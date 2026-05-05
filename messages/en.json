@@ -1,0 +1,181 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "about": "About",
+    "reservations": "Reservations",
+    "gallery": "Gallery",
+    "events": "Events",
+    "blog": "Journal",
+    "contact": "Contact",
+    "reserve": "Reserve",
+    "discover": "Discover the Menu",
+    "order": "Order Online"
+  },
+  "hero": {
+    "marker": "N° 001 — Langford · BC",
+    "stamp": "EST. MMXXVI · ARTISAN INDIAN DINING",
+    "title": "Modern\n*Indian*\nDining.",
+    "subtitle": "An intimate destination in Langford where heritage is served in a single, deliberate frame.",
+    "cta_primary": "Discover the Menu",
+    "cta_secondary": "Our Story",
+    "scroll": "Scroll to begin",
+    "vertical": "Victoria · BC · Canada"
+  },
+  "manifesto": {
+    "label": "The Manifesto"
+  },
+  "story": {
+    "label": "N° 002 — Heritage",
+    "title": "Heritage,\n*reimagined*\nas craft.",
+    "lead": "Long ago, in a small kitchen lit by lanterns, a grandmother folded saffron into milk and called it medicine. We started there.",
+    "body": "We treat the dining room like a stage and the kitchen like a studio — sourcing heirloom spices, refining technique, and pairing every plate with intention. The result is Indian cuisine that feels familiar yet entirely new — slow, considered, and quietly indulgent.",
+    "pullquote": "Every dish is a love letter — folded by hand, sealed in flame, opened at the table.",
+    "signoff": "— Chef & Founder",
+    "cta": "Read the full story"
+  },
+  "studies": {
+    "label": "N° 003 — Plate Studies",
+    "title": "Studies in\n*flavour*\nand fire.",
+    "body": "Seven plates that define the season. Drag, swipe, or scroll to explore each composition.",
+    "cta": "Explore the full menu"
+  },
+  "cocktails": {
+    "label": "N° 004 — The Bar Program",
+    "title": "Spirits, *spice*,\nslow ritual.",
+    "body": "Our cocktails are built like dishes — layered, balanced, and rooted in the Indian pantry. Cardamom. Tamarind. Saffron. Smoke.",
+    "feature_name": "The Tamarind Negroni",
+    "feature_note": "An aged Campari kissed with date-tamarind cordial, finished with a cardamom oil mist.",
+    "feature_method": "Stirred · Served on a single rock",
+    "ingredients": "Ingredients",
+    "method": "Method",
+    "cta": "View the full bar list"
+  },
+  "pillars": {
+    "label": "N° 005 — The Pillars",
+    "title": "Three\n*principles*,\none kitchen."
+  },
+  "ambience": {
+    "label": "N° 006 — Ambience",
+    "title": "A room\nlit by *flame*\nand quiet music.",
+    "body": "Soft lighting. Brushed brass. Velvet banquettes built for slow conversation. Outside, a heated patio for warm evenings under cedar.",
+    "interior_label": "The Dining Room",
+    "interior_caption": "Velvet banquettes, brass fixtures, candlelight tuned to the hour.",
+    "patio_label": "The Patio",
+    "patio_caption": "Heated, hedge-private, lit by hanging lanterns and West-Coast dusk.",
+    "music_label": "The Soundtrack",
+    "music_caption": "A nightly score curated by hand — analog warmth, sub-bass restraint."
+  },
+  "press": {
+    "label": "N° 007 — Press"
+  },
+  "testimonials": {
+    "label": "N° 008 — In Their Words",
+    "title": "What our\nguests *say*."
+  },
+  "visit": {
+    "label": "N° 009 — Visit",
+    "title": "Find us\nin *Langford*.",
+    "lead": "Two thousand and nine hundred Jacklin Road. A heated patio, a candle-lit room, a kitchen that opens at five.",
+    "hours_title": "Hours",
+    "address_title": "Address",
+    "contact_title": "Reach Us",
+    "directions": "Get directions",
+    "reserve": "Reserve a table"
+  },
+  "newsletter": {
+    "label": "N° 010 — Stay Close",
+    "title": "Notes from\nthe *Lab*.",
+    "body": "Seasonal menus, supper clubs, and the occasional secret. Once a month, never more.",
+    "placeholder": "your@email.com",
+    "submit": "Subscribe",
+    "success": "You're on the list. Welcome.",
+    "error": "Something went wrong. Try again."
+  },
+  "footer": {
+    "tagline": "Modern Indian dining. Crafted in Langford, BC.",
+    "rights": "© 2026 The Indian Lab. All rights reserved.",
+    "made": "Designed with intent. Served with fire."
+  },
+  "menu_page": {
+    "eyebrow": "The Menu",
+    "title": "A field guide\nto *flavour*.",
+    "intro": "Hover, tap, or read aloud. Every dish notes its region, its heat, and its dietary marks.",
+    "filters": "Filters",
+    "all": "All",
+    "veg": "Vegetarian",
+    "vegan": "Vegan",
+    "gf": "Gluten-free",
+    "heat": "Heat",
+    "categories": {
+      "starters": "Starters",
+      "tandoor": "Tandoor",
+      "mains": "Mains",
+      "biryani": "Biryani & Rice",
+      "desserts": "Desserts",
+      "drinks": "Drinks"
+    }
+  },
+  "about_page": {
+    "eyebrow": "About",
+    "title": "A laboratory\nfor *Indian* flavour.",
+    "lead": "Founded by a chef and a sommelier with a shared love for the subcontinent's pantry — and a romance with the West Coast.",
+    "philosophy_title": "Philosophy",
+    "philosophy": "We start every dish with a single question: what does this spice want to be? Then we test, taste, and refine until the answer is undeniable.",
+    "team_title": "The Team"
+  },
+  "reservations_page": {
+    "eyebrow": "Reservations",
+    "title": "Reserve\na *table*.",
+    "lead": "Tables seat 2–8. For larger parties or buyouts, please use the events form.",
+    "step": "Step",
+    "of": "of",
+    "date": "Date",
+    "time": "Time",
+    "party": "Party size",
+    "name": "Full name",
+    "email": "Email",
+    "phone": "Phone",
+    "notes": "Notes (allergies, occasion)",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Confirm reservation",
+    "success_title": "Table requested.",
+    "success_body": "We'll confirm by email within the hour.",
+    "error": "Could not submit. Please try again or call us."
+  },
+  "gallery_page": {
+    "eyebrow": "Gallery",
+    "title": "A visual\n*menu*.",
+    "all": "All",
+    "food": "Food",
+    "interior": "Interior",
+    "events": "Events"
+  },
+  "events_page": {
+    "eyebrow": "Events",
+    "title": "Private dining,\n*made* cinematic.",
+    "lead": "From eight-seat chef's tables to fifty-person buyouts — we tailor every detail.",
+    "private": "Private Dining",
+    "corporate": "Corporate",
+    "celebrations": "Celebrations",
+    "from": "From",
+    "inquire": "Inquire"
+  },
+  "blog_page": {
+    "eyebrow": "Journal",
+    "title": "Notes,\n*recipes*,\ndispatches.",
+    "read": "Read"
+  },
+  "contact_page": {
+    "eyebrow": "Contact",
+    "title": "Say *hello*.",
+    "lead": "We answer within a day — usually faster.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send",
+    "success": "Sent. We'll be in touch.",
+    "error": "Something went wrong."
+  }
+}
