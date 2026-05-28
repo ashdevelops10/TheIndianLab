@@ -20,7 +20,7 @@ export const gallery: GalleryItem[] = [
   { id: "g7", src: u("photo-1559339352-11d035aa65de", 1200, 800), category: "interior", alt: "Tandoor station", width: 1200, height: 800 },
   { id: "g8", src: u("photo-1559339352-11d035aa65de"), category: "events", alt: "Chef's table", width: 1200, height: 1500 },
   { id: "g9", src: u("photo-1603894584373-5ac82b2ae398"), category: "food", alt: "Butter chicken", width: 1200, height: 1500 },
-  { id: "g10", src: u("photo-1543007354-66bb3df58e9d", 1200, 800), category: "interior", alt: "Lounge", width: 1200, height: 800 },
+  { id: "g10", src: u("photo-1517248135467-4c7edcad34c4", 1200, 800), category: "interior", alt: "Lounge", width: 1200, height: 800 },
   { id: "g11", src: u("photo-1514362545857-3bc16c4c7d1b"), category: "food", alt: "Cocktail", width: 1200, height: 1500 },
   { id: "g12", src: u("photo-1551024601-bec78aea704b", 1200, 800), category: "events", alt: "Private dining", width: 1200, height: 800 },
 ];

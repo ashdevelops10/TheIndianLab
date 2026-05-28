@@ -21,7 +21,7 @@ export function SignatureDishes() {
       : [...signatureDishes, ...dishes.slice(0, 7 - signatureDishes.length)];
 
   return (
-    <section className="relative py-[clamp(6rem,14vw,12rem)]">
+    <section className="relative bg-bg-base py-[clamp(6rem,14vw,12rem)]">
       <Container>
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-7">

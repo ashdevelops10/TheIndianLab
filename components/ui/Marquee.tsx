@@ -26,7 +26,7 @@ export function Marquee({
             className={cn(
               "flex items-center gap-10",
               size === "lg"
-                ? "font-display text-fluid-h2 text-fg-bone"
+                ? "font-display text-fluid-marquee text-fg-bone"
                 : "font-mono text-[11px] uppercase tracking-[0.3em] text-fg-muted",
             )}
           >

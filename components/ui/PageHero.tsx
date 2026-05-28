@@ -19,7 +19,7 @@ export function PageHero({
           <RevealText
             as="h1"
             text={title}
-            className="mt-6 max-w-4xl font-display text-fluid-h1 text-fg-cream"
+            className="mt-6 max-w-5xl text-balance font-display text-fluid-h1 text-fg-cream"
           />
           {lead && (
             <p className="mt-8 max-w-xl text-fluid-body text-fg-muted">{lead}</p>

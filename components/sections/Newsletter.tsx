@@ -30,7 +30,7 @@ export function Newsletter() {
   };
 
   return (
-    <section className="relative border-t border-line bg-bg-base py-[clamp(5rem,12vw,10rem)]">
+    <section className="relative border-t border-accent-gold/25 bg-bg-surface py-[clamp(5rem,12vw,10rem)]">
       <Container>
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-5">
@@ -64,13 +64,13 @@ export function Newsletter() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder={t("placeholder")}
-                  className="w-full border-b border-line-strong bg-transparent px-7 pb-3 pt-1 text-base text-fg-cream placeholder:text-fg-dim focus:border-accent-gold focus:outline-none"
+                  className="w-full min-w-0 border-b border-line-strong bg-transparent px-7 pb-3 pt-1 text-base text-fg-cream placeholder:text-fg-dim focus:border-accent-gold focus:outline-none"
                 />
               </div>
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="btn btn-primary group disabled:opacity-60"
+                className="btn btn-primary group w-full disabled:opacity-60 sm:w-auto"
               >
                 <span>{t("submit")}</span>
                 <ArrowRight
@@ -82,7 +82,7 @@ export function Newsletter() {
 
             <div className="mt-4 h-5 text-sm">
               {status === "success" && <p className="text-accent-gold">{t("success")}</p>}
-              {status === "error" && <p className="text-accent-bordeaux">{t("error")}</p>}
+              {status === "error" && <p className="text-accent-ember">{t("error")}</p>}
             </div>
           </div>
         </div>

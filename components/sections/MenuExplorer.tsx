@@ -54,13 +54,13 @@ export function MenuExplorer() {
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-1">
+          <div className="flex flex-wrap gap-1 md:justify-end">
             {(["veg", "vegan", "gf"] as const).map((k) => (
               <button
                 key={k}
                 onClick={() => setFilters((f) => ({ ...f, [k]: !f[k] }))}
                 className={cn(
-                  "rounded-full border px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] transition-colors",
+                  "rounded-full border px-3 py-1.5 text-center font-mono text-[10px] uppercase leading-snug tracking-[0.14em] transition-colors sm:tracking-[0.18em]",
                   filters[k]
                     ? "border-accent-saffron text-accent-saffron"
                     : "border-line text-fg-muted hover:border-fg-muted hover:text-fg-cream",

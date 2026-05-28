@@ -75,7 +75,7 @@ export async function Ambience({ locale }: { locale: string }) {
                 </span>
               </div>
               <figcaption className="mt-5">
-                <p className="font-display italic text-2xl text-accent-goldlight">{tile.label}</p>
+                <p className="font-accent text-2xl text-accent-goldlight">{tile.label}</p>
                 <p className="mt-2 max-w-sm text-sm leading-relaxed text-fg-bone">{tile.caption}</p>
               </figcaption>
             </figure>

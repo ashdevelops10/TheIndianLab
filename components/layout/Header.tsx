@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { easeOutExpo } from "@/lib/motion";
+import { BrandSeal } from "@/components/ui/BrandSeal";
 
 const navItems = [
   { key: "menu", href: "/menu" },
@@ -47,21 +48,18 @@ export function Header() {
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-all duration-700 ease-out-expo",
           scrolled || open
-            ? "bg-bg-base/85 backdrop-blur-xl border-b border-line"
-            : "bg-transparent",
+            ? "border-b border-line bg-accent-bordeaux/92 shadow-[0_18px_50px_-34px_rgba(0,0,0,0.75)] backdrop-blur-xl"
+            : "bg-gradient-to-b from-accent-bordeaux/78 to-transparent",
         )}
       >
         <div className="container-page flex h-16 items-center justify-between md:h-[72px]">
           <Link
             href={lp("")}
-            className="flex items-baseline gap-2 font-display text-lg tracking-tight text-fg-cream"
+            className="flex items-center text-fg-cream"
             onClick={() => setOpen(false)}
+            aria-label="The Indian Lab"
           >
-            <span>The Indian Lab</span>
-            <span className="text-accent-gold">·</span>
-            <span className="hidden font-mono text-[10px] uppercase tracking-[0.32em] text-fg-muted sm:inline">
-              EST · MMXXVI
-            </span>
+            <BrandSeal variant="horizontal" size={64} className="transition-opacity hover:opacity-85" />
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex">
@@ -69,7 +67,7 @@ export function Header() {
               <Link
                 key={item.key}
                 href={lp(item.href)}
-                className="link-underline font-mono text-[10.5px] uppercase tracking-[0.28em] text-fg-bone transition-colors hover:text-accent-gold"
+                className="link-underline font-mono text-[10.5px] uppercase tracking-[0.28em] text-fg-bone transition-colors hover:text-accent-ember"
               >
                 {t(item.key)}
               </Link>
@@ -104,7 +102,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: easeOutExpo }}
-            className="fixed inset-0 z-40 bg-bg-base/95 backdrop-blur-2xl lg:hidden"
+            className="fixed inset-0 z-40 bg-accent-bordeaux/95 backdrop-blur-2xl lg:hidden"
           >
             <div className="container-page flex h-full flex-col justify-between pb-12 pt-24">
               <nav className="flex flex-col gap-1">
@@ -118,15 +116,15 @@ export function Header() {
                     <Link
                       href={lp(item.href)}
                       onClick={() => setOpen(false)}
-                      className="group flex items-baseline justify-between border-b border-line py-4 font-display text-3xl text-fg-cream transition-colors hover:text-accent-gold"
+                      className="group flex items-baseline justify-between gap-4 border-b border-line py-4 font-display text-3xl text-fg-cream transition-colors hover:text-accent-gold"
                     >
-                      <span className="flex items-baseline gap-4">
-                        <span className="font-mono text-xs text-fg-dim">
+                        <span className="flex min-w-0 flex-wrap items-baseline gap-x-4 gap-y-1">
+                          <span className="shrink-0 font-mono text-xs text-fg-dim">
                           N° 0{i + 1}
                         </span>
-                        {t(item.key)}
+                          <span className="min-w-0 break-words">{t(item.key)}</span>
                       </span>
-                      <span className="font-display italic text-base text-accent-gold opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        <span className="shrink-0 font-accent text-base text-accent-gold opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                         →
                       </span>
                     </Link>

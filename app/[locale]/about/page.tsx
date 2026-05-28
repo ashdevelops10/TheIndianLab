@@ -23,7 +23,7 @@ export default async function AboutPage({
         <Container className="grid gap-12 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-7">
             <RevealImage
-              src="https://images.unsplash.com/photo-1543007354-66bb3df58e9d?auto=format&fit=crop&w=1600&q=85"
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=85"
               alt="Kitchen scene"
               ratio="4/5"
             />

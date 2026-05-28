@@ -44,14 +44,14 @@ export function ContactBody() {
       <Container className="grid gap-16 md:grid-cols-12">
         <div className="md:col-span-5">
           <p className="label">Reach us</p>
-          <ul className="mt-6 space-y-4 text-fg-cream">
+          <ul className="mt-6 max-w-full space-y-4 text-fg-cream">
             <li>
-              <a href={`tel:${siteConfig.contact.phone}`} className="link-underline">
+              <a href={`tel:${siteConfig.contact.phone}`} className="link-underline max-w-full break-words">
                 {siteConfig.contact.phoneDisplay}
               </a>
             </li>
             <li>
-              <a href={`mailto:${siteConfig.contact.email}`} className="link-underline">
+              <a href={`mailto:${siteConfig.contact.email}`} className="link-underline max-w-full break-all">
                 {siteConfig.contact.email}
               </a>
             </li>
@@ -97,7 +97,7 @@ export function ContactBody() {
             />
             {errors.message && <p className="mt-2 text-xs text-accent-ember">Tell us a bit more</p>}
           </div>
-          <button type="submit" disabled={isSubmitting} className="btn btn-primary disabled:opacity-60">
+          <button type="submit" disabled={isSubmitting} className="btn btn-primary w-full disabled:opacity-60 sm:w-auto">
             {t("submit")}
           </button>
           <div className="h-5 text-sm">

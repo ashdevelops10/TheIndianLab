@@ -27,7 +27,7 @@ export async function Pillars({ locale }: { locale: string }) {
               className="group relative flex flex-col gap-6 bg-bg-base p-8 transition-colors duration-700 ease-out-expo hover:bg-bg-surface md:p-12"
             >
               <div className="flex items-center justify-between">
-                <span className="font-display italic text-5xl text-accent-gold md:text-6xl">
+                <span className="font-accent text-5xl text-accent-gold md:text-6xl">
                   {p.no}.
                 </span>
                 <Ornament size="sm" className="opacity-60 transition-opacity duration-700 group-hover:opacity-100" />

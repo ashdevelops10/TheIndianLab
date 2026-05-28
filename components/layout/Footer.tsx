@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
 import { Ornament, OrnamentRule } from "@/components/ui/Ornament";
+import { BrandSeal } from "@/components/ui/BrandSeal";
 
 export async function Footer({ locale }: { locale: string }) {
   const tF = await getTranslations({ locale, namespace: "footer" });
@@ -11,34 +12,31 @@ export async function Footer({ locale }: { locale: string }) {
   const lp = (p: string) => `/${locale}${p}`;
 
   return (
-    <footer className="relative overflow-hidden border-t border-line bg-bg-base">
+    <footer className="relative overflow-hidden border-t border-accent-gold/25 bg-bg-velvet">
       <Container className="py-20">
-        {/* Massive display wordmark */}
         <Link
           href={lp("")}
           aria-label="The Indian Lab"
-          className="block font-display text-fluid-display leading-none text-fg-cream/95 hover:text-accent-goldlight transition-colors duration-700 ease-out-expo"
+          className="inline-flex text-fg-cream/95 transition-colors duration-700 ease-out-expo hover:text-accent-goldlight"
         >
-          The Indian
-          <span className="italic-display"> Lab</span>
-          <span className="text-accent-gold">.</span>
+          <BrandSeal variant="circle" size={150} className="w-[120px] sm:w-[150px] h-auto" />
         </Link>
 
         <p className="mt-6 max-w-md text-fluid-body text-fg-bone">{tF("tagline")}</p>
 
         <OrnamentRule className="my-16" />
 
-        <div className="grid gap-10 md:grid-cols-12 md:gap-12">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-12 md:gap-12">
           <div className="md:col-span-3">
             <p className="label mb-4">{tV("hours_title")}</p>
             <ul className="space-y-1 text-sm">
               {siteConfig.hours.map((h) => (
                 <li
                   key={h.day}
-                  className="flex justify-between gap-4 border-b border-line py-1.5"
+                  className="flex flex-wrap justify-between gap-x-4 gap-y-1 border-b border-line py-1.5"
                 >
-                  <span className="text-fg-muted">{h.day}</span>
-                  <span className="text-fg-cream">{h.time}</span>
+                  <span className="min-w-0 flex-1 text-fg-muted">{h.day}</span>
+                  <span className="text-right text-fg-cream">{h.time}</span>
                 </li>
               ))}
             </ul>
@@ -103,12 +101,12 @@ export async function Footer({ locale }: { locale: string }) {
         </div>
       </Container>
 
-      <Container className="flex flex-col items-start justify-between gap-3 border-t border-line py-6 text-xs text-fg-dim md:flex-row md:items-center">
-        <div className="flex items-center gap-3">
+      <Container className="flex flex-col items-start justify-between gap-3 border-t border-accent-gold/20 py-6 text-xs text-fg-muted md:flex-row md:items-center">
+        <div className="flex max-w-full items-start gap-3">
           <Ornament size="sm" />
           <p>{tF("rights")}</p>
         </div>
-        <p className="font-mono uppercase tracking-[0.28em]">{tF("made")}</p>
+        <p className="max-w-full font-mono uppercase leading-relaxed tracking-[0.18em] sm:tracking-[0.28em]">{tF("made")}</p>
       </Container>
     </footer>
   );

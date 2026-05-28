@@ -40,7 +40,7 @@ export async function Cocktails({ locale }: { locale: string }) {
           </div>
           <div className="md:col-span-6 md:pt-12">
             <p className="marker text-accent-gold">N° 001 — Featured</p>
-            <h3 className="mt-4 font-display italic text-fluid-h2 text-accent-goldlight">
+            <h3 className="mt-4 text-balance font-accent text-fluid-h2 text-accent-goldlight">
               {featuredCocktail.name}
             </h3>
             <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.28em] text-fg-muted">
@@ -96,7 +96,7 @@ export async function Cocktails({ locale }: { locale: string }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-base/60 to-transparent" />
               </div>
 
-              <h4 className="mt-7 font-display italic text-2xl text-fg-cream">{c.name}</h4>
+              <h4 className="mt-7 font-accent text-2xl text-fg-cream">{c.name}</h4>
               <p className="mt-2 font-mono text-[10.5px] uppercase tracking-[0.28em] text-fg-muted">
                 {c.base}
               </p>
@@ -111,8 +111,8 @@ export async function Cocktails({ locale }: { locale: string }) {
                 ))}
               </ul>
 
-              <div className="mt-7 flex items-center justify-between border-t border-line pt-5">
-                <span className="font-mono text-[11px] uppercase tracking-[0.28em] text-fg-muted">
+              <div className="mt-7 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-5">
+                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-fg-muted sm:tracking-[0.28em]">
                   {c.method}
                 </span>
                 <span className="font-display text-xl text-accent-gold">${c.price}</span>

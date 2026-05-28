@@ -11,25 +11,25 @@ export const team: TeamMember[] = [
   {
     name: "Anaya Kapoor",
     role: "Executive Chef",
-    bio: "Trained at Bukhara, Noma, and Gaggan. Obsessed with regional grain.",
+    bio: "Leads a kitchen rooted in regional Indian recipes, modern technique, and quietly elegant plating.",
     image: u("photo-1583394293214-28ded15ee548"),
   },
   {
     name: "Devan Rao",
-    role: "Co-founder · Chemist",
-    bio: "Spice scientist. Built the in-house mill and ferment program.",
+    role: "Co-founder · Experience Director",
+    bio: "Shapes the room through music, pacing, lighting, and the warmth of Indian hospitality.",
     image: u("photo-1607990281513-2c110a25bd8c"),
   },
   {
     name: "Leah Mendes",
-    role: "Sommelier",
-    bio: "Pairing single-vineyard wines and small-batch arrack with Indian heat.",
+    role: "Sommelier · Cellar Lead",
+    bio: "Builds a global wine program around spice, texture, heat, and celebration.",
     image: u("photo-1573496359142-b8d87734a5a2"),
   },
   {
     name: "Karan Joshi",
-    role: "Pastry",
-    bio: "Bringing kulfi, kheer and shrikhand into the modern dessert canon.",
+    role: "Bar & Dessert Program",
+    bio: "Connects saffron, rose, cardamom, and smoke across signature cocktails and final courses.",
     image: u("photo-1566753323558-f4e0952af115"),
   },
 ];

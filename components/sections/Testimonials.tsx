@@ -56,12 +56,12 @@ export function Testimonials() {
           {/* quote carousel */}
           <div className="md:col-span-7 md:pt-16">
             <div className="flex items-start justify-between gap-8">
-              <div>
+              <div className="min-w-0">
                 <SectionLabel>{t("label")}</SectionLabel>
                 <RevealText
                   as="h2"
                   text={t("title")}
-                  className="mt-6 font-display text-fluid-h2 text-fg-cream"
+                  className="mt-6 text-balance font-display text-fluid-h2 text-fg-cream"
                 />
               </div>
               <div className="hidden gap-3 md:flex">
@@ -91,11 +91,11 @@ export function Testimonials() {
                     <figure className="relative">
                       <span
                         aria-hidden
-                        className="font-display italic absolute -left-2 -top-10 select-none text-7xl leading-none text-accent-gold/30 md:text-8xl"
+                        className="font-accent absolute -left-2 -top-10 select-none text-7xl leading-none text-accent-gold/30 md:text-8xl"
                       >
                         “
                       </span>
-                      <blockquote className="font-display italic text-3xl leading-snug text-fg-cream md:text-4xl">
+                      <blockquote className="font-accent text-2xl leading-snug text-fg-cream sm:text-3xl md:text-4xl">
                         {tm.quote}
                       </blockquote>
                       <figcaption className="mt-10 font-mono text-[11px] uppercase tracking-[0.28em] text-fg-muted">

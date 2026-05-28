@@ -13,7 +13,7 @@ export function DishCard({
   return (
     <article
       className={cn(
-        "group flex h-full flex-col overflow-hidden border border-line bg-bg-surface transition-colors duration-500 hover:border-accent-saffron/40",
+        "group flex h-full flex-col overflow-hidden border border-line bg-bg-surface/95 shadow-[0_22px_70px_-52px_rgba(0,0,0,0.95)] transition-colors duration-500 hover:border-accent-ember/55 hover:bg-bg-elevated",
         className,
       )}
     >
@@ -26,21 +26,21 @@ export function DishCard({
           className="object-cover transition-transform duration-[1200ms] ease-out-expo group-hover:scale-105"
         />
         {dish.signature && (
-          <span className="absolute left-4 top-4 label bg-bg-base/70 px-2 py-1 text-fg-cream backdrop-blur">
+          <span className="absolute left-4 top-4 label bg-bg-base/78 px-2 py-1 text-accent-goldlight backdrop-blur">
             Signature
           </span>
         )}
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <div className="mb-2 flex items-start justify-between gap-4">
-          <div>
+        <div className="mb-2 flex flex-wrap items-start justify-between gap-3">
+          <div className="min-w-0 flex-1">
             <h3 className="font-display text-2xl text-fg-cream">{dish.name}</h3>
             {dish.nameHi && (
               <p className="mt-1 font-deva text-sm text-fg-muted">{dish.nameHi}</p>
             )}
           </div>
-          <span className="font-mono text-sm text-accent-saffron">
+          <span className="shrink-0 font-mono text-sm text-accent-goldlight">
             {formatPrice(dish.price)}
           </span>
         </div>

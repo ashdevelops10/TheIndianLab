@@ -72,7 +72,7 @@ export function ReservationForm() {
     return (
       <Container className="py-24">
         <div className="mx-auto max-w-xl text-center">
-          <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-accent-saffron text-bg-base">
+          <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-accent-gold text-bg-velvet">
             <Check size={28} />
           </div>
           <h2 className="mt-8 font-display text-fluid-h2 text-fg-cream">{t("success_title")}</h2>
@@ -88,11 +88,11 @@ export function ReservationForm() {
   return (
     <Container className="pb-32">
       <div className="mx-auto grid max-w-2xl gap-10">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
           <SectionLabel>
             {t("step")} {step + 1} {t("of")} {totalSteps}
           </SectionLabel>
-          <div className="flex flex-1 max-w-[180px] gap-1.5 ml-6">
+          <div className="flex w-full max-w-[180px] gap-1.5 sm:ml-6 sm:flex-1">
             {Array.from({ length: totalSteps }).map((_, i) => (
               <span
                 key={i}
@@ -213,7 +213,7 @@ export function ReservationForm() {
             </motion.div>
           </AnimatePresence>
 
-          <div className="mt-12 flex items-center justify-between">
+          <div className="mt-12 flex flex-wrap items-center justify-between gap-4">
             <button
               type="button"
               onClick={() => setStep((s) => Math.max(s - 1, 0))}
@@ -223,11 +223,11 @@ export function ReservationForm() {
               <ArrowLeft size={14} /> {t("back")}
             </button>
             {step < 4 ? (
-              <button type="button" onClick={next} className="btn btn-primary">
+              <button type="button" onClick={next} className="btn btn-primary ml-auto">
                 {t("next")} <ArrowRight size={14} />
               </button>
             ) : (
-              <button type="submit" disabled={isSubmitting} className="btn btn-primary disabled:opacity-60">
+              <button type="submit" disabled={isSubmitting} className="btn btn-primary ml-auto disabled:opacity-60">
                 {t("submit")} <ArrowRight size={14} />
               </button>
             )}
@@ -239,12 +239,12 @@ export function ReservationForm() {
         .field-input {
           width: 100%;
           background: transparent;
-          border-bottom: 1px solid rgba(245,239,230,0.08);
+          border-bottom: 1px solid rgba(255,231,196,0.16);
           padding: 0.75rem 0;
-          color: #F5EFE6;
+          color: #FFE7C4;
           font-size: 1.125rem;
         }
-        .field-input:focus { outline: none; border-color: #E1A85F; }
+        .field-input:focus { outline: none; border-color: #DD645F; }
       `}</style>
     </Container>
   );

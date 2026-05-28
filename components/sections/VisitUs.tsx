@@ -24,9 +24,9 @@ export async function VisitUs({ locale }: { locale: string }) {
               <p className="label mb-4">{t("hours_title")}</p>
               <ul className="space-y-1.5 text-sm text-fg-bone">
                 {siteConfig.hours.map((h) => (
-                  <li key={h.day} className="flex justify-between gap-3 border-b border-line py-1.5">
-                    <span className="text-fg-muted">{h.day}</span>
-                    <span className="text-fg-cream">{h.time}</span>
+                  <li key={h.day} className="flex flex-wrap justify-between gap-x-3 gap-y-1 border-b border-line py-1.5">
+                    <span className="min-w-0 flex-1 text-fg-muted">{h.day}</span>
+                    <span className="text-right text-fg-cream">{h.time}</span>
                   </li>
                 ))}
               </ul>
@@ -54,13 +54,13 @@ export async function VisitUs({ locale }: { locale: string }) {
               <p className="label mt-10 mb-3">{t("contact_title")}</p>
               <a
                 href={`tel:${siteConfig.contact.phone}`}
-                className="block text-sm text-fg-cream link-underline"
+                className="link-underline block max-w-full break-words text-sm text-fg-cream"
               >
                 {siteConfig.contact.phoneDisplay}
               </a>
               <a
                 href={`mailto:${siteConfig.contact.reservations}`}
-                className="mt-1 block text-sm text-fg-bone link-underline"
+                className="link-underline mt-1 block max-w-full break-all text-sm text-fg-bone"
               >
                 {siteConfig.contact.reservations}
               </a>
@@ -82,7 +82,7 @@ export async function VisitUs({ locale }: { locale: string }) {
               48.45° N · 123.50° W
             </span>
             <span className="pointer-events-none absolute bottom-5 right-5 font-mono text-[10px] uppercase tracking-[0.32em] text-accent-gold">
-              Langford · BC
+              Victoria · BC
             </span>
           </div>
         </div>

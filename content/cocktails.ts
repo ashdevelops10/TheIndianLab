@@ -13,7 +13,7 @@ const u = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit=cro
 
 export const featuredCocktail: Cocktail = {
   id: "tamarind-negroni",
-  name: "The Tamarind Negroni",
+  name: "Midnight Tamarind Negroni",
   base: "Aged Campari",
   ingredients: [
     "Aged Campari · 30ml",
@@ -23,7 +23,7 @@ export const featuredCocktail: Cocktail = {
     "Cardamom oil · 1 mist",
   ],
   method: "Stirred · Served on a single rock · Orange peel",
-  note: "An aged Campari kissed with date-tamarind cordial, finished with a cardamom oil mist.",
+  note: "A polished house Negroni rounded with date-tamarind cordial and a clean cardamom finish.",
   price: 22,
   image: u("photo-1551024709-8f23befc6f87"),
 };
@@ -31,31 +31,31 @@ export const featuredCocktail: Cocktail = {
 export const cocktails: Cocktail[] = [
   {
     id: "rose-cardamom-sour",
-    name: "Rose & Cardamom Sour",
+    name: "Rose Cardamom Sour",
     base: "Bourbon",
     ingredients: ["Bourbon", "Rose syrup", "Lemon", "Cardamom", "Egg white"],
     method: "Dry-shake · Fine-strain",
-    note: "Velvet, floral, finished with a single rose petal.",
+    note: "Soft, floral, and romantic, finished with a single rose petal.",
     price: 19,
     image: u("photo-1514362545857-3bc16c4c7d1b"),
   },
   {
     id: "smoked-old-fashioned",
-    name: "Smoked Old Fashioned",
+    name: "Smoked Jaggery Old Fashioned",
     base: "Rye whisky",
     ingredients: ["Rye whisky", "Jaggery", "Black cardamom bitters", "Applewood smoke"],
     method: "Stirred · Smoked tableside",
-    note: "Charred sugar, slow smoke, a single ice diamond.",
+    note: "Charred sugar, slow smoke, and a steady late-night edge.",
     price: 24,
     image: u("photo-1470337458703-46ad1756a187"),
   },
   {
     id: "saffron-spritz",
-    name: "Saffron Spritz",
+    name: "Victoria Saffron Spritz",
     base: "Prosecco",
     ingredients: ["Prosecco", "Saffron-infused Aperol", "Soda", "Orange"],
     method: "Built · Served long",
-    note: "Bright, golden, lifted by saffron threads.",
+    note: "Bright, golden, and made for the patio at dusk.",
     price: 18,
     image: u("photo-1587223962930-cb7f31384c19"),
   },

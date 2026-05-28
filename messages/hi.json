@@ -13,10 +13,10 @@
     "order": "ऑनलाइन ऑर्डर"
   },
   "hero": {
-    "marker": "N° 001 — लैंगफ़र्ड · बीसी",
-    "stamp": "EST. MMXXVI · आधुनिक भारतीय भोजन",
+    "marker": "N° 001 - विक्टोरिया · बीसी",
+    "stamp": "आधुनिक भारतीय फाइन डाइनिंग",
     "title": "आधुनिक\n*भारतीय*\nभोजन।",
-    "subtitle": "लैंगफ़र्ड में एक अंतरंग गंतव्य जहाँ विरासत एक सोची-समझी प्लेट में परोसी जाती है।",
+    "subtitle": "विक्टोरिया में एक रोमांटिक भारतीय डाइनिंग डेस्टिनेशन, जहाँ पारंपरिक स्वाद, क्राफ्ट कॉकटेल और refined वैश्विक माहौल साथ आते हैं।",
     "cta_primary": "मेन्यू देखें",
     "cta_secondary": "हमारी कहानी",
     "scroll": "स्क्रॉल करें",
@@ -24,45 +24,45 @@
   },
   "manifesto": { "label": "घोषणापत्र" },
   "story": {
-    "label": "N° 002 — विरासत",
-    "title": "विरासत,\n*कला* के रूप में।",
-    "lead": "बहुत पहले, एक छोटी रसोई में लालटेन की रोशनी में, एक दादी ने केसर को दूध में घोला और इसे दवा कहा। हम वहीं से शुरू हुए।",
-    "body": "हम भोजन कक्ष को मंच मानते हैं और रसोई को एक स्टूडियो — दुर्लभ मसाले, परिष्कृत तकनीक, और हर प्लेट पर सोच। परिणाम परिचित यत पूरी तरह से नया।",
-    "pullquote": "हर व्यंजन एक प्रेम-पत्र है — हाथ से मोड़ा, अग्नि में सील किया, मेज़ पर खोला।",
-    "signoff": "— शेफ़ और संस्थापक",
+    "label": "N° 002 - ब्रांड कहानी",
+    "title": "एक आधुनिक\n*भारतीय*\nअनुभव।",
+    "lead": "द इंडियन लैब विक्टोरिया में भारतीय cuisine को नए ढंग से अनुभव कराने के लिए बनाया गया है: यादों में rooted, आज के लिए refined, और linger करने वाले माहौल में served।",
+    "body": "हमारी रसोई regional Indian recipes का सम्मान करती है और उन्हें modern technique, careful presentation और premium ingredients से elevate करती है। टेबल के आसपास soft lighting, curated house music, elegant interiors और vibrant patio एक ऐसी evening बनाते हैं जो intimate, global और India से deeply connected महसूस होती है।",
+    "pullquote": "दिल से authentic, expression में modern, और guest की feeling के around designed।",
+    "signoff": "- द इंडियन लैब",
     "cta": "पूरी कहानी पढ़ें"
   },
   "studies": {
     "label": "N° 003 — प्लेट अध्ययन",
-    "title": "स्वाद और\n*अग्नि* के\nअध्ययन।",
-    "body": "इस मौसम के सात व्यंजन। स्वाइप करें, खोजें।",
+    "title": "भारतीय स्वाद,\nआज की रात के लिए\n*refined*।",
+    "body": "Signature plates tandoor से coast तक, slow-cooked comfort से elegant modern finishes तक जाती हैं।",
     "cta": "पूरा मेन्यू देखें"
   },
   "cocktails": {
     "label": "N° 004 — बार",
-    "title": "सुरा, *मसाला*,\nधीमी रस्म।",
-    "body": "हमारे कॉकटेल व्यंजन की तरह बने हैं — परतदार, संतुलित, और भारतीय भंडार में निहित। इलायची, इमली, केसर, धुआँ।",
-    "feature_name": "तमरिंद नीग्रोनी",
-    "feature_note": "वृद्ध काम्पारी, खजूर-इमली कॉर्डियल, इलायची तेल की धुंध।",
+    "title": "कॉकटेल, *वाइन*,\nऔर धीमा rhythm।",
+    "body": "बार Indian botanicals को polished global language में लाता है: इमली, इलायची, केसर, smoke, premium spirits और दुनिया भर की cellar selections।",
+    "feature_name": "मिडनाइट तमरिंद नीग्रोनी",
+    "feature_note": "Date-tamarind cordial और साफ cardamom finish वाला bittersweet house Negroni।",
     "feature_method": "हिलाया · एक चट्टान पर",
     "ingredients": "सामग्री",
     "method": "विधि",
     "cta": "पूरी सूची देखें"
   },
   "pillars": {
-    "label": "N° 005 — स्तंभ",
-    "title": "तीन *सिद्धांत*,\nएक रसोई।"
+    "label": "N° 005 - मूल मूल्य",
+    "title": "पाँच *मूल्य*,\nएक अनुभव।"
   },
   "ambience": {
     "label": "N° 006 — परिवेश",
-    "title": "अग्नि और\nशांत संगीत से\n*प्रकाशित* कक्ष।",
-    "body": "मुलायम रोशनी। पीतल। मखमली बेंच। बाहर एक गर्म आँगन।",
+    "title": "रोमांस और\nrhythm के लिए\n*सजा* कमरा।",
+    "body": "Warm tones, soft lighting, intimate seating, polished textures और carefully curated house music. बाहर patio वही elevated mood Victoria evening में ले जाता है।",
     "interior_label": "भोजन कक्ष",
-    "interior_caption": "मखमली बेंच, पीतल के फिक्सचर, मोमबत्ती की रोशनी।",
+    "interior_caption": "Elegant textures, low light और intimate tables, dates, celebrations और slow conversation के लिए।",
     "patio_label": "आँगन",
-    "patio_caption": "गर्म, निजी, लालटेन और पश्चिमी तट की शाम।",
+    "patio_caption": "Refined service, warm details और West Coast glow वाला vibrant open-air setting।",
     "music_label": "ध्वनि",
-    "music_caption": "हाथ से चयनित रात्रिकालीन स्कोर।"
+    "music_caption": "संयम से चुना गया house music, जो room को energy देता है पर उसे overpower नहीं करता।"
   },
   "press": { "label": "N° 007 — प्रेस" },
   "testimonials": {
@@ -71,8 +71,8 @@
   },
   "visit": {
     "label": "N° 009 — पधारें",
-    "title": "*लैंगफ़र्ड*\nमें मिलें।",
-    "lead": "२९०० जैकलिन रोड। एक गर्म आँगन, मोमबत्ती की रोशनी वाला कक्ष, पाँच बजे खुलने वाली रसोई।",
+    "title": "*विक्टोरिया*\nमें मिलें।",
+    "lead": "२९०० जैकलिन रोड। Fine Indian dining, crafted cocktail bar, premium wine cellar और linger करने के लिए बना patio।",
     "hours_title": "समय",
     "address_title": "पता",
     "contact_title": "संपर्क",
@@ -81,22 +81,22 @@
   },
   "newsletter": {
     "label": "N° 010 — जुड़े रहें",
-    "title": "*प्रयोगशाला*\nसे नोट्स।",
-    "body": "मौसमी मेन्यू, सपर क्लब, कभी-कभी राज़। महीने में एक बार, उससे ज़्यादा कभी नहीं।",
+    "title": "*द इंडियन लैब*\nसे नोट्स।",
+    "body": "Seasonal menus, cellar pours, patio evenings, private events और कभी-कभी late-night activation। महीने में एक बार, उससे ज़्यादा कभी नहीं।",
     "placeholder": "आपका@ईमेल.com",
     "submit": "सब्सक्राइब",
     "success": "आप सूची में हैं। स्वागत है।",
     "error": "कुछ गलत हुआ। फिर कोशिश करें।"
   },
   "footer": {
-    "tagline": "आधुनिक भारतीय भोजन। लैंगफ़र्ड, बीसी में रचित।",
+    "tagline": "आधुनिक भारतीय फाइन डाइनिंग। विक्टोरिया, बीसी में crafted।",
     "rights": "© २०२६ द इंडियन लैब। सर्वाधिकार सुरक्षित।",
-    "made": "इरादे से डिज़ाइन। अग्नि से परोसा।"
+    "made": "Feeling के लिए designed। Craft के साथ served।"
   },
   "menu_page": {
     "eyebrow": "मेन्यू",
-    "title": "स्वाद का\n*मार्गदर्शक*।",
-    "intro": "हर व्यंजन का क्षेत्र, तीव्रता और आहार-चिह्न।",
+    "title": "*भारतीय* स्वाद\nका refined map।",
+    "intro": "Authentic roots, modern technique, regional character और clear dietary notes वाली fine dining plates explore करें।",
     "filters": "फ़िल्टर",
     "all": "सभी",
     "veg": "शाकाहारी",
@@ -114,16 +114,16 @@
   },
   "about_page": {
     "eyebrow": "हमारे बारे में",
-    "title": "*भारतीय* स्वाद\nकी प्रयोगशाला।",
-    "lead": "एक शेफ़ और एक सोमेलियर द्वारा स्थापित।",
+    "title": "एक आधुनिक\n*भारतीय* destination।",
+    "lead": "द इंडियन लैब Victoria में friendship, hospitality और Indian cuisine के shared love से shaped refined dining room है।",
     "philosophy_title": "दर्शन",
-    "philosophy": "हम हर व्यंजन एक प्रश्न से शुरू करते हैं — यह मसाला क्या बनना चाहता है?",
+    "philosophy": "हम उन recipes, spices और warmth का सम्मान करते हैं जो Indian dining को personal बनाते हैं, फिर उन्हें polished service, contemporary presentation, premium beverages और memorable evenings वाले atmosphere से elevate करते हैं।",
     "team_title": "टीम"
   },
   "reservations_page": {
     "eyebrow": "आरक्षण",
     "title": "टेबल\n*बुक* करें।",
-    "lead": "टेबल २–८ लोगों के लिए।",
+    "lead": "Tables २-८ guests के लिए हैं: dates, celebrations और intimate dinners। Private events या larger gatherings के लिए events form use करें।",
     "step": "चरण",
     "of": "/",
     "date": "तारीख़",
@@ -150,8 +150,8 @@
   },
   "events_page": {
     "eyebrow": "इवेंट्स",
-    "title": "निजी भोजन,\n*सिनेमाई*।",
-    "lead": "आठ सीटों के शेफ़ टेबल से लेकर पचास लोगों के बायआउट तक।",
+    "title": "Private dining,\n*intimate* अंदाज़ में।",
+    "lead": "Romantic celebrations से private gatherings तक, हम menu, drinks, music, lighting और service को occasion की feeling के around tailor करते हैं।",
     "private": "निजी भोजन",
     "corporate": "कॉर्पोरेट",
     "celebrations": "उत्सव",
@@ -160,13 +160,13 @@
   },
   "blog_page": {
     "eyebrow": "जर्नल",
-    "title": "नोट्स,\n*व्यंजन*, संदेश।",
+    "title": "Notes,\n*cellar*,\nऔर kitchen।",
     "read": "पढ़ें"
   },
   "contact_page": {
     "eyebrow": "संपर्क",
     "title": "*नमस्ते* कहें।",
-    "lead": "हम एक दिन में जवाब देते हैं।",
+    "lead": "Reservations, private events, patio evenings या team को note के लिए, हम एक दिन में जवाब देते हैं - usually faster।",
     "name": "नाम",
     "email": "ईमेल",
     "message": "संदेश",

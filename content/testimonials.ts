@@ -7,25 +7,25 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "The most thoughtful Indian dining I've experienced outside Delhi. Every plate feels deliberate.",
+      "Elegant, warm, and deeply flavourful. It felt like Indian comfort translated into a fine-dining evening.",
     author: "Ravi Sharma",
     city: "Calgary",
   },
   {
     quote:
-      "A masterclass in restraint — the room is whisper-quiet and the food does all the talking.",
+      "The cocktails, the music, the room, and the food all worked together. A beautiful place for a date night.",
     author: "Arjun Patel",
     city: "Victoria",
   },
   {
     quote:
-      "Innovative without being precious. The black dal alone is worth the flight.",
+      "Traditional flavours, modern presentation, and service that made the whole night feel considered.",
     author: "Priya Singh",
     city: "Vancouver",
   },
   {
     quote:
-      "I've never tasted spice this clean. They've genuinely earned the 'lab' in their name.",
+      "The patio has such a polished energy. Refined, romantic, and still full of Indian warmth.",
     author: "Maya Iyer",
     city: "Montréal",
   },

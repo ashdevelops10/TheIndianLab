@@ -47,13 +47,13 @@ export default async function EventsPage({
               className="group flex flex-col"
             >
               <RevealImage src={o.image} alt={t(o.key)} ratio="4/5" />
-              <div className="mt-6 flex items-start justify-between">
-                <div>
+              <div className="mt-6 flex flex-wrap items-start justify-between gap-3">
+                <div className="min-w-0 flex-1">
                   <p className="label">0{i + 1}</p>
                   <h3 className="mt-2 font-display text-2xl text-fg-cream">{t(o.key)}</h3>
                   <p className="mt-1 text-sm text-fg-muted">{o.capacity} guests</p>
                 </div>
-                <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent-saffron">
+                <p className="shrink-0 text-right font-mono text-xs uppercase tracking-[0.16em] text-accent-saffron">
                   {t("from")} ${o.from}/pp
                 </p>
               </div>
