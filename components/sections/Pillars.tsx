@@ -9,7 +9,7 @@ export async function Pillars({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "pillars" });
 
   return (
-    <section className="relative py-[clamp(6rem,14vw,12rem)]">
+    <section className="relative scroll-mt-24 py-[clamp(6rem,14vw,12rem)]">
       <Container>
         <div className="max-w-3xl">
           <SectionLabel>{t("label")}</SectionLabel>
@@ -20,7 +20,31 @@ export async function Pillars({ locale }: { locale: string }) {
           />
         </div>
 
-        <div className="mt-20 grid gap-px bg-line-strong sm:grid-cols-3 sm:gap-px">
+        <div className="mobile-loop-shell mt-14 lg:hidden">
+          <div className="mobile-loop-fade" />
+          <div className="mobile-loop-track animate-marquee-slow">
+            {[...siteConfig.pillars, ...siteConfig.pillars].map((p, i) => (
+              <article
+                key={`${p.no}-${i}`}
+                className={`mobile-loop-card flex w-[76vw] max-w-[320px] flex-col gap-6 bg-bg-base p-6 ${i % 2 ? "translate-y-5" : ""}`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-accent text-5xl text-accent-gold">{p.no}.</span>
+                  <Ornament size="sm" className="opacity-70" />
+                </div>
+
+                <h3 className="font-display text-3xl leading-tight text-fg-cream">{p.title}</h3>
+                <p className="text-sm leading-relaxed text-fg-bone">{p.body}</p>
+
+                <span className="mt-auto pt-4 font-mono text-[10.5px] uppercase tracking-[0.24em] text-fg-dim">
+                  Pillar {String((i % siteConfig.pillars.length) + 1).padStart(2, "0")}
+                </span>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-20 hidden gap-px bg-line-strong lg:grid lg:grid-cols-3 lg:gap-px">
           {siteConfig.pillars.map((p, i) => (
             <article
               key={p.no}

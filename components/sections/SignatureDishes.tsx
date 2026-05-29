@@ -1,8 +1,10 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { RevealText } from "@/components/ui/RevealText";
@@ -11,6 +13,7 @@ import { signatureDishes, dishes } from "@/content/dishes";
 
 export function SignatureDishes() {
   const t = useTranslations("studies");
+  const locale = useLocale();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const x = useTransform(scrollYProgress, [0, 1], ["5%", "-25%"]);
@@ -20,9 +23,10 @@ export function SignatureDishes() {
       ? signatureDishes
       : [...signatureDishes, ...dishes.slice(0, 7 - signatureDishes.length)]
   ).slice(0, 4);
+  const loopedItems = [...items, ...items];
 
   return (
-    <section className="relative bg-bg-base py-[clamp(6rem,14vw,12rem)]">
+    <section className="relative scroll-mt-24 bg-bg-base py-[clamp(6rem,14vw,12rem)]">
       <Container>
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-7">
@@ -36,19 +40,31 @@ export function SignatureDishes() {
           <p className="md:col-span-4 md:col-start-9 max-w-sm text-fluid-body text-fg-bone">
             {t("body")}
           </p>
+          <div className="md:col-span-4 md:col-start-9">
+            <Link href={`/${locale}/menu`} className="btn btn-primary group w-full sm:w-auto">
+              <span>{t("cta")}</span>
+              <ArrowRight
+                size={14}
+                className="transition-transform duration-700 ease-out-expo group-hover:translate-x-1"
+              />
+            </Link>
+          </div>
         </div>
       </Container>
 
-      {/* Mobile / tablet: snap-scroll carousel */}
-      <div className="mt-14 lg:hidden">
-        <div className="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 sm:px-6">
-          {items.map((d, i) => (
-            <div key={d.id} className="w-[78vw] max-w-[360px] flex-shrink-0 snap-start">
-              <p className="marker mb-3">Study N° 0{i + 1}</p>
+      {/* Mobile / tablet: smooth auto-loop rail */}
+      <div className="mobile-loop-shell mt-14 lg:hidden">
+        <div className="mobile-loop-fade" />
+        <div className="mobile-loop-track animate-marquee-slow">
+          {loopedItems.map((d, i) => (
+            <div
+              key={`${d.id}-${i}`}
+              className={`w-[78vw] max-w-[320px] flex-shrink-0 sm:max-w-[340px] ${i % 2 ? "translate-y-5" : ""}`}
+            >
+              <p className="marker mb-3">Study N° 0{(i % items.length) + 1}</p>
               <DishCard dish={d} />
             </div>
           ))}
-          <div className="w-1 flex-shrink-0" />
         </div>
       </div>
 

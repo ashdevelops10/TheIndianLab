@@ -53,7 +53,7 @@ const config: Config = {
       fontSize: {
         "fluid-display": ["clamp(4rem, 13vw, 13rem)", { lineHeight: "0.9", letterSpacing: "0" }],
         "fluid-hero": ["clamp(3.25rem, 11vw, 9.5rem)", { lineHeight: "0.92", letterSpacing: "0" }],
-        "fluid-h1": ["clamp(3.5rem, 9vw, 7.5rem)", { lineHeight: "0.95", letterSpacing: "0" }],
+        "fluid-h1": ["clamp(2.85rem, 9vw, 7.5rem)", { lineHeight: "0.95", letterSpacing: "0" }],
         "fluid-h2": ["clamp(2.6rem, 6.8vw, 5.5rem)", { lineHeight: "0.98", letterSpacing: "0" }],
         "fluid-h3": ["clamp(1.85rem, 3.6vw, 2.75rem)", { lineHeight: "1.1", letterSpacing: "0" }],
         "fluid-marquee": ["clamp(1.1rem, 2.4vw, 1.9rem)", { lineHeight: "1.1", letterSpacing: "-0.01em" }],

@@ -50,14 +50,14 @@ export function Header() {
             : "bg-gradient-to-b from-accent-bordeaux/78 to-transparent",
         )}
       >
-        <div className="container-page flex h-16 items-center justify-between md:h-[72px]">
+        <div className="container-page flex h-24 items-center justify-between md:h-28">
           <Link
             href={lp("")}
             className="flex items-center text-fg-cream"
             onClick={() => setOpen(false)}
             aria-label="The Indian Lab"
           >
-            <BrandSeal variant="horizontal" size={64} className="transition-opacity hover:opacity-85" />
+            <BrandSeal variant="horizontal" size={88} className="transition-opacity hover:opacity-85 md:[--brand-size:104px]" />
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex">

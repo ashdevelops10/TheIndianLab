@@ -55,9 +55,9 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative h-[200svh] min-h-[1240px] w-full bg-bg-base sm:min-h-[1360px]"
+      className="relative h-[100svh] min-h-[700px] w-full bg-bg-base md:h-[200svh] md:min-h-[1240px] lg:min-h-[1360px]"
     >
-      <div className="sticky top-0 h-[100svh] min-h-[620px] w-full overflow-hidden bg-bg-base sm:min-h-[680px]">
+      <div className="sticky top-0 h-[100svh] min-h-[700px] w-full overflow-hidden bg-bg-base md:min-h-[680px]">
       {/* Hero image */}
       <motion.div style={{ y }} className="absolute inset-0">
         <Image
@@ -95,7 +95,7 @@ export function Hero() {
       <motion.div
         aria-hidden
         style={{ clipPath: detailClipPath }}
-        className="pointer-events-none absolute inset-0 z-20 [will-change:clip-path]"
+        className="pointer-events-none absolute inset-0 z-20 hidden [will-change:clip-path] md:block"
       >
         <motion.div style={{ scale: detailImageScale }} className="absolute inset-0 origin-center will-change-transform">
           <Image
@@ -113,18 +113,18 @@ export function Hero() {
       <motion.div
         aria-hidden
         style={{ opacity: detailShadowOpacity }}
-        className="pointer-events-none absolute bottom-[18%] right-5 z-30 h-[168px] w-[124px] border border-accent-gold/50 shadow-[0_34px_70px_-32px_rgba(37,2,2,0.9)] sm:right-8 sm:h-[210px] sm:w-[154px] lg:right-[5%] lg:h-[260px] lg:w-[190px] xl:h-[300px] xl:w-[220px]"
+        className="pointer-events-none absolute bottom-[18%] right-5 z-30 hidden h-[168px] w-[124px] border border-accent-gold/50 shadow-[0_34px_70px_-32px_rgba(37,2,2,0.9)] sm:right-8 sm:h-[210px] sm:w-[154px] md:block lg:right-[5%] lg:h-[260px] lg:w-[190px] xl:h-[300px] xl:w-[220px]"
       />
       <motion.span
         style={{ opacity: detailLabelOpacity }}
-        className="pointer-events-none absolute bottom-[calc(18%+12px)] right-[calc(1.25rem+12px)] z-30 max-w-[100px] font-mono text-[8px] uppercase tracking-[0.24em] text-fg-cream sm:right-[calc(2rem+12px)] sm:max-w-[128px] sm:text-[9px] sm:tracking-[0.3em] lg:right-[calc(5%+12px)]"
+        className="pointer-events-none absolute bottom-[calc(18%+12px)] right-[calc(1.25rem+12px)] z-30 hidden max-w-[100px] font-mono text-[8px] uppercase tracking-[0.24em] text-fg-cream sm:right-[calc(2rem+12px)] sm:max-w-[128px] sm:text-[9px] sm:tracking-[0.3em] md:block lg:right-[calc(5%+12px)]"
       >
         The Dining Room
       </motion.span>
 
       {/* Main content */}
       <motion.div style={{ opacity }} className="relative z-10 flex h-full flex-col">
-        <div className="container-page flex flex-1 flex-col justify-end pb-14 pt-32 md:pb-20">
+        <div className="container-page flex flex-1 flex-col justify-end pb-10 pt-28 md:pb-20 md:pt-32">
           <RevealText
             as="h1"
             text={t("title")}
@@ -145,7 +145,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: easeOutExpo, delay: 1.5 }}
-            className="mt-10 flex flex-wrap items-center gap-3"
+            className="mt-8 flex flex-wrap items-center gap-3 md:mt-10"
           >
             <Link href={lp("/menu")} className="btn btn-primary group w-full sm:w-auto">
               <span>{t("cta_primary")}</span>

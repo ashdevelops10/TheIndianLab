@@ -18,8 +18,8 @@ export async function Footer({ locale }: { locale: string }) {
 
   return (
     <footer className="relative overflow-hidden border-t border-accent-gold/25 bg-bg-velvet [font-family:Arial,Helvetica,sans-serif]">
-      <Container className="py-[clamp(5rem,10vw,8rem)]">
-        <div className="grid gap-12 lg:grid-cols-12 lg:items-end lg:gap-16">
+      <Container className="py-14 md:py-[clamp(5rem,10vw,8rem)]">
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-16">
           <div className="lg:col-span-5">
             <Link
               href={lp("")}
@@ -29,15 +29,15 @@ export async function Footer({ locale }: { locale: string }) {
               <BrandSeal variant="circle" size={132} className="h-auto w-[112px] sm:w-[132px]" />
             </Link>
 
-            <p className="mt-6 max-w-md text-fluid-body text-fg-bone">{tF("tagline")}</p>
-            <p className="label mt-10 mb-4">{tN("label")}</p>
+            <p className="mt-5 max-w-md text-fluid-body text-fg-bone">{tF("tagline")}</p>
+            <p className="label mt-8 mb-4 md:mt-10">{tN("label")}</p>
             <h2 className="max-w-lg text-fluid-h3 text-fg-cream">{tN("title").replace(/\*/g, "")}</h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-fg-bone">{tN("body")}</p>
             <FooterNewsletterForm />
           </div>
 
           <div className="lg:col-span-7">
-            <div className="relative aspect-[16/10] min-h-[320px] overflow-hidden border border-accent-gold/30 bg-bg-surface">
+            <div className="relative aspect-[16/10] min-h-[240px] overflow-hidden border border-accent-gold/30 bg-bg-surface sm:min-h-[320px]">
               <iframe
                 title="Map"
                 src={siteConfig.mapsEmbed}
@@ -53,9 +53,9 @@ export async function Footer({ locale }: { locale: string }) {
           </div>
         </div>
 
-        <OrnamentRule className="my-14" />
+        <OrnamentRule className="my-10 md:my-14" />
 
-        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-12 md:gap-12">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-12 md:gap-12">
           <div className="md:col-span-3">
             <p className="label mb-4">{tV("hours_title")}</p>
             <ul className="space-y-1 text-sm">

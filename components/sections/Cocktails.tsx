@@ -43,7 +43,7 @@ export async function Cocktails({ locale }: { locale: string }) {
         />
 
         {/* Three-up grid */}
-        <div className="mt-24 grid gap-10 md:grid-cols-3 md:gap-8">
+        <div className="mt-24 hidden gap-10 md:grid md:grid-cols-3 md:gap-8">
           {cocktails.map((c, i) => (
             <article
               key={c.id}

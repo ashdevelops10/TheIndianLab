@@ -32,10 +32,47 @@ export function CocktailScrollShowcase({
   });
 
   const activeProduct = products[activeIndex] ?? products[0];
+  const loopedProducts = [...products, ...products];
 
   return (
-    <div ref={ref} className="relative h-[300svh] min-h-[1920px]">
-      <div className="sticky top-0 grid min-h-[100svh] items-center gap-10 py-14 md:grid-cols-12 md:gap-x-16 md:py-20">
+    <div ref={ref} className="relative mt-14 md:mt-0 md:h-[300svh] md:min-h-[1920px]">
+      <div className="mobile-loop-shell md:hidden">
+        <div className="mobile-loop-fade" />
+        <div className="mobile-loop-track animate-marquee-slow">
+          {loopedProducts.map((product, index) => (
+            <article
+              key={`${product.id}-${index}`}
+              className={`mobile-loop-card w-[78vw] max-w-[330px] ${index % 2 ? "translate-y-5" : ""}`}
+            >
+              <div className="relative aspect-[4/5] overflow-hidden bg-bg-velvet">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  sizes="78vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-base/72 via-bg-base/12 to-transparent" />
+                <span className="absolute left-4 top-4 font-mono text-[10px] uppercase tracking-[0.28em] text-fg-cream/85">
+                  N° 00{(index % products.length) + 1}
+                </span>
+              </div>
+              <div className="border-x border-b border-line bg-bg-base/92 p-5">
+                <p className="marker text-accent-gold">Featured</p>
+                <h3 className="mt-3 font-accent text-3xl leading-none text-accent-goldlight">
+                  {product.name}
+                </h3>
+                <p className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.2em] text-fg-muted">
+                  {product.base} · ${product.price}
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-fg-bone">{product.note}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="sticky top-0 hidden min-h-[100svh] items-center gap-10 py-14 md:grid md:grid-cols-12 md:gap-x-16 md:py-20">
         <div className="md:col-span-6">
           <div className="relative aspect-[4/5] overflow-hidden bg-bg-velvet">
             <motion.div

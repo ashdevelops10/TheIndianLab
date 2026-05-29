@@ -162,6 +162,52 @@
     height: 1px;
     background: linear-gradient(to right, transparent, rgba(200, 164, 93, 0.46), transparent);
   }
+
+  .mobile-loop-shell {
+    position: relative;
+    contain: layout paint;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    max-width: 100vw;
+    overflow: hidden;
+    padding: 0 1.25rem 1.5rem;
+  }
+
+  .mobile-loop-track {
+    display: flex;
+    width: max-content;
+    gap: 1rem;
+    will-change: transform;
+  }
+
+  .mobile-loop-shell:hover .mobile-loop-track {
+    animation-play-state: paused;
+  }
+
+  .mobile-loop-card {
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 231, 196, 0.14);
+    background: rgba(9, 6, 4, 0.92);
+    box-shadow: 0 26px 70px -48px rgba(0, 0, 0, 0.95);
+  }
+
+  .mobile-loop-fade {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: linear-gradient(90deg, var(--c-bg), transparent 12%, transparent 88%, var(--c-bg));
+  }
+}
+
+@media (min-width: 640px) {
+  .mobile-loop-shell {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -23,7 +23,10 @@ export function BrandSeal({
   return (
     <span
       className={cn("inline-flex shrink-0 overflow-hidden", className)}
-      style={{ width: pixelSize, height: pixelSize * logoAspectRatio }}
+      style={{
+        width: `var(--brand-size, ${pixelSize}px)`,
+        height: `calc(var(--brand-size, ${pixelSize}px) * ${logoAspectRatio})`,
+      }}
     >
       <img
         src="/assets/logo.png"

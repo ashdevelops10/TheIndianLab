@@ -47,7 +47,37 @@ export async function Ambience({ locale }: { locale: string }) {
           </p>
         </div>
 
-        <div className="mt-20 grid gap-10 md:grid-cols-3 md:gap-8">
+        <div className="mobile-loop-shell mt-14 md:hidden">
+          <div className="mobile-loop-fade" />
+          <div className="mobile-loop-track animate-marquee-slow">
+            {[...tiles, ...tiles].map((tile, i) => (
+              <figure
+                key={`${tile.key}-${i}`}
+                className={`mobile-loop-card w-[76vw] max-w-[320px] ${i % 2 ? "translate-y-5" : ""}`}
+              >
+                <div className="relative aspect-[4/5] overflow-hidden bg-bg-velvet">
+                  <Image
+                    src={tile.img}
+                    alt={tile.label}
+                    fill
+                    sizes="76vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg-base/65 via-transparent to-transparent" />
+                  <span className="absolute left-4 top-4 font-mono text-[10px] uppercase tracking-[0.28em] text-fg-cream/85">
+                    N° 00{(i % tiles.length) + 1}
+                  </span>
+                </div>
+                <figcaption className="border-x border-b border-line bg-bg-base/92 p-5">
+                  <p className="font-accent text-3xl leading-none text-accent-goldlight">{tile.label}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-fg-bone">{tile.caption}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-20 hidden gap-10 md:grid md:grid-cols-3 md:gap-8">
           {tiles.map((tile, i) => (
             <figure key={tile.key} className="group relative flex flex-col">
               <div className="relative aspect-[4/5] overflow-hidden bg-bg-velvet">
