@@ -8,8 +8,6 @@ import { Pillars } from "@/components/sections/Pillars";
 import { Ambience } from "@/components/sections/Ambience";
 import { PressMarquee } from "@/components/sections/PressMarquee";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { VisitUs } from "@/components/sections/VisitUs";
-import { Newsletter } from "@/components/sections/Newsletter";
 
 export default async function HomePage({
   params,
@@ -29,8 +27,6 @@ export default async function HomePage({
       <Ambience locale={locale} />
       <PressMarquee locale={locale} />
       <Testimonials />
-      <VisitUs locale={locale} />
-      <Newsletter />
     </>
   );
 }

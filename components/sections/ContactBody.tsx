@@ -6,7 +6,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Container } from "@/components/ui/Container";
-import { siteConfig } from "@/config/site";
+import { SectionLabel } from "@/components/ui/SectionLabel";
+import { RevealText } from "@/components/ui/RevealText";
 
 const schema = z.object({
   name: z.string().min(2),
@@ -15,7 +16,15 @@ const schema = z.object({
 });
 type Data = z.infer<typeof schema>;
 
-export function ContactBody() {
+export function ContactBody({
+  eyebrow,
+  title,
+  lead,
+}: {
+  eyebrow: string;
+  title: string;
+  lead?: string;
+}) {
   const t = useTranslations("contact_page");
   const [status, setStatus] = useState<"idle" | "ok" | "err">("idle");
   const {
@@ -40,42 +49,31 @@ export function ContactBody() {
   };
 
   return (
-    <section className="pb-32">
-      <Container className="grid gap-16 md:grid-cols-12">
-        <div className="md:col-span-5">
-          <p className="label">Reach us</p>
-          <ul className="mt-6 max-w-full space-y-4 text-fg-cream">
-            <li>
-              <a href={`tel:${siteConfig.contact.phone}`} className="link-underline max-w-full break-words">
-                {siteConfig.contact.phoneDisplay}
-              </a>
-            </li>
-            <li>
-              <a href={`mailto:${siteConfig.contact.email}`} className="link-underline max-w-full break-all">
-                {siteConfig.contact.email}
-              </a>
-            </li>
-            <li className="text-fg-muted">
-              {siteConfig.address.line1}, {siteConfig.address.city}
-            </li>
-          </ul>
-
-          <div className="mt-12 aspect-[4/3] overflow-hidden border border-line">
-            <iframe
-              title="Map"
-              src={siteConfig.mapsEmbed}
-              loading="lazy"
-              className="h-full w-full [filter:invert(0.92)_hue-rotate(180deg)_grayscale(0.5)] opacity-80"
-            />
-          </div>
+    <section className="relative pt-36 pb-28 md:pt-48 md:pb-36">
+      <Container className="grid gap-16 lg:grid-cols-12 lg:gap-x-20">
+        {/* Left — heading */}
+        <div className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
+          <SectionLabel>{eyebrow}</SectionLabel>
+          <RevealText
+            as="h1"
+            text={title}
+            className="mt-6 text-balance font-display text-fluid-h1 text-fg-cream"
+          />
+          {lead && (
+            <p className="mt-8 max-w-sm text-fluid-body text-fg-muted">{lead}</p>
+          )}
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="md:col-span-7 space-y-8">
+        {/* Right — form */}
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col gap-10 lg:col-span-7"
+        >
           <div>
             <label className="label mb-2 block">{t("name")}</label>
             <input
               {...register("name")}
-              className="w-full border-b border-line bg-transparent py-3 text-lg text-fg-cream focus:border-accent-saffron focus:outline-none"
+              className="w-full border-b border-line bg-transparent py-3 text-lg text-fg-cream focus:border-accent-saffron focus:outline-none [font-family:Arial,Helvetica,sans-serif]"
             />
             {errors.name && <p className="mt-2 text-xs text-accent-ember">Required</p>}
           </div>
@@ -84,25 +82,27 @@ export function ContactBody() {
             <input
               type="email"
               {...register("email")}
-              className="w-full border-b border-line bg-transparent py-3 text-lg text-fg-cream focus:border-accent-saffron focus:outline-none"
+              className="w-full border-b border-line bg-transparent py-3 text-lg text-fg-cream focus:border-accent-saffron focus:outline-none [font-family:Arial,Helvetica,sans-serif]"
             />
             {errors.email && <p className="mt-2 text-xs text-accent-ember">Valid email required</p>}
           </div>
           <div>
             <label className="label mb-2 block">{t("message")}</label>
             <textarea
-              rows={5}
+              rows={6}
               {...register("message")}
-              className="w-full resize-none border-b border-line bg-transparent py-3 text-lg text-fg-cream focus:border-accent-saffron focus:outline-none"
+              className="w-full resize-none border-b border-line bg-transparent py-3 text-lg text-fg-cream focus:border-accent-saffron focus:outline-none [font-family:Arial,Helvetica,sans-serif]"
             />
             {errors.message && <p className="mt-2 text-xs text-accent-ember">Tell us a bit more</p>}
           </div>
-          <button type="submit" disabled={isSubmitting} className="btn btn-primary w-full disabled:opacity-60 sm:w-auto">
-            {t("submit")}
-          </button>
-          <div className="h-5 text-sm">
-            {status === "ok" && <p className="text-accent-saffron">{t("success")}</p>}
-            {status === "err" && <p className="text-accent-ember">{t("error")}</p>}
+          <div>
+            <button type="submit" disabled={isSubmitting} className="btn btn-primary disabled:opacity-60">
+              {t("submit")}
+            </button>
+            <div className="mt-4 h-5 text-sm">
+              {status === "ok" && <p className="text-accent-saffron">{t("success")}</p>}
+              {status === "err" && <p className="text-accent-ember">{t("error")}</p>}
+            </div>
           </div>
         </form>
       </Container>

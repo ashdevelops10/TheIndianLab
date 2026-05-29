@@ -26,8 +26,8 @@ export async function POST(req: Request) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: process.env.RESEND_FROM_EMAIL ?? "reservations@theindianlab.com",
-          to: process.env.RESEND_TO_EMAIL ?? "hello@theindianlab.com",
+          from: process.env.RESEND_FROM_EMAIL ?? "info@indianlab.ca",
+          to: process.env.RESEND_TO_EMAIL ?? "info@indianlab.ca",
           reply_to: data.email,
           subject: `Reservation — ${data.name} · ${data.date} ${data.time}`,
           text: `New reservation request

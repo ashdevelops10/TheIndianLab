@@ -12,7 +12,7 @@ import { testimonials } from "@/content/testimonials";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const portrait =
-  "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=85";
+  "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=88";
 
 export function Testimonials() {
   const t = useTranslations("testimonials");

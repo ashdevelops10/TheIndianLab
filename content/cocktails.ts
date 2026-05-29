@@ -25,7 +25,7 @@ export const featuredCocktail: Cocktail = {
   method: "Stirred · Served on a single rock · Orange peel",
   note: "A polished house Negroni rounded with date-tamarind cordial and a clean cardamom finish.",
   price: 22,
-  image: u("photo-1551024709-8f23befc6f87"),
+  image: u("photo-1527661591475-527312dd65f5"),
 };
 
 export const cocktails: Cocktail[] = [
@@ -37,7 +37,7 @@ export const cocktails: Cocktail[] = [
     method: "Dry-shake · Fine-strain",
     note: "Soft, floral, and romantic, finished with a single rose petal.",
     price: 19,
-    image: u("photo-1514362545857-3bc16c4c7d1b"),
+    image: u("photo-1551024709-8f23befc6f87"),
   },
   {
     id: "smoked-old-fashioned",
@@ -47,7 +47,7 @@ export const cocktails: Cocktail[] = [
     method: "Stirred · Smoked tableside",
     note: "Charred sugar, slow smoke, and a steady late-night edge.",
     price: 24,
-    image: u("photo-1470337458703-46ad1756a187"),
+    image: u("photo-1514362545857-3bc16c4c7d1b"),
   },
   {
     id: "saffron-spritz",

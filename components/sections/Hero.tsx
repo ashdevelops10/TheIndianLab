@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { RevealText } from "@/components/ui/RevealText";
 import { ArrowRight } from "lucide-react";
@@ -14,23 +14,54 @@ export function Hero() {
   const t = useTranslations("hero");
   const locale = useLocale();
   const ref = useRef<HTMLElement>(null);
+  const [isCompactViewport, setIsCompactViewport] = useState(() => {
+    if (typeof window === "undefined") return false;
+
+    return window.matchMedia("(max-width: 767px)").matches;
+  });
+  const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
-  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
-  const detailY = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
+  const smoothScrollProgress = useSpring(scrollYProgress, { stiffness: 135, damping: 32, mass: 0.24 });
+  const detailStartClip = isCompactViewport
+    ? "inset(58% 5% 18% 63%)"
+    : "inset(38% 5% 18% 74%)";
+  const y = useTransform(smoothScrollProgress, [0, 1], shouldReduceMotion ? ["0%", "0%"] : ["0%", "14%"]);
+  const opacity = useTransform(smoothScrollProgress, [0, 0.4], [1, 0]);
+  const detailClipPath = useTransform(
+    smoothScrollProgress,
+    [0, 0.08, 0.36],
+    shouldReduceMotion ? [detailStartClip, detailStartClip, detailStartClip] : [detailStartClip, detailStartClip, "inset(0% 0% 0% 0%)"],
+  );
+  const detailImageScale = useTransform(
+    smoothScrollProgress,
+    [0, 0.08, 0.36],
+    shouldReduceMotion ? [1, 1, 1] : [1.08, 1.08, 1],
+  );
+  const detailLabelOpacity = useTransform(smoothScrollProgress, [0, 0.12, 0.34], [1, 1, 0]);
+  const detailShadowOpacity = useTransform(smoothScrollProgress, [0, 0.18, 0.34], [1, 0.7, 0]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const syncViewport = () => setIsCompactViewport(mediaQuery.matches);
+
+    syncViewport();
+    mediaQuery.addEventListener("change", syncViewport);
+
+    return () => mediaQuery.removeEventListener("change", syncViewport);
+  }, []);
 
   const lp = (p: string) => `/${locale}${p}`;
 
   return (
     <section
       ref={ref}
-      className="relative h-[100svh] min-h-[620px] w-full overflow-hidden bg-bg-base sm:min-h-[680px]"
+      className="relative h-[200svh] min-h-[1240px] w-full bg-bg-base sm:min-h-[1360px]"
     >
+      <div className="sticky top-0 h-[100svh] min-h-[620px] w-full overflow-hidden bg-bg-base sm:min-h-[680px]">
       {/* Hero image */}
-      <motion.div style={{ y, scale }} className="absolute inset-0">
+      <motion.div style={{ y }} className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=2400&q=85"
+          src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=2400&q=88"
           alt=""
           fill
           priority
@@ -60,26 +91,36 @@ export function Hero() {
         {t("vertical")}
       </motion.span>
 
-      {/* Floating detail card (desktop only) */}
+      {/* Floating detail image expands into the hero cover on scroll */}
       <motion.div
-        style={{ y: detailY }}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.4, ease: easeOutExpo, delay: 1.4 }}
-        className="absolute bottom-[18%] right-[6%] z-10 hidden h-[300px] w-[220px] overflow-hidden border border-accent-gold/35 shadow-[0_34px_70px_-32px_rgba(37,2,2,0.9)] xl:block"
+        aria-hidden
+        style={{ clipPath: detailClipPath }}
+        className="pointer-events-none absolute inset-0 z-20 [will-change:clip-path]"
       >
-        <Image
-          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85"
-          alt=""
-          fill
-          sizes="220px"
-          className="object-cover"
-        />
+        <motion.div style={{ scale: detailImageScale }} className="absolute inset-0 origin-center will-change-transform">
+          <Image
+            src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1800&q=88"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-bg-base/20" />
-        <span className="absolute bottom-3 left-3 font-mono text-[9px] uppercase tracking-[0.3em] text-fg-cream">
-          The Dining Room
-        </span>
+        <div className="grain-overlay" />
       </motion.div>
+
+      <motion.div
+        aria-hidden
+        style={{ opacity: detailShadowOpacity }}
+        className="pointer-events-none absolute bottom-[18%] right-5 z-30 h-[168px] w-[124px] border border-accent-gold/50 shadow-[0_34px_70px_-32px_rgba(37,2,2,0.9)] sm:right-8 sm:h-[210px] sm:w-[154px] lg:right-[5%] lg:h-[260px] lg:w-[190px] xl:h-[300px] xl:w-[220px]"
+      />
+      <motion.span
+        style={{ opacity: detailLabelOpacity }}
+        className="pointer-events-none absolute bottom-[calc(18%+12px)] right-[calc(1.25rem+12px)] z-30 max-w-[100px] font-mono text-[8px] uppercase tracking-[0.24em] text-fg-cream sm:right-[calc(2rem+12px)] sm:max-w-[128px] sm:text-[9px] sm:tracking-[0.3em] lg:right-[calc(5%+12px)]"
+      >
+        The Dining Room
+      </motion.span>
 
       {/* Main content */}
       <motion.div style={{ opacity }} className="relative z-10 flex h-full flex-col">
@@ -145,6 +186,7 @@ export function Hero() {
           </div>
         </motion.div>
       </motion.div>
+      </div>
     </section>
   );
 }

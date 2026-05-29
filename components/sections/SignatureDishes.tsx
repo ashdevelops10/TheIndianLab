@@ -15,10 +15,11 @@ export function SignatureDishes() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const x = useTransform(scrollYProgress, [0, 1], ["5%", "-25%"]);
 
-  const items =
+  const items = (
     signatureDishes.length >= 5
       ? signatureDishes
-      : [...signatureDishes, ...dishes.slice(0, 7 - signatureDishes.length)];
+      : [...signatureDishes, ...dishes.slice(0, 7 - signatureDishes.length)]
+  ).slice(0, 4);
 
   return (
     <section className="relative bg-bg-base py-[clamp(6rem,14vw,12rem)]">

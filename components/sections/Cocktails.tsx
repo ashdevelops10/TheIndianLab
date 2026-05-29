@@ -4,18 +4,22 @@ import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { RevealText } from "@/components/ui/RevealText";
-import { RevealImage } from "@/components/ui/RevealImage";
 import { Ornament } from "@/components/ui/Ornament";
+import { BarProgramBackground } from "@/components/sections/BarProgramBackground";
+import { BarProgramReveal } from "@/components/sections/BarProgramReveal";
+import { CocktailScrollShowcase } from "@/components/sections/CocktailScrollShowcase";
 import { ArrowUpRight } from "lucide-react";
 import { featuredCocktail, cocktails } from "@/content/cocktails";
 
 export async function Cocktails({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "cocktails" });
+  const showcaseProducts = [featuredCocktail, ...cocktails.slice(0, 2)];
 
   return (
     <section className="relative bg-bg-surface py-[clamp(6rem,14vw,12rem)]">
-      <Container>
-        <div className="grid gap-10 md:grid-cols-12 md:items-end">
+      <BarProgramBackground />
+      <Container className="relative z-10">
+        <div className="grid gap-10 md:grid-cols-12 md:items-start">
           <div className="md:col-span-7">
             <SectionLabel>{t("label")}</SectionLabel>
             <RevealText
@@ -24,54 +28,19 @@ export async function Cocktails({ locale }: { locale: string }) {
               className="mt-6 font-display text-fluid-h1 text-fg-cream"
             />
           </div>
-          <p className="md:col-span-4 md:col-start-9 max-w-sm text-fluid-body text-fg-bone">
-            {t("body")}
-          </p>
-        </div>
-
-        {/* Featured cocktail */}
-        <div className="mt-20 grid gap-10 md:grid-cols-12 md:gap-x-16">
-          <div className="md:col-span-6">
-            <RevealImage
-              src={featuredCocktail.image}
-              alt={featuredCocktail.name}
-              ratio="4/5"
-            />
-          </div>
-          <div className="md:col-span-6 md:pt-12">
-            <p className="marker text-accent-gold">N° 001 — Featured</p>
-            <h3 className="mt-4 text-balance font-accent text-fluid-h2 text-accent-goldlight">
-              {featuredCocktail.name}
-            </h3>
-            <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.28em] text-fg-muted">
-              Base · {featuredCocktail.base}
+          <div className="md:col-span-4 md:col-start-9 md:pt-10">
+            <BarProgramReveal />
+            <p className="mt-8 max-w-sm text-fluid-body text-fg-bone">
+              {t("body")}
             </p>
-            <p className="mt-8 max-w-md text-fluid-body text-fg-bone">{t("feature_note")}</p>
-
-            <div className="mt-10 grid gap-8 sm:grid-cols-2">
-              <div>
-                <p className="label mb-3">{t("ingredients")}</p>
-                <ul className="space-y-1.5 font-mono text-[12px] text-fg-cream/85">
-                  {featuredCocktail.ingredients.map((line) => (
-                    <li key={line} className="flex items-start gap-3">
-                      <span className="text-accent-gold">·</span>
-                      <span>{line}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="label mb-3">{t("method")}</p>
-                <p className="font-mono text-[12px] leading-relaxed text-fg-cream/85">
-                  {featuredCocktail.method}
-                </p>
-                <p className="mt-8 font-display text-2xl text-accent-gold">
-                  ${featuredCocktail.price}
-                </p>
-              </div>
-            </div>
           </div>
         </div>
+
+        <CocktailScrollShowcase
+          products={showcaseProducts}
+          ingredientsLabel={t("ingredients")}
+          methodLabel={t("method")}
+        />
 
         {/* Three-up grid */}
         <div className="mt-24 grid gap-10 md:grid-cols-3 md:gap-8">

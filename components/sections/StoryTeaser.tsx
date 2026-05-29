@@ -32,8 +32,8 @@ export async function StoryTeaser({ locale }: { locale: string }) {
         {/* Right rail — overlapping image then prose */}
         <div className="md:col-span-7 md:-translate-y-6">
           <RevealImage
-            src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=1600&q=85"
-            alt="Tandoor flame in the kitchen"
+            src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1600&q=88"
+            alt="Chef finishing a fine-dining plate"
             ratio="4/5"
             className="md:translate-x-6"
           />

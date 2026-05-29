@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { LocaleSwitcher } from "./LocaleSwitcher";
 import { easeOutExpo } from "@/lib/motion";
 import { BrandSeal } from "@/components/ui/BrandSeal";
 
@@ -16,7 +15,6 @@ const navItems = [
   { key: "gallery", href: "/gallery" },
   { key: "events", href: "/events" },
   { key: "blog", href: "/blog" },
-  { key: "reservations", href: "/reservations" },
   { key: "contact", href: "/contact" },
 ] as const;
 
@@ -75,7 +73,6 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3 md:gap-5">
-            <LocaleSwitcher className="hidden sm:flex" />
             <Link
               href={lp("/reservations")}
               className="btn btn-ghost hidden md:inline-flex"
@@ -145,7 +142,6 @@ export function Header() {
                 >
                   {t("discover")}
                 </Link>
-                <LocaleSwitcher />
               </motion.div>
             </div>
           </motion.div>

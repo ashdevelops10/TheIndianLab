@@ -12,24 +12,21 @@ export async function Ambience({ locale }: { locale: string }) {
   const tiles = [
     {
       key: "interior",
-      img: u("photo-1517248135467-4c7edcad34c4"),
+      img: u("photo-1514933651103-005eec06c04b"),
       label: t("interior_label"),
       caption: t("interior_caption"),
-      ratio: "aspect-[3/4]",
     },
     {
       key: "patio",
-      img: u("photo-1559339352-11d035aa65de"),
+      img: u("photo-1552566626-52f8b828add9"),
       label: t("patio_label"),
       caption: t("patio_caption"),
-      ratio: "aspect-[4/5]",
     },
     {
       key: "music",
-      img: u("photo-1514525253161-7a46d19cd819"),
+      img: u("photo-1414235077428-338989a2e8c0"),
       label: t("music_label"),
       caption: t("music_caption"),
-      ratio: "aspect-[3/4]",
     },
   ];
 
@@ -50,18 +47,10 @@ export async function Ambience({ locale }: { locale: string }) {
           </p>
         </div>
 
-        <div className="mt-20 grid gap-10 md:grid-cols-12 md:gap-8">
+        <div className="mt-20 grid gap-10 md:grid-cols-3 md:gap-8">
           {tiles.map((tile, i) => (
-            <figure
-              key={tile.key}
-              className={[
-                "group relative",
-                i === 0 ? "md:col-span-4 md:mt-24" : "",
-                i === 1 ? "md:col-span-5" : "",
-                i === 2 ? "md:col-span-3 md:mt-16" : "",
-              ].join(" ")}
-            >
-              <div className={`relative ${tile.ratio} overflow-hidden bg-bg-velvet`}>
+            <figure key={tile.key} className="group relative flex flex-col">
+              <div className="relative aspect-[4/5] overflow-hidden bg-bg-velvet">
                 <Image
                   src={tile.img}
                   alt={tile.label}
@@ -74,7 +63,7 @@ export async function Ambience({ locale }: { locale: string }) {
                   N° 00{i + 1}
                 </span>
               </div>
-              <figcaption className="mt-5">
+              <figcaption className="mt-5 flex flex-1 flex-col">
                 <p className="font-accent text-2xl text-accent-goldlight">{tile.label}</p>
                 <p className="mt-2 max-w-sm text-sm leading-relaxed text-fg-bone">{tile.caption}</p>
               </figcaption>

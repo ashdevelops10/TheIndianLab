@@ -4,27 +4,56 @@ import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
 import { Ornament, OrnamentRule } from "@/components/ui/Ornament";
 import { BrandSeal } from "@/components/ui/BrandSeal";
+import { FooterNewsletterForm } from "./FooterNewsletterForm";
 
 export async function Footer({ locale }: { locale: string }) {
   const tF = await getTranslations({ locale, namespace: "footer" });
   const tV = await getTranslations({ locale, namespace: "visit" });
+  const tN = await getTranslations({ locale, namespace: "newsletter" });
 
   const lp = (p: string) => `/${locale}${p}`;
+  const directionsUrl = `https://maps.google.com/?q=${encodeURIComponent(
+    `${siteConfig.address.line1}, ${siteConfig.address.city}, ${siteConfig.address.region} ${siteConfig.address.postal}, ${siteConfig.address.country}`,
+  )}`;
 
   return (
-    <footer className="relative overflow-hidden border-t border-accent-gold/25 bg-bg-velvet">
-      <Container className="py-20">
-        <Link
-          href={lp("")}
-          aria-label="The Indian Lab"
-          className="inline-flex text-fg-cream/95 transition-colors duration-700 ease-out-expo hover:text-accent-goldlight"
-        >
-          <BrandSeal variant="circle" size={150} className="w-[120px] sm:w-[150px] h-auto" />
-        </Link>
+    <footer className="relative overflow-hidden border-t border-accent-gold/25 bg-bg-velvet [font-family:Arial,Helvetica,sans-serif]">
+      <Container className="py-[clamp(5rem,10vw,8rem)]">
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-end lg:gap-16">
+          <div className="lg:col-span-5">
+            <Link
+              href={lp("")}
+              aria-label="The Indian Lab"
+              className="inline-flex text-fg-cream/95 transition-colors duration-700 ease-out-expo hover:text-accent-goldlight"
+            >
+              <BrandSeal variant="circle" size={132} className="h-auto w-[112px] sm:w-[132px]" />
+            </Link>
 
-        <p className="mt-6 max-w-md text-fluid-body text-fg-bone">{tF("tagline")}</p>
+            <p className="mt-6 max-w-md text-fluid-body text-fg-bone">{tF("tagline")}</p>
+            <p className="label mt-10 mb-4">{tN("label")}</p>
+            <h2 className="max-w-lg text-fluid-h3 text-fg-cream">{tN("title").replace(/\*/g, "")}</h2>
+            <p className="mt-5 max-w-xl text-base leading-7 text-fg-bone">{tN("body")}</p>
+            <FooterNewsletterForm />
+          </div>
 
-        <OrnamentRule className="my-16" />
+          <div className="lg:col-span-7">
+            <div className="relative aspect-[16/10] min-h-[320px] overflow-hidden border border-accent-gold/30 bg-bg-surface">
+              <iframe
+                title="Map"
+                src={siteConfig.mapsEmbed}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 h-full w-full opacity-90 [filter:invert(0.92)_hue-rotate(180deg)_saturate(0.7)_sepia(0.2)]"
+              />
+              <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-line-strong" />
+              <span className="pointer-events-none absolute bottom-5 right-5 font-mono text-[10px] uppercase tracking-[0.32em] text-accent-gold">
+                Langford · BC
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <OrnamentRule className="my-14" />
 
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-12 md:gap-12">
           <div className="md:col-span-3">
@@ -50,7 +79,17 @@ export async function Footer({ locale }: { locale: string }) {
               {siteConfig.address.city}, {siteConfig.address.region}
               <br />
               {siteConfig.address.postal}
+              <br />
+              {siteConfig.address.country}
             </address>
+            <a
+              href={directionsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 block text-sm text-accent-gold link-underline"
+            >
+              {tV("directions")}
+            </a>
             <a
               href={`tel:${siteConfig.contact.phone}`}
               className="mt-4 block text-sm text-fg-cream link-underline"

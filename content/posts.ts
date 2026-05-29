@@ -19,7 +19,7 @@ export const posts: Post[] = [
     body: "Indian cuisine carries memory: family recipes, regional techniques, spice blends, and the warmth of being served generously. Our work begins there, with respect for the dishes that shaped us.\n\nFrom that foundation, we refine. Sauces are clarified without losing depth, tandoor dishes are plated with restraint, and familiar flavours are paired with global wines and crafted cocktails. The goal is not to make Indian food less Indian. The goal is to let it feel vivid, elegant, and ready for the way Victoria dines now.",
     date: "2026-04-12",
     category: "Story",
-    cover: u("photo-1596040033229-a9821ebd058d"),
+    cover: u("photo-1551218808-94e220e084d2"),
     readingTime: "4 min",
   },
   {
@@ -29,7 +29,7 @@ export const posts: Post[] = [
     body: "We built The Indian Lab around feeling. A guest should sense the shift as soon as they arrive: warm tones, soft light, a steady house rhythm, and a room that invites conversation rather than rushing it.\n\nThat atmosphere is not separate from the food. It frames the meal. A saffron cocktail feels different under low light. A slow-cooked dal becomes more generous when the room is calm. A patio table at dusk turns dinner into a small celebration. Experience comes first because memory is made from more than flavour alone.",
     date: "2026-03-02",
     category: "Ambience",
-    cover: u("photo-1505253758473-96b7015fcd40"),
+    cover: u("photo-1514933651103-005eec06c04b"),
     readingTime: "6 min",
   },
   {
@@ -39,7 +39,7 @@ export const posts: Post[] = [
     body: "Our bar program is built with the same care as the kitchen. Tamarind, rose, saffron, cardamom, and smoke are treated as serious ingredients, not decoration. They bring Indian character into cocktails that still feel clean, balanced, and polished.\n\nThe cellar follows the same idea. Bottles are selected for how they meet spice, richness, acidity, and celebration: crisp whites for coastal curries, structured reds for tandoor, sparkling wines for the patio, and special pours for private gatherings.",
     date: "2026-02-14",
     category: "Bar",
-    cover: u("photo-1551024709-8f23befc6f87"),
+    cover: u("photo-1527661591475-527312dd65f5"),
     readingTime: "3 min",
   },
 ];
