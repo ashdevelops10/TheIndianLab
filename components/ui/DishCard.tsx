@@ -13,7 +13,7 @@ export function DishCard({
   return (
     <article
       className={cn(
-        "group flex h-full flex-col overflow-hidden border border-line bg-bg-surface/95 shadow-[0_22px_70px_-52px_rgba(0,0,0,0.95)] transition-colors duration-500 hover:border-accent-ember/55 hover:bg-bg-elevated",
+        "group flex h-full flex-col overflow-hidden rounded-xl border border-line bg-bg-surface/95 shadow-[0_8px_40px_-16px_rgba(95,0,0,0.35),0_2px_8px_-4px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-accent-gold/40 hover:bg-bg-elevated hover:shadow-[0_16px_56px_-16px_rgba(95,0,0,0.55),0_4px_12px_-4px_rgba(0,0,0,0.7)]",
         className,
       )}
     >

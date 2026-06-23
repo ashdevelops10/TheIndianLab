@@ -68,11 +68,17 @@ export function Hero() {
           sizes="100vw"
           className="object-cover"
         />
-        {/* wine lounge vignette + bottom fade */}
-        <div className="absolute inset-0 bg-gradient-to-b from-bg-velvet/55 via-bg-base/48 to-bg-base" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(221,100,95,0.18),transparent_34%),radial-gradient(circle_at_80%_18%,rgba(255,231,196,0.12),transparent_30%)]" />
+        {/* cinematic dark overlay + bottom fade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-bg-velvet/70 via-bg-base/52 to-bg-base" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(95,0,0,0.32),transparent_40%),radial-gradient(circle_at_80%_18%,rgba(212,175,55,0.10),transparent_36%),radial-gradient(circle_at_50%_80%,rgba(95,0,0,0.20),transparent_50%)]" />
         <div className="absolute inset-0 bg-vignette" />
         <div className="grain-overlay" />
+        {/* curved bottom divider */}
+        <div className="absolute bottom-0 left-0 right-0 z-10 h-20 overflow-hidden pointer-events-none">
+          <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="absolute bottom-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0D0907" fillOpacity="0.85" />
+          </svg>
+        </div>
       </motion.div>
 
       {/* gold radial glow behind italic word — purely decorative */}
@@ -168,13 +174,13 @@ export function Hero() {
           className="container-page relative pb-7"
         >
           <div className="flex items-center gap-4">
-            <span className="h-px flex-1 bg-accent-gold/35" />
+            <span className="h-px flex-1 bg-accent-gold/45" />
             <Ornament size="sm" />
-            <span className="h-px flex-1 bg-accent-gold/35" />
+            <span className="h-px flex-1 bg-accent-gold/45" />
             <Ornament size="sm" />
-            <span className="h-px flex-1 bg-accent-gold/35" />
+            <span className="h-px flex-1 bg-accent-gold/45" />
             <Ornament size="sm" />
-            <span className="h-px flex-1 bg-accent-gold/35" />
+            <span className="h-px flex-1 bg-accent-gold/45" />
           </div>
           <div className="mt-3 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
             <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-fg-bone/70 animate-scroll-cue">

@@ -28,8 +28,8 @@ export function SignatureDishes() {
   return (
     <section className="relative scroll-mt-24 bg-bg-base py-[clamp(6rem,14vw,12rem)]">
       <Container>
-        <div className="grid gap-10 md:grid-cols-12 md:items-end">
-          <div className="md:col-span-7">
+        <div className="flex flex-col items-center text-center gap-8">
+          <div>
             <SectionLabel>{t("label")}</SectionLabel>
             <RevealText
               as="h2"
@@ -37,18 +37,16 @@ export function SignatureDishes() {
               className="mt-6 font-display text-fluid-h1 text-fg-cream"
             />
           </div>
-          <p className="md:col-span-4 md:col-start-9 max-w-sm text-fluid-body text-fg-bone">
+          <p className="max-w-lg text-fluid-body text-fg-bone">
             {t("body")}
           </p>
-          <div className="md:col-span-4 md:col-start-9">
-            <Link href={`/${locale}/menu`} className="btn btn-primary group w-full sm:w-auto">
-              <span>{t("cta")}</span>
-              <ArrowRight
-                size={14}
-                className="transition-transform duration-700 ease-out-expo group-hover:translate-x-1"
-              />
-            </Link>
-          </div>
+          <Link href={`/${locale}/menu`} className="btn btn-primary group">
+            <span>{t("cta")}</span>
+            <ArrowRight
+              size={14}
+              className="transition-transform duration-700 ease-out-expo group-hover:translate-x-1"
+            />
+          </Link>
         </div>
       </Container>
 
