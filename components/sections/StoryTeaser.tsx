@@ -10,7 +10,7 @@ import { ArrowUpRight } from "lucide-react";
 export async function StoryTeaser({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "story" });
   return (
-    <section className="relative bg-bg-base py-[clamp(6rem,14vw,12rem)]">
+    <section className="relative bg-bg-base py-[clamp(6rem,14vw,12rem)] section-gradient-left">
       <Container className="grid gap-12 md:grid-cols-12 md:gap-x-16">
         {/* Left rail — eyebrow + title */}
         <div className="md:col-span-5 md:pt-20">

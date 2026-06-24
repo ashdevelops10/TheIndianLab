@@ -33,7 +33,7 @@ export function Testimonials() {
   }, [emblaApi]);
 
   return (
-    <section className="relative py-[clamp(6rem,14vw,12rem)]">
+    <section className="relative py-[clamp(6rem,14vw,12rem)] section-gradient-right">
       <Container>
         <div className="grid gap-12 md:grid-cols-12 md:gap-x-16">
           {/* portrait of the room */}

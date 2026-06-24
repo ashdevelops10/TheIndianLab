@@ -4,14 +4,8 @@ import localFont from "next/font/local";
 import { Inter, JetBrains_Mono, Noto_Serif_Devanagari } from "next/font/google";
 import { siteConfig } from "@/config/site";
 
-const display = localFont({
-  src: [
-    { path: "../Fonts/nyght_serif/fonts/OTF/NyghtSerif-Light.otf", weight: "300" },
-    { path: "../Fonts/nyght_serif/fonts/OTF/NyghtSerif-Regular.otf", weight: "400" },
-    { path: "../Fonts/nyght_serif/fonts/OTF/NyghtSerif-Medium.otf", weight: "500" },
-    { path: "../Fonts/nyght_serif/fonts/OTF/NyghtSerif-Bold.otf", weight: "700" },
-    { path: "../Fonts/nyght_serif/fonts/OTF/NyghtSerif-Dark.otf", weight: "900" },
-  ],
+const display = JetBrains_Mono({
+  subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
 });

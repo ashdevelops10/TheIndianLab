@@ -59,7 +59,7 @@ export function CocktailScrollShowcase({
               </div>
               <div className="border-x border-b border-line bg-bg-base/92 p-5">
                 <p className="marker text-accent-gold">Featured</p>
-                <h3 className="mt-3 font-accent text-3xl leading-none text-accent-goldlight">
+                <h3 className="mt-3 font-mono text-3xl font-thin uppercase tracking-[0.03em] leading-tight text-accent-goldlight">
                   {product.name}
                 </h3>
                 <p className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.2em] text-fg-muted">
@@ -111,7 +111,7 @@ export function CocktailScrollShowcase({
             transition={{ duration: 0.5, ease: easeOutExpo }}
           >
             <p className="marker text-accent-gold">N° 00{activeIndex + 1} — Featured</p>
-            <h3 className="mt-4 text-balance font-accent text-fluid-h2 text-accent-goldlight">
+            <h3 className="mt-4 text-balance font-mono text-fluid-h2 font-thin uppercase tracking-[0.03em] text-accent-goldlight">
               {activeProduct.name}
             </h3>
             <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.28em] text-fg-muted">
@@ -136,7 +136,7 @@ export function CocktailScrollShowcase({
                 <p className="font-mono text-[12px] leading-relaxed text-fg-cream/85">
                   {activeProduct.method}
                 </p>
-                <p className="mt-8 font-display text-2xl text-accent-gold">${activeProduct.price}</p>
+                <p className="mt-8 font-mono text-2xl font-light tracking-[0.06em] text-accent-gold">${activeProduct.price}</p>
               </div>
             </div>
           </motion.div>

@@ -10,7 +10,7 @@ export async function Pillars({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "pillars" });
 
   return (
-    <section className="relative scroll-mt-24 py-[clamp(6rem,14vw,12rem)]">
+    <section className="relative scroll-mt-24 py-[clamp(6rem,14vw,12rem)] section-gradient-top-left">
       <Container>
         <div className="max-w-3xl">
           <SectionLabel>{t("label")}</SectionLabel>

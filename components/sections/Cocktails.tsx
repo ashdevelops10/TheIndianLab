@@ -65,7 +65,7 @@ export async function Cocktails({ locale }: { locale: string }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-base/60 to-transparent" />
               </div>
 
-              <h4 className="mt-7 font-accent text-2xl text-fg-cream">{c.name}</h4>
+              <h4 className="mt-7 font-mono text-xl uppercase tracking-[0.04em] text-fg-cream">{c.name}</h4>
               <p className="mt-2 font-mono text-[10.5px] uppercase tracking-[0.28em] text-fg-muted">
                 {c.base}
               </p>
@@ -84,7 +84,7 @@ export async function Cocktails({ locale }: { locale: string }) {
                 <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-fg-muted sm:tracking-[0.28em]">
                   {c.method}
                 </span>
-                <span className="font-display text-xl text-accent-gold">${c.price}</span>
+                <span className="font-mono text-sm tracking-[0.06em] text-accent-gold">${c.price}</span>
               </div>
             </article>
           ))}

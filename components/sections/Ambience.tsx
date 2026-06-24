@@ -31,7 +31,7 @@ export async function Ambience({ locale }: { locale: string }) {
   ];
 
   return (
-    <section className="relative bg-bg-surface py-[clamp(6rem,14vw,12rem)]">
+    <section className="relative bg-bg-surface py-[clamp(6rem,14vw,12rem)] section-gradient-top-left">
       <Container>
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-6">

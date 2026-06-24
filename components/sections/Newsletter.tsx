@@ -30,7 +30,7 @@ export function Newsletter() {
   };
 
   return (
-    <section className="relative border-t border-accent-gold/25 bg-bg-surface py-[clamp(5rem,12vw,10rem)]">
+    <section className="relative border-t border-accent-gold/25 bg-bg-surface py-[clamp(5rem,12vw,10rem)] section-gradient-center">
       <Container>
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-5">

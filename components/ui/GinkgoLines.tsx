@@ -7,10 +7,8 @@ import { cn } from "@/lib/utils";
  */
 export function GinkgoLines({
   className,
-  opacity = 0.55,
 }: {
   className?: string;
-  opacity?: number;
 }) {
   return (
     <svg
@@ -18,7 +16,6 @@ export function GinkgoLines({
       aria-hidden="true"
       preserveAspectRatio="xMidYMid slice"
       className={cn("pointer-events-none text-accent-gold", className)}
-      style={{ opacity }}
       fill="none"
       stroke="currentColor"
       strokeWidth="0.8"

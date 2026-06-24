@@ -26,7 +26,7 @@ export function SignatureDishes() {
   const loopedItems = [...items, ...items];
 
   return (
-    <section className="relative scroll-mt-24 bg-bg-base py-[clamp(6rem,14vw,12rem)]">
+    <section className="relative scroll-mt-24 bg-bg-base py-[clamp(6rem,14vw,12rem)] section-gradient-right">
       <Container>
         <div className="flex flex-col items-center text-center gap-8">
           <div>

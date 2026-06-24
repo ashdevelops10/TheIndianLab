@@ -8,7 +8,7 @@ import { ArrowUpRight } from "lucide-react";
 export async function VisitUs({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "visit" });
   return (
-    <section className="relative py-[clamp(6rem,14vw,12rem)]">
+    <section className="relative py-[clamp(6rem,14vw,12rem)] section-gradient-left">
       <Container className="grid gap-12 md:grid-cols-12 md:gap-x-16">
         <div className="md:col-span-5">
           <SectionLabel>{t("label")}</SectionLabel>
