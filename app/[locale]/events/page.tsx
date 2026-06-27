@@ -39,8 +39,8 @@ export default async function EventsPage({
     <>
       <PageHero eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
 
-      <section className="pb-32">
-        <Container className="grid gap-8 md:grid-cols-3">
+      <section className="section-dark pb-32 pt-[clamp(4rem,8vw,6rem)]">
+        <Container className="grid gap-x-8 gap-y-12 md:grid-cols-3">
           {offerings.map((o, i) => (
             <article
               key={o.key}
@@ -50,16 +50,16 @@ export default async function EventsPage({
               <div className="mt-6 flex flex-wrap items-start justify-between gap-3">
                 <div className="min-w-0 flex-1">
                   <p className="label">0{i + 1}</p>
-                  <h3 className="mt-2 font-display text-2xl text-fg-cream">{t(o.key)}</h3>
+                  <h3 className="mt-2 font-display text-2xl font-medium text-fg-cream">{t(o.key)}</h3>
                   <p className="mt-1 text-sm text-fg-muted">{o.capacity} guests</p>
                 </div>
-                <p className="shrink-0 text-right font-mono text-xs uppercase tracking-[0.16em] text-accent-saffron">
+                <p className="shrink-0 text-right font-sans text-xs font-medium uppercase tracking-[0.16em] text-accent-gold">
                   {t("from")} ${o.from}/pp
                 </p>
               </div>
               <Link
                 href={`/${locale}/contact`}
-                className="link-underline mt-6 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.2em] text-fg-cream"
+                className="link-underline mt-6 inline-flex items-center gap-1.5 font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-fg-cream"
               >
                 {t("inquire")} <ArrowUpRight size={12} />
               </Link>

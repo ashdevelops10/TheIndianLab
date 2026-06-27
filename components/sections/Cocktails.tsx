@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { RevealText } from "@/components/ui/RevealText";
 import { Ornament } from "@/components/ui/Ornament";
-import { BarProgramBackground } from "@/components/sections/BarProgramBackground";
+import { GinkgoLines } from "@/components/ui/GinkgoLines";
 import { BarProgramReveal } from "@/components/sections/BarProgramReveal";
 import { CocktailScrollShowcase } from "@/components/sections/CocktailScrollShowcase";
 import { ArrowUpRight } from "lucide-react";
@@ -16,8 +16,8 @@ export async function Cocktails({ locale }: { locale: string }) {
   const showcaseProducts = [featuredCocktail, ...cocktails.slice(0, 2)];
 
   return (
-    <section className="relative bg-bg-surface py-[clamp(6rem,14vw,12rem)]">
-      <BarProgramBackground />
+    <section className="section-burgundy relative overflow-hidden py-[clamp(5rem,12vw,10rem)]">
+      <GinkgoLines className="pointer-events-none absolute -left-32 bottom-0 h-[460px] w-[560px] opacity-[0.18]" />
       <Container className="relative z-10">
         <div className="grid gap-10 md:grid-cols-12 md:items-start">
           <div className="md:col-span-7">
@@ -25,12 +25,12 @@ export async function Cocktails({ locale }: { locale: string }) {
             <RevealText
               as="h2"
               text={t("title")}
-              className="mt-6 font-display text-fluid-h1 text-fg-cream"
+              className="mt-6 font-display text-fluid-h1 font-medium leading-[1.05] text-fg-cream"
             />
           </div>
           <div className="md:col-span-4 md:col-start-9 md:pt-10">
             <BarProgramReveal />
-            <p className="mt-8 max-w-sm text-fluid-body text-fg-bone">
+            <p className="mt-8 max-w-sm text-fluid-body leading-relaxed text-fg-bone">
               {t("body")}
             </p>
           </div>
@@ -54,24 +54,24 @@ export async function Cocktails({ locale }: { locale: string }) {
                 <Ornament size="sm" />
               </div>
 
-              <div className="relative mt-7 aspect-[4/5] overflow-hidden bg-bg-velvet">
+              <div className="relative mt-7 aspect-[4/5] overflow-hidden rounded-sm bg-bg-velvet">
                 <Image
                   src={c.image}
                   alt={c.name}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-[1200ms] ease-out-expo group-hover:scale-[1.04]"
+                  className="object-cover transition-transform duration-[800ms] ease-out-expo group-hover:scale-[1.04]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-base/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-burgundy/60 to-transparent" />
               </div>
 
-              <h4 className="mt-7 font-mono text-xl uppercase tracking-[0.04em] text-fg-cream">{c.name}</h4>
-              <p className="mt-2 font-mono text-[10.5px] uppercase tracking-[0.28em] text-fg-muted">
+              <h4 className="mt-7 font-display text-2xl font-medium text-fg-cream">{c.name}</h4>
+              <p className="mt-2 font-sans text-[10.5px] font-medium uppercase tracking-[0.26em] text-fg-muted">
                 {c.base}
               </p>
               <p className="mt-5 text-sm leading-relaxed text-fg-bone">{c.note}</p>
 
-              <ul className="mt-6 flex flex-wrap gap-x-3 gap-y-1.5 font-mono text-[10.5px] uppercase tracking-[0.18em] text-fg-muted">
+              <ul className="mt-6 flex flex-wrap gap-x-3 gap-y-1.5 font-sans text-[10.5px] font-medium uppercase tracking-[0.16em] text-fg-muted">
                 {c.ingredients.map((ing, k) => (
                   <li key={ing} className="flex items-center gap-2">
                     {k > 0 && <span className="text-accent-gold/60">·</span>}
@@ -81,10 +81,10 @@ export async function Cocktails({ locale }: { locale: string }) {
               </ul>
 
               <div className="mt-7 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-5">
-                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-fg-muted sm:tracking-[0.28em]">
+                <span className="font-sans text-[11px] font-medium uppercase tracking-[0.2em] text-fg-muted sm:tracking-[0.24em]">
                   {c.method}
                 </span>
-                <span className="font-mono text-sm tracking-[0.06em] text-accent-gold">${c.price}</span>
+                <span className="font-display text-lg text-accent-gold">${c.price}</span>
               </div>
             </article>
           ))}
@@ -93,7 +93,7 @@ export async function Cocktails({ locale }: { locale: string }) {
         <div className="mt-16 flex justify-center">
           <Link
             href={`/${locale}/menu`}
-            className="link-underline inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.28em] text-accent-gold"
+            className="link-underline inline-flex items-center gap-2 font-sans text-[11px] font-semibold uppercase tracking-[0.28em] text-accent-gold"
           >
             {t("cta")} <ArrowUpRight size={14} />
           </Link>

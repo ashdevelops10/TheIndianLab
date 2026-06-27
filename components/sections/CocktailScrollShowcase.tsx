@@ -58,11 +58,11 @@ export function CocktailScrollShowcase({
                 </span>
               </div>
               <div className="border-x border-b border-line bg-bg-base/92 p-5">
-                <p className="marker text-accent-gold">Featured</p>
-                <h3 className="mt-3 font-mono text-3xl font-thin uppercase tracking-[0.03em] leading-tight text-accent-goldlight">
+                <p className="label">Featured</p>
+                <h3 className="mt-3 font-display text-3xl font-medium leading-tight text-fg-cream">
                   {product.name}
                 </h3>
-                <p className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.2em] text-fg-muted">
+                <p className="mt-3 font-sans text-[10.5px] font-medium uppercase tracking-[0.2em] text-fg-muted">
                   {product.base} · ${product.price}
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-fg-bone">{product.note}</p>
@@ -110,11 +110,11 @@ export function CocktailScrollShowcase({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: easeOutExpo }}
           >
-            <p className="marker text-accent-gold">N° 00{activeIndex + 1} — Featured</p>
-            <h3 className="mt-4 text-balance font-mono text-fluid-h2 font-thin uppercase tracking-[0.03em] text-accent-goldlight">
+            <p className="label">N° 00{activeIndex + 1} — Featured</p>
+            <h3 className="mt-4 text-balance font-display text-fluid-h2 font-medium leading-[1.05] text-fg-cream">
               {activeProduct.name}
             </h3>
-            <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.28em] text-fg-muted">
+            <p className="mt-3 font-sans text-[11px] font-medium uppercase tracking-[0.28em] text-fg-muted">
               Base · {activeProduct.base}
             </p>
             <p className="mt-8 max-w-md text-fluid-body text-fg-bone">{activeProduct.note}</p>
@@ -136,7 +136,7 @@ export function CocktailScrollShowcase({
                 <p className="font-mono text-[12px] leading-relaxed text-fg-cream/85">
                   {activeProduct.method}
                 </p>
-                <p className="mt-8 font-mono text-2xl font-light tracking-[0.06em] text-accent-gold">${activeProduct.price}</p>
+                <p className="mt-8 font-display text-3xl text-accent-gold">${activeProduct.price}</p>
               </div>
             </div>
           </motion.div>

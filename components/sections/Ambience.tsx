@@ -31,7 +31,7 @@ export async function Ambience({ locale }: { locale: string }) {
   ];
 
   return (
-    <section className="relative bg-bg-surface py-[clamp(6rem,14vw,12rem)] section-gradient-top-left">
+    <section className="section-dark relative py-[clamp(5rem,12vw,10rem)]">
       <Container>
         <div className="grid gap-10 md:grid-cols-12 md:items-end">
           <div className="md:col-span-6">
@@ -39,10 +39,10 @@ export async function Ambience({ locale }: { locale: string }) {
             <RevealText
               as="h2"
               text={t("title")}
-              className="mt-6 font-display text-fluid-h1 text-fg-cream"
+              className="mt-6 font-display text-fluid-h1 font-medium leading-[1.05] text-fg-cream"
             />
           </div>
-          <p className="md:col-span-5 md:col-start-8 max-w-md text-fluid-body text-fg-bone">
+          <p className="md:col-span-5 md:col-start-8 max-w-md text-fluid-body leading-relaxed text-fg-bone">
             {t("body")}
           </p>
         </div>
@@ -64,12 +64,12 @@ export async function Ambience({ locale }: { locale: string }) {
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-bg-base/65 via-transparent to-transparent" />
-                  <span className="absolute left-4 top-4 font-mono text-[10px] uppercase tracking-[0.28em] text-fg-cream/85">
+                  <span className="absolute left-4 top-4 font-sans text-[10px] font-medium uppercase tracking-[0.28em] text-fg-cream/85">
                     N° 00{(i % tiles.length) + 1}
                   </span>
                 </div>
-                <figcaption className="border-x border-b border-line bg-bg-base/92 p-5">
-                  <p className="font-accent text-3xl leading-none text-accent-goldlight">{tile.label}</p>
+                <figcaption className="border-x border-b border-line bg-bg-velvet p-5">
+                  <p className="font-display text-2xl font-medium leading-none text-fg-cream">{tile.label}</p>
                   <p className="mt-3 text-sm leading-relaxed text-fg-bone">{tile.caption}</p>
                 </figcaption>
               </figure>
@@ -89,12 +89,12 @@ export async function Ambience({ locale }: { locale: string }) {
                   className="object-cover transition-transform duration-[1400ms] ease-out-expo group-hover:scale-[1.04]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-base/55 via-transparent to-transparent" />
-                <span className="absolute left-4 top-4 font-mono text-[10px] uppercase tracking-[0.32em] text-fg-cream/85">
+                <span className="absolute left-4 top-4 font-sans text-[10px] font-medium uppercase tracking-[0.32em] text-fg-cream/85">
                   N° 00{i + 1}
                 </span>
               </div>
               <figcaption className="mt-5 flex flex-1 flex-col">
-                <p className="font-accent text-2xl text-accent-goldlight">{tile.label}</p>
+                <p className="font-display text-2xl font-medium text-fg-cream">{tile.label}</p>
                 <p className="mt-2 max-w-sm text-sm leading-relaxed text-fg-bone">{tile.caption}</p>
               </figcaption>
             </figure>

@@ -21,23 +21,23 @@ export default async function PostPage({
   if (!post) notFound();
 
   return (
-    <article className="pt-32 pb-32">
+    <article className="section-dark pt-36 pb-32 md:pt-44">
       <Container className="max-w-3xl">
         <Link
           href={`/${locale}/blog`}
-          className="link-underline mb-10 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-fg-muted"
+          className="link-underline mb-10 inline-flex items-center gap-2 font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-fg-muted"
         >
           <ArrowLeft size={14} /> Journal
         </Link>
-        <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent-saffron">
+        <p className="font-sans text-[11px] font-medium uppercase tracking-[0.2em] text-accent-gold">
           {post.category} · {post.readingTime}
         </p>
-        <h1 className="mt-4 font-display text-fluid-h1 text-fg-cream">{post.title}</h1>
-        <p className="mt-6 text-fluid-body text-fg-muted">{post.excerpt}</p>
+        <h1 className="mt-4 font-display text-fluid-h1 font-medium leading-[1.05] text-fg-cream">{post.title}</h1>
+        <p className="mt-6 text-fluid-body leading-relaxed text-fg-bone">{post.excerpt}</p>
       </Container>
 
       <Container className="mt-16 max-w-5xl">
-        <div className="relative aspect-[16/10] overflow-hidden bg-bg-surface">
+        <div className="relative aspect-[16/10] overflow-hidden rounded-sm bg-bg-surface">
           <Image
             src={post.cover}
             alt={post.title}
@@ -49,7 +49,7 @@ export default async function PostPage({
       </Container>
 
       <Container className="mt-16 max-w-2xl">
-        <div className="space-y-6 text-fluid-body leading-relaxed text-fg-cream/90">
+        <div className="space-y-6 text-fluid-body leading-relaxed text-fg-bone">
           {post.body.split("\n\n").map((para, i) => (
             <p key={i}>{para}</p>
           ))}

@@ -19,7 +19,7 @@ export default async function AboutPage({
     <>
       <PageHero eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
 
-      <section className="py-[clamp(4rem,10vw,8rem)]">
+      <section className="section-cream py-[clamp(4rem,10vw,8rem)]">
         <Container className="grid gap-12 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-7">
             <RevealImage
@@ -30,34 +30,34 @@ export default async function AboutPage({
           </div>
           <div className="md:col-span-5 md:pt-12">
             <SectionLabel>01 / {t("philosophy_title")}</SectionLabel>
-            <p className="mt-8 font-display text-fluid-h3 leading-snug text-fg-cream">
+            <p className="mt-8 font-display text-fluid-h3 font-medium leading-snug text-fg-ink">
               {t("philosophy")}
             </p>
           </div>
         </Container>
       </section>
 
-      <section className="border-t border-line bg-bg-surface py-[clamp(4rem,10vw,8rem)]">
+      <section className="section-dark border-t border-line py-[clamp(4rem,10vw,8rem)]">
         <Container>
           <SectionLabel>02 / {t("team_title")}</SectionLabel>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((m) => (
               <article key={m.name} className="group">
-                <div className="relative aspect-[3/4] overflow-hidden bg-bg-elevated">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-bg-elevated">
                   <Image
                     src={m.image}
                     alt={m.name}
                     fill
                     sizes="(min-width: 1024px) 22vw, 50vw"
-                    className="object-cover grayscale transition duration-[1200ms] ease-out-expo group-hover:grayscale-0"
+                    className="object-cover grayscale transition duration-[800ms] ease-out-expo group-hover:grayscale-0"
                   />
                 </div>
-                <div className="mt-4">
-                  <p className="font-display text-xl text-fg-cream">{m.name}</p>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent-saffron">
+                <div className="mt-5">
+                  <p className="font-display text-xl font-medium text-fg-cream">{m.name}</p>
+                  <p className="mt-1 font-sans text-[11px] font-medium uppercase tracking-[0.2em] text-accent-gold">
                     {m.role}
                   </p>
-                  <p className="mt-2 text-sm text-fg-muted">{m.bio}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-fg-bone">{m.bio}</p>
                 </div>
               </article>
             ))}

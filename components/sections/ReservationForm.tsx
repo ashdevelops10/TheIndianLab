@@ -70,15 +70,17 @@ export function ReservationForm() {
 
   if (done === "ok") {
     return (
-      <Container className="py-24">
-        <div className="mx-auto max-w-xl text-center">
-          <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-accent-gold text-bg-velvet">
-            <Check size={28} />
+      <section className="section-dark">
+        <Container className="py-24">
+          <div className="mx-auto max-w-xl text-center">
+            <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-accent-gold text-bg-burgundy">
+              <Check size={28} />
+            </div>
+            <h2 className="mt-8 font-display text-fluid-h2 font-medium text-fg-cream">{t("success_title")}</h2>
+            <p className="mt-4 text-fg-bone">{t("success_body")}</p>
           </div>
-          <h2 className="mt-8 font-display text-fluid-h2 text-fg-cream">{t("success_title")}</h2>
-          <p className="mt-4 text-fg-muted">{t("success_body")}</p>
-        </div>
-      </Container>
+        </Container>
+      </section>
     );
   }
 
@@ -86,7 +88,8 @@ export function ReservationForm() {
   const totalSteps = 5;
 
   return (
-    <Container className="pb-32">
+    <section className="section-dark">
+    <Container className="pb-32 pt-[clamp(3rem,6vw,5rem)]">
       <div className="mx-auto grid max-w-2xl gap-10">
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
           <SectionLabel>
@@ -97,7 +100,7 @@ export function ReservationForm() {
               <span
                 key={i}
                 className={`h-px flex-1 transition-colors duration-500 ${
-                  i <= step ? "bg-accent-saffron" : "bg-line"
+                  i <= step ? "bg-accent-gold" : "bg-line"
                 }`}
               />
             ))}
@@ -120,7 +123,7 @@ export function ReservationForm() {
                     type="date"
                     min={today}
                     {...register("date")}
-                    className="w-full border-b border-line bg-transparent py-3 text-2xl text-fg-cream focus:border-accent-saffron focus:outline-none [color-scheme:dark]"
+                    className="w-full border-b border-line bg-transparent py-3 text-2xl text-fg-cream focus:border-accent-gold focus:outline-none [color-scheme:dark]"
                   />
                   {errors.date && <p className="mt-2 text-xs text-accent-ember">Required</p>}
                 </div>
@@ -135,10 +138,10 @@ export function ReservationForm() {
                         type="button"
                         key={tm}
                         onClick={() => setValue("time", tm, { shouldValidate: true })}
-                        className={`border px-3 py-3 font-mono text-sm transition-colors ${
+                        className={`rounded-sm border px-3 py-3 font-sans text-sm transition-colors duration-300 ${
                           values.time === tm
-                            ? "border-accent-saffron text-accent-saffron"
-                            : "border-line text-fg-cream hover:border-fg-muted"
+                            ? "border-accent-gold text-accent-gold"
+                            : "border-line text-fg-cream hover:border-accent-gold/50"
                         }`}
                       >
                         {tm}
@@ -159,10 +162,10 @@ export function ReservationForm() {
                         type="button"
                         key={p}
                         onClick={() => setValue("party", p, { shouldValidate: true })}
-                        className={`grid h-14 w-14 place-items-center rounded-full border font-display text-xl transition-colors ${
+                        className={`grid h-14 w-14 place-items-center rounded-full border font-display text-xl transition-colors duration-300 ${
                           Number(values.party) === p
-                            ? "border-accent-saffron text-accent-saffron"
-                            : "border-line text-fg-cream hover:border-fg-muted"
+                            ? "border-accent-gold text-accent-gold"
+                            : "border-line text-fg-cream hover:border-accent-gold/50"
                         }`}
                       >
                         {p}
@@ -218,7 +221,7 @@ export function ReservationForm() {
               type="button"
               onClick={() => setStep((s) => Math.max(s - 1, 0))}
               disabled={step === 0}
-              className="link-underline inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-fg-muted disabled:opacity-30"
+              className="link-underline inline-flex items-center gap-2 font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-fg-muted disabled:opacity-30"
             >
               <ArrowLeft size={14} /> {t("back")}
             </button>
@@ -239,14 +242,15 @@ export function ReservationForm() {
         .field-input {
           width: 100%;
           background: transparent;
-          border-bottom: 1px solid rgba(255,231,196,0.16);
+          border-bottom: 1px solid rgba(243,237,228,0.16);
           padding: 0.75rem 0;
-          color: #FFE7C4;
+          color: #F3EDE4;
           font-size: 1.125rem;
         }
-        .field-input:focus { outline: none; border-color: #DD645F; }
+        .field-input:focus { outline: none; border-color: #CBA66A; }
       `}</style>
     </Container>
+    </section>
   );
 }
 

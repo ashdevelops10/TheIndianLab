@@ -49,18 +49,19 @@ export function ContactBody({
   };
 
   return (
-    <section className="relative pt-36 pb-28 md:pt-48 md:pb-36">
-      <Container className="grid gap-16 lg:grid-cols-12 lg:gap-x-20">
+    <section className="section-burgundy relative overflow-hidden pt-36 pb-28 md:pt-44 md:pb-36">
+      <div aria-hidden className="grain-overlay" />
+      <Container className="relative grid gap-16 lg:grid-cols-12 lg:gap-x-20">
         {/* Left — heading */}
         <div className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
           <SectionLabel>{eyebrow}</SectionLabel>
           <RevealText
             as="h1"
             text={title}
-            className="mt-6 text-balance font-display text-fluid-h1 text-fg-cream"
+            className="mt-6 text-balance font-display text-fluid-h1 font-medium leading-[1.05] text-fg-cream"
           />
           {lead && (
-            <p className="mt-8 max-w-sm text-fluid-body text-fg-muted">{lead}</p>
+            <p className="mt-8 max-w-sm text-fluid-body leading-relaxed text-fg-bone">{lead}</p>
           )}
         </div>
 
@@ -73,7 +74,7 @@ export function ContactBody({
             <label className="label mb-2 block">{t("name")}</label>
             <input
               {...register("name")}
-              className="w-full border-b border-line bg-transparent py-3 text-lg text-fg-cream focus:border-accent-saffron focus:outline-none [font-family:Arial,Helvetica,sans-serif]"
+              className="w-full border-b border-line bg-transparent py-3 text-lg text-fg-cream transition-colors focus:border-accent-gold focus:outline-none"
             />
             {errors.name && <p className="mt-2 text-xs text-accent-ember">Required</p>}
           </div>
@@ -82,7 +83,7 @@ export function ContactBody({
             <input
               type="email"
               {...register("email")}
-              className="w-full border-b border-line bg-transparent py-3 text-lg text-fg-cream focus:border-accent-saffron focus:outline-none [font-family:Arial,Helvetica,sans-serif]"
+              className="w-full border-b border-line bg-transparent py-3 text-lg text-fg-cream transition-colors focus:border-accent-gold focus:outline-none"
             />
             {errors.email && <p className="mt-2 text-xs text-accent-ember">Valid email required</p>}
           </div>
@@ -91,7 +92,7 @@ export function ContactBody({
             <textarea
               rows={6}
               {...register("message")}
-              className="w-full resize-none border-b border-line bg-transparent py-3 text-lg text-fg-cream focus:border-accent-saffron focus:outline-none [font-family:Arial,Helvetica,sans-serif]"
+              className="w-full resize-none border-b border-line bg-transparent py-3 text-lg text-fg-cream transition-colors focus:border-accent-gold focus:outline-none"
             />
             {errors.message && <p className="mt-2 text-xs text-accent-ember">Tell us a bit more</p>}
           </div>
@@ -100,7 +101,7 @@ export function ContactBody({
               {t("submit")}
             </button>
             <div className="mt-4 h-5 text-sm">
-              {status === "ok" && <p className="text-accent-saffron">{t("success")}</p>}
+              {status === "ok" && <p className="text-accent-gold">{t("success")}</p>}
               {status === "err" && <p className="text-accent-ember">{t("error")}</p>}
             </div>
           </div>

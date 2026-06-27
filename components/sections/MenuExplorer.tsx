@@ -34,18 +34,18 @@ export function MenuExplorer() {
   );
 
   return (
-    <section className="pb-32">
+    <section className="section-dark pb-32">
       <Container>
-        <div className="sticky top-16 z-30 -mx-5 flex flex-col gap-4 border-b border-line bg-bg-base/85 px-5 py-4 backdrop-blur-xl md:top-20 md:mx-0 md:flex-row md:items-center md:justify-between md:px-0">
-          <div className="no-scrollbar -mx-5 flex gap-1 overflow-x-auto px-5 md:mx-0 md:px-0">
+        <div className="sticky top-16 z-30 -mx-6 flex flex-col gap-4 border-b border-line bg-bg-base/90 px-6 py-5 backdrop-blur-xl md:top-20 md:mx-0 md:flex-row md:items-center md:justify-between md:px-0">
+          <div className="no-scrollbar -mx-6 flex gap-2 overflow-x-auto px-6 md:mx-0 md:px-0">
             {categories.map((c) => (
               <button
                 key={c}
                 onClick={() => setActive(c)}
                 className={cn(
-                  "whitespace-nowrap px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] transition-colors",
+                  "whitespace-nowrap px-4 py-2 font-sans text-[11px] font-medium uppercase tracking-[0.2em] transition-colors duration-300",
                   c === active
-                    ? "text-accent-saffron"
+                    ? "text-accent-gold"
                     : "text-fg-muted hover:text-fg-cream",
                 )}
               >
@@ -54,16 +54,16 @@ export function MenuExplorer() {
             ))}
           </div>
 
-          <div className="flex flex-wrap gap-1 md:justify-end">
+          <div className="flex flex-wrap gap-2 md:justify-end">
             {(["veg", "vegan", "gf"] as const).map((k) => (
               <button
                 key={k}
                 onClick={() => setFilters((f) => ({ ...f, [k]: !f[k] }))}
                 className={cn(
-                  "rounded-full border px-3 py-1.5 text-center font-mono text-[10px] uppercase leading-snug tracking-[0.14em] transition-colors sm:tracking-[0.18em]",
+                  "rounded-full border px-4 py-1.5 text-center font-sans text-[10px] font-medium uppercase leading-snug tracking-[0.16em] transition-colors duration-300",
                   filters[k]
-                    ? "border-accent-saffron text-accent-saffron"
-                    : "border-line text-fg-muted hover:border-fg-muted hover:text-fg-cream",
+                    ? "border-accent-gold text-accent-gold"
+                    : "border-line text-fg-muted hover:border-accent-gold/50 hover:text-fg-cream",
                 )}
               >
                 {t(k)}
@@ -72,7 +72,7 @@ export function MenuExplorer() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((d) => (
             <DishCard key={d.id} dish={d} />
           ))}

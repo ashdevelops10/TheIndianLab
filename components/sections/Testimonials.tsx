@@ -33,12 +33,12 @@ export function Testimonials() {
   }, [emblaApi]);
 
   return (
-    <section className="relative py-[clamp(6rem,14vw,12rem)] section-gradient-right">
+    <section className="section-cream relative py-[clamp(5rem,12vw,10rem)]">
       <Container>
         <div className="grid gap-12 md:grid-cols-12 md:gap-x-16">
           {/* portrait of the room */}
           <div className="md:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden bg-bg-velvet">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-bg-velvet">
               <Image
                 src={portrait}
                 alt=""
@@ -46,8 +46,8 @@ export function Testimonials() {
                 sizes="(max-width: 768px) 100vw, 40vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-bg-base/55 via-transparent to-transparent" />
-              <span className="absolute bottom-4 left-4 font-mono text-[10px] uppercase tracking-[0.32em] text-fg-cream/85">
+              <div className="absolute inset-0 bg-gradient-to-tr from-bg-burgundy/45 via-transparent to-transparent" />
+              <span className="absolute bottom-4 left-4 font-sans text-[10px] font-medium uppercase tracking-[0.3em] text-fg-cream/90">
                 The Room · 8 PM
               </span>
             </div>
@@ -61,14 +61,14 @@ export function Testimonials() {
                 <RevealText
                   as="h2"
                   text={t("title")}
-                  className="mt-6 text-balance font-display text-fluid-h2 text-fg-cream"
+                  className="mt-6 text-balance font-display text-fluid-h2 font-medium leading-[1.08] text-fg-ink"
                 />
               </div>
               <div className="hidden gap-3 md:flex">
                 <button
                   type="button"
                   onClick={() => emblaApi?.scrollPrev()}
-                  className="grid h-12 w-12 place-items-center border border-line text-fg-cream transition-colors hover:border-accent-gold hover:text-accent-gold"
+                  className="grid h-12 w-12 place-items-center rounded-full border border-accent-bordeaux/30 text-accent-bordeaux transition-colors duration-300 hover:border-accent-bordeaux hover:bg-accent-bordeaux hover:text-fg-cream"
                   aria-label="Previous"
                 >
                   <ArrowLeft size={16} />
@@ -76,7 +76,7 @@ export function Testimonials() {
                 <button
                   type="button"
                   onClick={() => emblaApi?.scrollNext()}
-                  className="grid h-12 w-12 place-items-center border border-line text-fg-cream transition-colors hover:border-accent-gold hover:text-accent-gold"
+                  className="grid h-12 w-12 place-items-center rounded-full border border-accent-bordeaux/30 text-accent-bordeaux transition-colors duration-300 hover:border-accent-bordeaux hover:bg-accent-bordeaux hover:text-fg-cream"
                   aria-label="Next"
                 >
                   <ArrowRight size={16} />
@@ -91,14 +91,14 @@ export function Testimonials() {
                     <figure className="relative">
                       <span
                         aria-hidden
-                        className="font-accent absolute -left-2 -top-10 select-none text-7xl leading-none text-accent-gold/30 md:text-8xl"
+                        className="font-display absolute -left-2 -top-12 select-none text-8xl leading-none text-accent-gold/40 md:text-9xl"
                       >
-                        “
+                        &ldquo;
                       </span>
-                      <blockquote className="font-accent text-2xl leading-snug text-fg-cream sm:text-3xl md:text-4xl">
+                      <blockquote className="font-display text-2xl italic leading-snug text-fg-ink sm:text-3xl md:text-[2.5rem]">
                         {tm.quote}
                       </blockquote>
-                      <figcaption className="mt-10 font-mono text-[11px] uppercase tracking-[0.28em] text-fg-muted">
+                      <figcaption className="mt-10 font-sans text-[11px] font-medium uppercase tracking-[0.28em] text-fg-muted">
                         — {tm.author} · {tm.city}
                       </figcaption>
                     </figure>

@@ -1,82 +1,104 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { RevealText } from "@/components/ui/RevealText";
-import { DishCard } from "@/components/ui/DishCard";
+import { formatPrice } from "@/lib/utils";
+import { easeOutExpo, viewportOnce } from "@/lib/motion";
 import { signatureDishes, dishes } from "@/content/dishes";
 
 export function SignatureDishes() {
   const t = useTranslations("studies");
   const locale = useLocale();
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const x = useTransform(scrollYProgress, [0, 1], ["5%", "-25%"]);
 
   const items = (
     signatureDishes.length >= 5
       ? signatureDishes
       : [...signatureDishes, ...dishes.slice(0, 7 - signatureDishes.length)]
   ).slice(0, 4);
-  const loopedItems = [...items, ...items];
 
   return (
-    <section className="relative scroll-mt-24 bg-bg-base py-[clamp(6rem,14vw,12rem)] section-gradient-right">
+    <section className="section-dark relative scroll-mt-24 py-[clamp(5rem,12vw,10rem)]">
       <Container>
-        <div className="flex flex-col items-center text-center gap-8">
-          <div>
+        {/* Header — editorial, offset */}
+        <div className="grid gap-8 md:grid-cols-12 md:items-end">
+          <div className="md:col-span-7">
             <SectionLabel>{t("label")}</SectionLabel>
             <RevealText
               as="h2"
               text={t("title")}
-              className="mt-6 font-display text-fluid-h1 text-fg-cream"
+              className="mt-6 font-display text-fluid-h1 font-medium leading-[1.05] text-fg-cream"
             />
           </div>
-          <p className="max-w-lg text-fluid-body text-fg-bone">
-            {t("body")}
-          </p>
-          <Link href={`/${locale}/menu`} className="btn btn-primary group">
-            <span>{t("cta")}</span>
-            <ArrowRight
-              size={14}
-              className="transition-transform duration-700 ease-out-expo group-hover:translate-x-1"
-            />
-          </Link>
+          <div className="md:col-span-4 md:col-start-9">
+            <p className="max-w-sm text-fluid-body leading-relaxed text-fg-bone">{t("body")}</p>
+            <Link
+              href={`/${locale}/menu`}
+              className="link-underline mt-6 inline-flex items-center gap-2 font-sans text-[11px] font-semibold uppercase tracking-[0.28em] text-accent-gold"
+            >
+              {t("cta")} <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+
+        {/* Editorial dish rows */}
+        <div className="mt-16 border-t border-line">
+          {items.map((d, i) => (
+            <motion.div
+              key={d.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={viewportOnce}
+              transition={{ duration: 0.5, ease: easeOutExpo, delay: i * 0.05 }}
+            >
+              <Link
+                href={`/${locale}/menu`}
+                className="group grid grid-cols-1 items-center gap-6 border-b border-line py-7 transition-colors md:grid-cols-12 md:gap-8 md:py-8"
+              >
+                {/* index */}
+                <span className="hidden font-sans text-[11px] font-medium uppercase tracking-[0.24em] text-fg-dim md:col-span-1 md:block">
+                  0{i + 1}
+                </span>
+
+                {/* image */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-sm md:col-span-3 md:aspect-[5/4]">
+                  <Image
+                    src={d.image}
+                    alt={d.name}
+                    fill
+                    sizes="(min-width: 768px) 25vw, 90vw"
+                    className="object-cover transition-transform duration-500 ease-out-expo group-hover:scale-[1.06]"
+                  />
+                </div>
+
+                {/* name + region */}
+                <div className="md:col-span-4">
+                  <h3 className="font-display text-fluid-h3 font-medium text-fg-cream transition-colors duration-300 group-hover:text-accent-gold">
+                    {d.name}
+                  </h3>
+                  {d.nameHi && <p className="mt-1 font-deva text-sm text-fg-muted">{d.nameHi}</p>}
+                  <p className="mt-2 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-fg-dim">
+                    {d.region}
+                  </p>
+                </div>
+
+                {/* description */}
+                <p className="text-sm leading-relaxed text-fg-bone md:col-span-3">{d.description}</p>
+
+                {/* price */}
+                <span className="font-display text-xl text-accent-gold md:col-span-1 md:text-right">
+                  {formatPrice(d.price)}
+                </span>
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </Container>
-
-      {/* Mobile / tablet: smooth auto-loop rail */}
-      <div className="mobile-loop-shell mt-14 lg:hidden">
-        <div className="mobile-loop-fade" />
-        <div className="mobile-loop-track animate-marquee-slow">
-          {loopedItems.map((d, i) => (
-            <div
-              key={`${d.id}-${i}`}
-              className={`w-[78vw] max-w-[320px] flex-shrink-0 sm:max-w-[340px] ${i % 2 ? "translate-y-5" : ""}`}
-            >
-              <p className="marker mb-3">Study N° 0{(i % items.length) + 1}</p>
-              <DishCard dish={d} />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Desktop: scroll-driven horizontal drift */}
-      <div ref={ref} className="mt-16 hidden overflow-hidden lg:block">
-        <motion.div style={{ x }} className="flex gap-8 px-8">
-          {items.map((d, i) => (
-            <div key={d.id} className="w-[360px] flex-shrink-0">
-              <p className="marker mb-3">Study N° 0{i + 1}</p>
-              <DishCard dish={d} />
-            </div>
-          ))}
-        </motion.div>
-      </div>
     </section>
   );
 }

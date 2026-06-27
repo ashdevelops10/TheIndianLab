@@ -4,6 +4,7 @@ import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
 import { Ornament, OrnamentRule } from "@/components/ui/Ornament";
 import { BrandSeal } from "@/components/ui/BrandSeal";
+import { GinkgoLines } from "@/components/ui/GinkgoLines";
 import { FooterNewsletterForm } from "./FooterNewsletterForm";
 
 export async function Footer({ locale }: { locale: string }) {
@@ -17,21 +18,23 @@ export async function Footer({ locale }: { locale: string }) {
   )}`;
 
   return (
-    <footer className="relative overflow-hidden border-t border-accent-gold/25 bg-bg-velvet [font-family:Arial,Helvetica,sans-serif]">
-      <Container className="py-14 md:py-[clamp(5rem,10vw,8rem)]">
+    <footer className="section-burgundy relative overflow-hidden border-t border-accent-gold/20">
+      {/* botanical line art — bottom-right */}
+      <GinkgoLines className="pointer-events-none absolute -bottom-20 -right-16 h-[460px] w-[520px] opacity-[0.16]" />
+      <Container className="relative py-14 md:py-[clamp(5rem,10vw,8rem)]">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-16">
           <div className="lg:col-span-5">
             <Link
               href={lp("")}
               aria-label="The Indian Lab"
-              className="inline-flex text-fg-cream/95 transition-colors duration-700 ease-out-expo hover:text-accent-goldlight"
+              className="inline-flex text-fg-cream/95 transition-opacity duration-300 ease-out-expo hover:opacity-80"
             >
               <BrandSeal variant="circle" size={132} className="h-auto w-[112px] sm:w-[132px]" />
             </Link>
 
-            <p className="mt-5 max-w-md text-fluid-body text-fg-bone">{tF("tagline")}</p>
+            <p className="mt-5 max-w-md text-fluid-body leading-relaxed text-fg-bone">{tF("tagline")}</p>
             <p className="label mt-8 mb-4 md:mt-10">{tN("label")}</p>
-            <h2 className="max-w-lg text-fluid-h3 text-fg-cream">{tN("title").replace(/\*/g, "")}</h2>
+            <h2 className="max-w-lg font-display text-fluid-h3 font-medium text-fg-cream">{tN("title").replace(/\*/g, "")}</h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-fg-bone">{tN("body")}</p>
             <FooterNewsletterForm />
           </div>
@@ -46,7 +49,7 @@ export async function Footer({ locale }: { locale: string }) {
                 className="absolute inset-0 h-full w-full opacity-90 [filter:invert(0.92)_hue-rotate(180deg)_saturate(0.7)_sepia(0.2)]"
               />
               <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-line-strong" />
-              <span className="pointer-events-none absolute bottom-5 right-5 font-mono text-[10px] uppercase tracking-[0.32em] text-accent-gold">
+              <span className="pointer-events-none absolute bottom-5 right-5 font-sans text-[10px] font-medium uppercase tracking-[0.3em] text-accent-gold">
                 Langford · BC
               </span>
             </div>
@@ -140,12 +143,12 @@ export async function Footer({ locale }: { locale: string }) {
         </div>
       </Container>
 
-      <Container className="flex flex-col items-start justify-between gap-3 border-t border-accent-gold/20 py-6 text-xs text-fg-muted md:flex-row md:items-center">
+      <Container className="relative flex flex-col items-start justify-between gap-3 border-t border-accent-gold/20 py-6 text-xs text-fg-muted md:flex-row md:items-center">
         <div className="flex max-w-full items-start gap-3">
           <Ornament size="sm" />
           <p>{tF("rights")}</p>
         </div>
-        <p className="max-w-full font-mono uppercase leading-relaxed tracking-[0.18em] sm:tracking-[0.28em]">{tF("made")}</p>
+        <p className="max-w-full font-sans text-[10px] font-medium uppercase leading-relaxed tracking-[0.18em] sm:tracking-[0.26em]">{tF("made")}</p>
       </Container>
     </footer>
   );

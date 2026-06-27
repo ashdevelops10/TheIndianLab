@@ -5,12 +5,15 @@
 @layer base {
   :root {
     color-scheme: dark;
-    --c-bg: #0D0907;
-    --c-fg: #FFE7C4;
-    --c-coral: #DD645F;
-    --c-gold: #D4AF37;
-    --c-wine: #5F0000;
-    --c-line: rgba(255, 231, 196, 0.14);
+    /* Mood board palette */
+    --c-burgundy: #4B1311;   /* deep burgundy */
+    --c-wine: #7D2E1F;       /* warm burgundy */
+    --c-gold: #CBA66A;       /* luxury gold */
+    --c-cream: #F3EDE4;      /* warm cream */
+    --c-ink: #1E1A14;        /* dark neutral */
+    --c-bg: #1E1A14;
+    --c-fg: #F3EDE4;
+    --c-line: rgba(243, 237, 228, 0.14);
   }
 
   html { background-color: var(--c-bg); }
@@ -21,9 +24,10 @@
     overflow-x: clip;
     color: var(--c-fg);
     font-family: theme(fontFamily.sans);
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    font-feature-settings: "ss01", "kern";
+    font-feature-settings: "kern";
   }
 
   main { overflow-x: clip; }
@@ -34,22 +38,17 @@
     overflow-wrap: anywhere;
   }
 
+  /* Playfair Display headings — editorial, never uppercased by default */
   .font-display {
-    text-transform: uppercase;
     font-weight: 400;
+    font-feature-settings: "kern", "liga";
   }
 
   body {
     background-color: var(--c-bg);
-    background-image:
-      linear-gradient(180deg, rgba(13, 9, 7, 0.97), rgba(13, 9, 7, 0.95) 44%, rgba(9, 6, 4, 0.98)),
-      radial-gradient(1100px 520px at 85% -8%, rgba(212, 175, 55, 0.09), transparent 64%),
-      radial-gradient(900px 600px at 4% 58%, rgba(95, 0, 0, 0.18), transparent 62%),
-      radial-gradient(600px 400px at 50% 100%, rgba(95, 0, 0, 0.10), transparent 70%);
-    background-attachment: fixed;
   }
 
-  ::selection { background-color: var(--c-wine); color: var(--c-fg); }
+  ::selection { background-color: var(--c-gold); color: var(--c-ink); }
   * { -webkit-tap-highlight-color: transparent; }
 
   .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -68,47 +67,89 @@
 }
 
 @layer components {
-  .container-page { @apply mx-auto w-full max-w-none px-5 sm:px-6 lg:px-10 xl:px-12; }
+  .container-page { @apply mx-auto w-full max-w-[1600px] px-6 sm:px-8 lg:px-16 xl:px-20; }
 
+  /* ── Section background system (alternating light / dark) ── */
+  .section-dark {
+    background-color: #1E1A14;
+    color: theme(colors.fg.cream);
+  }
+  .section-burgundy {
+    background-color: #4B1311;
+    color: theme(colors.fg.cream);
+  }
+  .section-cream {
+    background-color: #F3EDE4;
+    color: theme(colors.fg.ink);
+  }
+  /* On cream sections, retune muted/dim text + lines to ink tones */
+  .section-cream .text-fg-bone { color: #5C5142; }
+  .section-cream .text-fg-muted { color: #6B5E4C; }
+  .section-cream .text-fg-dim { color: #8A7C68; }
+  .section-cream .text-fg-cream { color: #1E1A14; }
+  .section-cream .border-line { border-color: rgba(30, 26, 20, 0.14); }
+  .section-cream .border-line-strong { border-color: rgba(30, 26, 20, 0.24); }
+  .section-cream .bg-line { background-color: rgba(30, 26, 20, 0.14); }
+
+  /* ── Type helpers ── */
   .label {
-    @apply max-w-full break-words font-mono text-label uppercase text-fg-muted;
+    @apply max-w-full break-words font-sans text-label font-medium uppercase text-accent-gold;
+    letter-spacing: 0.28em;
   }
 
   .marker {
-    @apply max-w-full break-words font-mono text-[10.5px] uppercase tracking-[0.28em] text-fg-muted;
+    @apply max-w-full break-words font-sans text-[10.5px] font-medium uppercase text-fg-muted;
+    letter-spacing: 0.26em;
+  }
+
+  .eyebrow {
+    @apply font-sans text-[11px] font-semibold uppercase text-accent-gold;
+    letter-spacing: 0.3em;
   }
 
   .hairline { @apply h-px w-full bg-line; }
 
   /* drop cap for editorial story */
   .drop-cap::first-letter {
-    font-family: theme(fontFamily.accent);
+    font-family: theme(fontFamily.display);
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     float: left;
     font-size: 5.5rem;
-    line-height: 0.85;
-    margin: 0.5rem 0.7rem -0.2rem 0;
+    line-height: 0.78;
+    margin: 0.4rem 0.7rem -0.2rem 0;
     color: theme(colors.accent.gold);
   }
 
-  /* Buttons */
+  /* ── Buttons — luxury gold-outline ── */
   .btn {
-    @apply inline-flex max-w-full items-center justify-center gap-2.5 rounded-full px-6 py-3.5 text-center font-mono text-[10.5px] uppercase leading-snug tracking-[0.18em] transition-all duration-700 ease-out-expo sm:px-8 sm:tracking-[0.24em];
-    box-shadow: 0 4px 24px -8px rgba(95, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 231, 196, 0.08);
+    @apply inline-flex max-w-full items-center justify-center gap-2.5 rounded-full px-8 py-4 text-center font-sans text-[11px] font-medium uppercase leading-snug transition-all duration-300 ease-out-expo sm:px-10;
+    letter-spacing: 0.22em;
   }
+  /* Gold outline → fills gold on hover (works on dark surfaces) */
   .btn-primary {
-    @apply text-fg-cream hover:bg-accent-ember hover:text-bg-velvet;
-    background-color: #5F0000;
-    border: 1px solid rgba(212, 175, 55, 0.45);
-    box-shadow: 0 6px 28px -8px rgba(95, 0, 0, 0.6), inset 0 1px 0 rgba(212, 175, 55, 0.12);
+    @apply text-accent-gold hover:text-bg-burgundy;
+    border: 1px solid theme(colors.accent.gold);
+    background-color: transparent;
   }
+  .btn-primary:hover { background-color: theme(colors.accent.gold); }
+
   .btn-ghost {
-    @apply border border-line-strong text-fg-cream hover:border-accent-gold hover:text-accent-goldlight;
+    @apply border text-fg-cream hover:border-accent-gold hover:text-accent-gold;
+    border-color: theme(colors.line-strong);
+    background-color: transparent;
   }
   .btn-line {
-    @apply border-y border-line-strong px-1 py-3.5 text-fg-cream hover:border-accent-gold hover:text-accent-goldlight;
+    @apply border-y border-line-strong px-1 py-3.5 text-fg-cream hover:border-accent-gold hover:text-accent-gold;
   }
+
+  /* Inverted button for light (cream) sections */
+  .btn-ink {
+    @apply text-accent-bordeaux hover:text-fg-cream;
+    border: 1px solid theme(colors.accent.bordeaux);
+    background-color: transparent;
+  }
+  .btn-ink:hover { background-color: theme(colors.accent.bordeaux); }
 
   .link-underline { @apply relative inline-block; }
   .link-underline::after {
@@ -121,80 +162,40 @@
     background: currentColor;
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .link-underline:hover::after {
     transform: scaleX(1);
     transform-origin: left;
   }
 
+  /* Italic Playfair accent (used inside headings via *word*) */
   .italic-display {
     font-family: theme(fontFamily.accent);
-    font-style: normal;
-    font-weight: 300;
-    color: theme(colors.accent.goldlight);
+    font-style: italic;
+    font-weight: 400;
+    color: theme(colors.accent.gold);
     font-feature-settings: "kern";
-    letter-spacing: -0.02em;
   }
 
   .glow-gold {
-    background: radial-gradient(ellipse at center, rgba(212,175,55,0.22) 0%, rgba(95,0,0,0) 66%);
+    background: radial-gradient(ellipse at center, rgba(203,166,106,0.18) 0%, transparent 66%);
   }
-
   .glow-wine {
-    background: radial-gradient(ellipse at center, rgba(95,0,0,0.32) 0%, transparent 70%);
-  }
-
-  /* Curved SVG divider between sections */
-  .section-curve {
-    position: relative;
-  }
-  .section-curve::after {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z' fill='%230D0907'/%3E%3C/svg%3E");
-    background-size: 100% 100%;
-    pointer-events: none;
-    z-index: 2;
+    background: radial-gradient(ellipse at center, rgba(75,19,17,0.45) 0%, transparent 70%);
   }
 
   /* Thin gold rule used as a decorative separator */
   .gold-rule {
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.55), transparent);
-  }
-
-  /* Hero-language gradient overlays — wine red + gold, various orientations */
-  .section-gradient-left {
-    background:
-      radial-gradient(ellipse 70% 60% at 0% 50%, rgba(95,0,0,0.28) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 40% at 90% 10%, rgba(212,175,55,0.07) 0%, transparent 60%);
-  }
-  .section-gradient-right {
-    background:
-      radial-gradient(ellipse 70% 60% at 100% 50%, rgba(95,0,0,0.28) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 40% at 8% 15%, rgba(212,175,55,0.07) 0%, transparent 60%);
-  }
-  .section-gradient-center {
-    background:
-      radial-gradient(ellipse 80% 55% at 50% 100%, rgba(95,0,0,0.24) 0%, transparent 70%),
-      radial-gradient(ellipse 50% 40% at 50% 0%, rgba(212,175,55,0.06) 0%, transparent 60%);
-  }
-  .section-gradient-top-left {
-    background:
-      radial-gradient(ellipse 65% 55% at 0% 0%, rgba(95,0,0,0.30) 0%, transparent 65%),
-      radial-gradient(ellipse 35% 35% at 85% 85%, rgba(212,175,55,0.07) 0%, transparent 60%);
+    background: linear-gradient(to right, transparent, rgba(203, 166, 106, 0.6), transparent);
   }
 
   .grain-overlay {
     position: absolute;
     inset: 0;
     background-image: theme(backgroundImage.grain);
-    opacity: 0.42;
+    opacity: 0.32;
     mix-blend-mode: soft-light;
     pointer-events: none;
   }
@@ -219,17 +220,17 @@
     content: "";
     flex: 1;
     height: 1px;
-    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.55), transparent);
+    background: linear-gradient(to right, transparent, rgba(203, 166, 106, 0.6), transparent);
   }
 
   .mobile-loop-shell {
     position: relative;
     contain: layout paint;
-    margin-left: -1.25rem;
-    margin-right: -1.25rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
     max-width: 100vw;
     overflow: hidden;
-    padding: 0 1.25rem 1.5rem;
+    padding: 0 1.5rem 1.5rem;
   }
 
   .mobile-loop-track {
@@ -246,10 +247,10 @@
   .mobile-loop-card {
     flex-shrink: 0;
     overflow: hidden;
-    border-radius: 12px;
-    border: 1px solid rgba(212, 175, 55, 0.14);
-    background: rgba(9, 6, 4, 0.92);
-    box-shadow: 0 26px 70px -48px rgba(95, 0, 0, 0.7), 0 4px 16px -8px rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    border: 1px solid rgba(203, 166, 106, 0.18);
+    background: #15120D;
+    box-shadow: 0 26px 70px -48px rgba(0, 0, 0, 0.85);
   }
 
   .mobile-loop-fade {
@@ -258,15 +259,6 @@
     inset: 0;
     z-index: 10;
     background: linear-gradient(90deg, var(--c-bg), transparent 12%, transparent 88%, var(--c-bg));
-  }
-}
-
-@media (min-width: 640px) {
-  .mobile-loop-shell {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
   }
 }
 

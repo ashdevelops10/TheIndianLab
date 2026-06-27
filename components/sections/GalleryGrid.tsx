@@ -23,16 +23,16 @@ export function GalleryGrid() {
   );
 
   return (
-    <section className="pb-32">
+    <section className="section-dark pb-32 pt-[clamp(3rem,6vw,5rem)]">
       <Container>
-        <div className="flex flex-wrap gap-1">
+        <div className="flex flex-wrap gap-2">
           {FILTERS.map((f) => (
             <button
               key={f}
               onClick={() => setFilter(f)}
               className={cn(
-                "px-4 py-2 font-mono text-[11px] uppercase tracking-[0.2em] transition-colors",
-                f === filter ? "text-accent-saffron" : "text-fg-muted hover:text-fg-cream",
+                "px-4 py-2 font-sans text-[11px] font-medium uppercase tracking-[0.2em] transition-colors duration-300",
+                f === filter ? "text-accent-gold" : "text-fg-muted hover:text-fg-cream",
               )}
             >
               {t(f)}
@@ -45,7 +45,7 @@ export function GalleryGrid() {
             <button
               key={g.id}
               onClick={() => setOpen(i)}
-              className="group mb-5 block w-full overflow-hidden bg-bg-surface"
+              className="group mb-5 block w-full overflow-hidden rounded-sm bg-bg-surface"
               style={{ breakInside: "avoid" }}
             >
               <div
