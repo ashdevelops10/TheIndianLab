@@ -10,10 +10,12 @@ export function CocktailScrollShowcase({
   products,
   ingredientsLabel,
   methodLabel,
+  children,
 }: {
   products: Cocktail[];
   ingredientsLabel: string;
   methodLabel: string;
+  children?: React.ReactNode;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
@@ -35,7 +37,7 @@ export function CocktailScrollShowcase({
   const loopedProducts = [...products, ...products];
 
   return (
-    <div ref={ref} className="relative mt-14 md:mt-0 md:h-[300svh] md:min-h-[1920px]">
+    <div ref={ref} className="relative mt-14 md:mt-0 md:h-[200svh] md:min-h-[1280px]">
       <div className="mobile-loop-shell md:hidden">
         <div className="mobile-loop-fade" />
         <div className="mobile-loop-track animate-marquee-slow">
@@ -153,6 +155,9 @@ export function CocktailScrollShowcase({
           </div>
         </div>
       </div>
+      {children && (
+        <div className="hidden md:block">{children}</div>
+      )}
     </div>
   );
 }

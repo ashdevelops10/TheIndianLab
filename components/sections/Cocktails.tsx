@@ -40,10 +40,9 @@ export async function Cocktails({ locale }: { locale: string }) {
           products={showcaseProducts}
           ingredientsLabel={t("ingredients")}
           methodLabel={t("method")}
-        />
-
-        {/* Three-up grid */}
-        <div className="mt-24 hidden gap-10 md:grid md:grid-cols-3 md:gap-8">
+        >
+          {/* Three-up grid lives inside the scroll container so it fills the dead space after sticky exits */}
+          <div className="mt-24 gap-10 md:grid md:grid-cols-3 md:gap-8 md:pb-8">
           {cocktails.map((c, i) => (
             <article
               key={c.id}
@@ -88,7 +87,8 @@ export async function Cocktails({ locale }: { locale: string }) {
               </div>
             </article>
           ))}
-        </div>
+          </div>
+        </CocktailScrollShowcase>
 
         <div className="mt-16 flex justify-center">
           <Link

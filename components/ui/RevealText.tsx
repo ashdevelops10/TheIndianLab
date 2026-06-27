@@ -31,8 +31,10 @@ export function RevealText({
           <span key={li} className="block overflow-hidden pb-[0.24em] -mb-[0.24em]">
             <span className="inline-flex flex-wrap">
               {words.map((raw, wi) => {
-                const isItalic = /^\*.+\*$/.test(raw);
-                const word = isItalic ? raw.slice(1, -1) : raw;
+                const match = raw.match(/^\*(.+)\*([^*]*)$/);
+                const isItalic = match !== null;
+                const word = isItalic ? match![1] : raw;
+                const punct = isItalic ? match![2] : "";
                 const trailing = wi < words.length - 1 ? "\u00A0" : "";
                 return (
                   <span key={wi} className="overflow-hidden pb-[0.24em] -mb-[0.24em]">
@@ -51,8 +53,7 @@ export function RevealText({
                         delay: delay + (li * 0.09 + wi * 0.04) + (isItalic ? 0.12 : 0),
                       }}
                     >
-                      {word}
-                      {trailing}
+                      {word}{punct}{trailing}
                     </motion.span>
                   </span>
                 );
