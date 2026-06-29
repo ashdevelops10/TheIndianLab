@@ -172,10 +172,10 @@
     transform-origin: left;
   }
 
-  /* Italic Playfair accent (used inside headings via *word*) */
+  /* Accent word (used inside headings via *word*) */
   .italic-display {
     font-family: theme(fontFamily.accent);
-    font-style: italic;
+    font-style: normal;
     font-weight: 400;
     color: theme(colors.accent.gold);
     font-feature-settings: "kern";

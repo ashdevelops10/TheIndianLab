@@ -53,7 +53,7 @@ export async function StoryTeaser({ locale }: { locale: string }) {
           <p className="mt-6 text-fluid-body leading-relaxed text-fg-bone">{t("body")}</p>
 
           <figure className="mt-8 border-l-2 border-accent-gold pl-5">
-            <blockquote className="font-display text-fluid-h3 italic leading-snug text-accent-bordeaux">
+            <blockquote className="font-display text-fluid-h3 leading-snug text-accent-bordeaux">
               &ldquo;{t("pullquote")}&rdquo;
             </blockquote>
             <figcaption className="mt-4 font-sans text-[11px] font-medium uppercase tracking-[0.26em] text-fg-muted">

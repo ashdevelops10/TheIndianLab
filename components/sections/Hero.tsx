@@ -56,7 +56,7 @@ export function Hero() {
       <div className="sticky top-0 h-[100svh] min-h-[700px] w-full overflow-hidden bg-bg-base md:min-h-[680px]">
         {/* Hero background — SVG illustration over solid burgundy */}
         <div className="absolute inset-0 bg-[#4B1311]">
-          <div className="absolute -right-16 -top-16 h-[70vh] w-[70vh]">
+          <div className="absolute -right-8 -top-8 h-[45vh] w-[45vh] md:-right-16 md:-top-16 md:h-[70vh] md:w-[70vh]">
             <Image
               src="/assets/hero-bg.svg"
               alt=""

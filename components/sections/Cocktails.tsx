@@ -17,7 +17,7 @@ export async function Cocktails({ locale }: { locale: string }) {
 
   return (
     <section className="section-burgundy relative overflow-hidden pb-[clamp(5rem,10vw,8rem)] pt-[clamp(5rem,12vw,10rem)]">
-      <GinkgoLines className="pointer-events-none absolute -left-32 bottom-0 h-[460px] w-[560px] opacity-[0.18]" />
+      <GinkgoLines className="pointer-events-none absolute -left-32 bottom-0 hidden h-[460px] w-[560px] opacity-[0.18] md:block" />
       <Container className="relative z-10">
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
           {/* Left — label + headline + body */}

@@ -95,7 +95,7 @@ export function Testimonials() {
                       >
                         &ldquo;
                       </span>
-                      <blockquote className="font-display text-2xl italic leading-snug text-fg-ink sm:text-3xl md:text-[2.5rem]">
+                      <blockquote className="font-display text-2xl leading-snug text-fg-ink sm:text-3xl md:text-[2.5rem]">
                         {tm.quote}
                       </blockquote>
                       <figcaption className="mt-10 font-sans text-[11px] font-medium uppercase tracking-[0.28em] text-fg-muted">
