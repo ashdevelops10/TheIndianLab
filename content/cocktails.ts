@@ -9,7 +9,7 @@ export type Cocktail = {
   image: string;
 };
 
-const u = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=900&q=72`;
+const u = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1400&q=80`;
 
 export const featuredCocktail: Cocktail = {
   id: "tamarind-negroni",

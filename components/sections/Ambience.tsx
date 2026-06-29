@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { RevealText } from "@/components/ui/RevealText";
 
-const u = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=900&q=72`;
+const u = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1400&q=85`;
 
 export async function Ambience({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "ambience" });

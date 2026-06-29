@@ -15,7 +15,7 @@ export async function StoryTeaser({ locale }: { locale: string }) {
         {/* Left — feature image with floating logo badge */}
         <div className="relative md:col-span-5">
           <RevealImage
-            src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1000&q=72"
+            src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1600&q=88"
             alt="Chef finishing a fine-dining plate"
             ratio="4/5"
           />

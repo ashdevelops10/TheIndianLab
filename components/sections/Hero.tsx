@@ -58,7 +58,7 @@ export function Hero() {
         {/* Hero background image with parallax */}
         <motion.div style={{ y }} className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1920&q=75"
+            src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=2400&q=88"
             alt=""
             fill
             priority
@@ -101,7 +101,7 @@ export function Hero() {
         >
           <motion.div style={{ scale: detailImageScale }} className="absolute inset-0 origin-center will-change-transform">
             <Image
-              src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1400&q=75"
+              src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1800&q=88"
               alt=""
               fill
               sizes="100vw"
