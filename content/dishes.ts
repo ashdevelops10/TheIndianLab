@@ -14,7 +14,7 @@ export type Dish = {
   signature?: boolean;
 };
 
-const u = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1400&q=80`;
+const u = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=900&q=72`;
 
 export const dishes: Dish[] = [
   {
