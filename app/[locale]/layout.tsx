@@ -5,7 +5,6 @@ import { locales, type Locale } from "@/i18n/config";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { LenisProvider } from "@/components/providers/LenisProvider";
-import { CursorMagnet } from "@/components/providers/CursorMagnet";
 import { siteConfig } from "@/config/site";
 
 export function generateStaticParams() {
@@ -46,8 +45,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <LenisProvider>
-        <CursorMagnet />
-        <Header />
+<Header />
         <main id="main" className="relative">
           {children}
         </main>

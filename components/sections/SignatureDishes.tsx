@@ -76,24 +76,26 @@ export function SignatureDishes() {
                   />
                 </div>
 
-                {/* name + region */}
-                <div className="md:col-span-4">
-                  <h3 className="font-display text-fluid-h3 font-medium text-fg-cream transition-colors duration-300 group-hover:text-accent-gold">
-                    {d.name}
-                  </h3>
-                  {d.nameHi && <p className="mt-1 font-deva text-sm text-fg-muted">{d.nameHi}</p>}
-                  <p className="mt-2 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-fg-dim">
-                    {d.region}
-                  </p>
+                {/* name + region + price (price inline on mobile) */}
+                <div className="flex items-start justify-between md:contents">
+                  <div className="md:col-span-4">
+                    <h3 className="font-display text-fluid-h3 font-medium text-fg-cream transition-colors duration-300 group-hover:text-accent-gold">
+                      {d.name}
+                    </h3>
+                    {d.nameHi && <p className="mt-1 font-deva text-sm text-fg-muted">{d.nameHi}</p>}
+                    <p className="mt-2 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-fg-dim">
+                      {d.region}
+                    </p>
+                  </div>
+
+                  {/* price — inline with name on mobile, own column on desktop */}
+                  <span className="font-display text-2xl text-accent-gold md:col-span-1 md:text-right">
+                    {formatPrice(d.price)}
+                  </span>
                 </div>
 
                 {/* description */}
                 <p className="text-sm leading-relaxed text-fg-bone md:col-span-3">{d.description}</p>
-
-                {/* price */}
-                <span className="font-display text-2xl text-accent-gold md:col-span-1 md:text-right">
-                  {formatPrice(d.price)}
-                </span>
               </Link>
             </motion.div>
           ))}
