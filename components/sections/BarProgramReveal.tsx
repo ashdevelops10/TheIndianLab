@@ -126,9 +126,6 @@ export function BarProgramReveal() {
             stroke="rgba(0,0,0,0.5)"
             strokeWidth="1"
           />
-          <rect x="-19" y="-208" width="7" height="150" rx="3.5" fill="rgba(255,255,255,0.14)" filter="url(#bar-soft)" />
-          <rect x="15" y="-204" width="5" height="150" rx="2.5" fill="rgba(0,0,0,0.35)" filter="url(#bar-soft)" />
-          <ellipse cx="0" cy="-205" rx="22" ry="6" fill="rgba(0,0,0,0.4)" />
           <rect x="-19" y="-182" width="38" height="66" rx="3" fill="url(#bar-label-grad)" opacity="0.94" />
           <rect x="-12" y="-150" width="24" height="1.6" fill="var(--wine)" opacity="0.8" />
           <rect x="-9" y="-172" width="18" height="1.4" fill="rgba(80,55,30,0.5)" />

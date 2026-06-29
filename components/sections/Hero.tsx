@@ -58,7 +58,7 @@ export function Hero() {
         {/* Hero background image with parallax */}
         <motion.div style={{ y }} className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=2400&q=88"
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2400&q=88"
             alt=""
             fill
             priority
@@ -69,12 +69,6 @@ export function Hero() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(95,0,0,0.32),transparent_40%),radial-gradient(circle_at_80%_18%,rgba(212,175,55,0.10),transparent_36%),radial-gradient(circle_at_50%_80%,rgba(95,0,0,0.20),transparent_50%)]" />
           <div className="absolute inset-0 bg-vignette" />
           <div className="grain-overlay" />
-          {/* curved bottom divider */}
-          <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 h-20 overflow-hidden">
-            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="absolute bottom-0 h-full w-full" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0D0907" fillOpacity="0.85" />
-            </svg>
-          </div>
         </motion.div>
 
         {/* Gold radial glow */}

@@ -47,7 +47,7 @@ export function Newsletter() {
 
             <form
               onSubmit={onSubmit}
-              className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
+              className="mt-10 flex max-w-sm flex-col gap-4"
             >
               <label htmlFor="news-email" className="sr-only">
                 Email
@@ -70,7 +70,7 @@ export function Newsletter() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="btn btn-primary group w-full disabled:opacity-60 sm:w-auto"
+                className="btn btn-primary group w-full disabled:opacity-60"
               >
                 <span>{t("submit")}</span>
                 <ArrowRight
