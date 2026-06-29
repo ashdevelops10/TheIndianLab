@@ -1,10 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
 import { Ornament, OrnamentRule } from "@/components/ui/Ornament";
 import { BrandSeal } from "@/components/ui/BrandSeal";
-import { GinkgoLines } from "@/components/ui/GinkgoLines";
 import { FooterNewsletterForm } from "./FooterNewsletterForm";
 
 export async function Footer({ locale }: { locale: string }) {
@@ -19,8 +19,10 @@ export async function Footer({ locale }: { locale: string }) {
 
   return (
     <footer className="section-burgundy relative overflow-hidden border-t border-accent-gold/20">
-      {/* botanical line art — bottom-right */}
-      <GinkgoLines className="pointer-events-none absolute -bottom-20 -right-16 h-[460px] w-[520px] opacity-[0.16]" />
+      {/* botanical pattern — bottom-right */}
+      <div className="pointer-events-none absolute -bottom-10 -right-10 h-[520px] w-[520px] opacity-[0.22]">
+        <Image src="/assets/hero-bg.svg" alt="" fill sizes="520px" className="object-contain" />
+      </div>
       <Container className="relative py-14 md:py-[clamp(5rem,10vw,8rem)]">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-16">
           <div className="lg:col-span-5">

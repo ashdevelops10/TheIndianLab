@@ -24,7 +24,6 @@ export function Hero() {
   const detailStartClip = isCompactViewport
     ? "inset(58% 5% 18% 63%)"
     : "inset(38% 5% 18% 74%)";
-  const y = useTransform(smoothScrollProgress, [0, 1], shouldReduceMotion ? ["0%", "0%"] : ["0%", "14%"]);
   const opacity = useTransform(smoothScrollProgress, [0, 0.4], [1, 0]);
   const detailClipPath = useTransform(
     smoothScrollProgress,
@@ -55,39 +54,33 @@ export function Hero() {
       className="relative h-[100svh] min-h-[700px] w-full bg-bg-base md:h-[200svh] md:min-h-[1240px] lg:min-h-[1360px]"
     >
       <div className="sticky top-0 h-[100svh] min-h-[700px] w-full overflow-hidden bg-bg-base md:min-h-[680px]">
-        {/* Hero background image with parallax */}
-        <motion.div style={{ y }} className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2400&q=88"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-bg-velvet/70 via-bg-base/52 to-bg-base" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_15%,rgba(95,0,0,0.32),transparent_40%),radial-gradient(circle_at_80%_18%,rgba(212,175,55,0.10),transparent_36%),radial-gradient(circle_at_50%_80%,rgba(95,0,0,0.20),transparent_50%)]" />
-          <div className="absolute inset-0 bg-vignette" />
+        {/* Hero background — SVG illustration over solid burgundy */}
+        <div className="absolute inset-0 bg-[#4B1311]">
+          <div className="absolute -right-16 -top-16 h-[70vh] w-[70vh]">
+            <Image
+              src="/assets/hero-bg.svg"
+              alt=""
+              fill
+              priority
+              sizes="70vh"
+              className="object-contain opacity-25"
+            />
+          </div>
           <div className="grain-overlay" />
-        </motion.div>
+        </div>
 
-        {/* Gold radial glow */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-1/2 top-1/2 h-[55vh] w-[55vh] -translate-x-1/2 -translate-y-[35%] animate-glow-pulse glow-gold"
-        />
 
         {/* Vertical edge tag — desktop only */}
         <motion.span
           initial={{ opacity: 0, x: 12 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.1, ease: easeOutExpo, delay: 1.2 }}
+          transition={{ duration: 0.9, ease: easeOutExpo, delay: 0.5 }}
           className="vertical-tag absolute right-5 top-1/2 z-20 hidden -translate-y-1/2 font-mono text-[10px] uppercase tracking-[0.36em] text-fg-bone/70 md:block"
         >
           {t("vertical")}
         </motion.span>
 
-        {/* Floating detail image — scroll-driven clip expand */}
+        {/* Detail image — clip-reveals on scroll, desktop only */}
         <motion.div
           aria-hidden
           style={{ clipPath: detailClipPath }}
@@ -104,19 +97,22 @@ export function Hero() {
           </motion.div>
           <div className="absolute inset-0 bg-bg-base/20" />
           <div className="grain-overlay" />
-        </motion.div>
 
-        <motion.div
-          aria-hidden
-          style={{ opacity: detailShadowOpacity }}
-          className="pointer-events-none absolute bottom-[18%] left-[74%] right-[5%] top-[38%] z-30 hidden border border-accent-gold/50 shadow-[0_34px_70px_-32px_rgba(37,2,2,0.9)] md:block"
-        />
-        <motion.span
-          style={{ opacity: detailLabelOpacity }}
-          className="pointer-events-none absolute bottom-[calc(18%+12px)] right-[calc(1.25rem+12px)] z-30 hidden max-w-[100px] font-mono text-[8px] uppercase tracking-[0.24em] text-fg-cream sm:right-[calc(2rem+12px)] sm:max-w-[128px] sm:text-[9px] sm:tracking-[0.3em] md:block lg:right-[calc(5%+12px)]"
-        >
-          The Dining Room
-        </motion.span>
+          {/* Frame + label — inside clip so they expand and disappear with the image */}
+          <motion.div
+            style={{ opacity: detailLabelOpacity }}
+            className="absolute inset-0"
+          >
+            {/* inset frame border */}
+            <div className="absolute inset-[10px] border border-accent-gold/60" />
+            {/* label bottom-center */}
+            <div className="absolute bottom-5 left-0 right-0 flex justify-center">
+              <span className="font-mono text-[9px] uppercase tracking-[0.32em] text-fg-cream/90">
+                The Dining Room
+              </span>
+            </div>
+          </motion.div>
+        </motion.div>
 
         {/* Main content */}
         <motion.div style={{ opacity }} className="relative z-10 flex h-full flex-col">
@@ -125,13 +121,13 @@ export function Hero() {
               as="h1"
               text={t("title")}
               className="max-w-full text-balance font-display text-fluid-hero text-fg-cream"
-              delay={0.5}
+              delay={0.1}
             />
 
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease: easeOutExpo, delay: 1.3 }}
+              transition={{ duration: 0.7, ease: easeOutExpo, delay: 0.55 }}
               className="mt-8 max-w-xl text-fluid-body text-fg-bone/85"
             >
               {t("subtitle")}
@@ -140,7 +136,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease: easeOutExpo, delay: 1.5 }}
+              transition={{ duration: 0.7, ease: easeOutExpo, delay: 0.7 }}
               className="mt-8 flex flex-wrap items-center gap-3 md:mt-10"
             >
               <Link href={lp("/menu")} className="btn btn-primary group w-full sm:w-auto">
@@ -160,7 +156,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.2, delay: 1.7 }}
+            transition={{ duration: 0.8, delay: 0.85 }}
             className="container-page relative pb-7"
           >
             <div className="flex items-center gap-4">
@@ -172,11 +168,8 @@ export function Hero() {
               <Ornament size="sm" />
               <span className="h-px flex-1 bg-accent-gold/45" />
             </div>
-            <div className="mt-3 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
-              <span className="animate-scroll-cue font-mono text-[10px] uppercase tracking-[0.32em] text-fg-bone/70">
-                ↓ {t("scroll")}
-              </span>
-              <span className="max-w-full text-left font-mono text-[10px] uppercase tracking-[0.24em] text-fg-bone/70 sm:text-right sm:tracking-[0.32em]">
+            <div className="mt-3 flex justify-end">
+              <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-fg-bone/70">
                 भारत · India · Reimagined
               </span>
             </div>
