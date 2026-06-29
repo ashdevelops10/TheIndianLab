@@ -61,7 +61,7 @@ export function SignatureDishes() {
                 className="group grid grid-cols-1 items-center gap-6 border-b border-line py-7 transition-colors md:grid-cols-12 md:gap-8 md:py-8"
               >
                 {/* index */}
-                <span className="hidden font-sans text-[11px] font-medium uppercase tracking-[0.24em] text-fg-dim md:col-span-1 md:block">
+                <span className="hidden font-sans text-[15px] font-medium uppercase tracking-[0.24em] text-fg-dim md:col-span-1 md:block">
                   0{i + 1}
                 </span>
 
@@ -91,7 +91,7 @@ export function SignatureDishes() {
                 <p className="text-sm leading-relaxed text-fg-bone md:col-span-3">{d.description}</p>
 
                 {/* price */}
-                <span className="font-display text-xl text-accent-gold md:col-span-1 md:text-right">
+                <span className="font-display text-2xl text-accent-gold md:col-span-1 md:text-right">
                   {formatPrice(d.price)}
                 </span>
               </Link>

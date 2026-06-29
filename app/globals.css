@@ -73,14 +73,17 @@
   .section-dark {
     background-color: #1E1A14;
     color: theme(colors.fg.cream);
+    --c-bg: #1E1A14;
   }
   .section-burgundy {
     background-color: #4B1311;
     color: theme(colors.fg.cream);
+    --c-bg: #4B1311;
   }
   .section-cream {
     background-color: #F3EDE4;
     color: theme(colors.fg.ink);
+    --c-bg: #F3EDE4;
   }
   /* On cream sections, retune muted/dim text + lines to ink tones */
   .section-cream .text-fg-bone { color: #5C5142; }

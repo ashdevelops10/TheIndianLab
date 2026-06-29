@@ -16,23 +16,27 @@ export async function Cocktails({ locale }: { locale: string }) {
   const showcaseProducts = [featuredCocktail, ...cocktails.slice(0, 2)];
 
   return (
-    <section className="section-burgundy relative overflow-hidden py-[clamp(5rem,12vw,10rem)]">
+    <section className="section-burgundy relative overflow-hidden pb-[clamp(5rem,10vw,8rem)] pt-[clamp(5rem,12vw,10rem)]">
       <GinkgoLines className="pointer-events-none absolute -left-32 bottom-0 h-[460px] w-[560px] opacity-[0.18]" />
       <Container className="relative z-10">
-        <div className="grid gap-10 md:grid-cols-12 md:items-start">
-          <div className="md:col-span-7">
+        <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
+          {/* Left — label + headline + body */}
+          <div>
             <SectionLabel>{t("label")}</SectionLabel>
             <RevealText
               as="h2"
               text={t("title")}
               className="mt-6 font-display text-fluid-h1 font-medium leading-[1.05] text-fg-cream"
             />
-          </div>
-          <div className="md:col-span-4 md:col-start-9 md:pt-10">
-            <BarProgramReveal />
-            <p className="mt-8 max-w-sm text-fluid-body leading-relaxed text-fg-bone">
+            <p className="mt-8 max-w-md text-fluid-body leading-relaxed text-fg-bone">
               {t("body")}
             </p>
+          </div>
+          {/* Right — wine glass animation, vertically centred */}
+          <div className="flex items-center justify-center">
+            <div className="w-full max-w-sm">
+              <BarProgramReveal />
+            </div>
           </div>
         </div>
 
@@ -40,9 +44,10 @@ export async function Cocktails({ locale }: { locale: string }) {
           products={showcaseProducts}
           ingredientsLabel={t("ingredients")}
           methodLabel={t("method")}
-        >
-          {/* Three-up grid lives inside the scroll container so it fills the dead space after sticky exits */}
-          <div className="mt-24 gap-10 md:grid md:grid-cols-3 md:gap-8 md:pb-8">
+        />
+
+        {/* Three-up card grid — outside showcase, in normal document flow */}
+        <div className="mt-24 gap-10 md:grid md:grid-cols-3 md:gap-8">
           {cocktails.map((c, i) => (
             <article
               key={c.id}
@@ -87,13 +92,13 @@ export async function Cocktails({ locale }: { locale: string }) {
               </div>
             </article>
           ))}
-          </div>
-        </CocktailScrollShowcase>
+        </div>
 
+        {/* CTA — in normal flow, always visible within the burgundy section */}
         <div className="mt-16 flex justify-center">
           <Link
             href={`/${locale}/menu`}
-            className="link-underline inline-flex items-center gap-2 font-sans text-[11px] font-semibold uppercase tracking-[0.28em] text-accent-gold"
+            className="inline-flex items-center gap-3 rounded-full border border-accent-gold/60 px-8 py-3.5 font-sans text-[11px] font-semibold uppercase tracking-[0.28em] text-accent-gold transition-all duration-300 hover:border-accent-gold hover:bg-accent-gold/10"
           >
             {t("cta")} <ArrowUpRight size={14} />
           </Link>

@@ -55,7 +55,7 @@ export function BarProgramReveal() {
   return (
     <div
       ref={ref}
-      className="relative min-h-[280px] w-full overflow-hidden bg-bg-velvet sm:min-h-[340px] md:min-h-[420px]"
+      className="relative min-h-[280px] w-full sm:min-h-[340px] md:min-h-[420px]"
       style={{
         "--wine": "#8e2433",
         "--wine-dark": "#5e1622",
@@ -115,7 +115,6 @@ export function BarProgramReveal() {
           </filter>
         </defs>
 
-        <ellipse cx="182" cy="470" rx="96" ry="20" fill="rgba(0,0,0,0.45)" filter="url(#bar-softer)" />
 
         <motion.g
           opacity={enter * (1 - 0.85 * exit)}
@@ -185,7 +184,6 @@ export function BarProgramReveal() {
         </motion.g>
       </svg>
 
-      <div className="grain-overlay" />
     </div>
   );
 }

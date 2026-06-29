@@ -21,7 +21,21 @@ export async function StoryTeaser({ locale }: { locale: string }) {
           />
           {/* floating logo badge */}
           <div className="absolute -bottom-8 right-6 grid h-28 w-28 place-items-center rounded-full border border-accent-bordeaux/30 bg-bg-cream shadow-[0_24px_60px_-30px_rgba(75,19,17,0.5)] md:h-32 md:w-32">
-            <BrandSeal variant="mark" size={56} />
+            <div
+              style={{
+                width: 56,
+                height: Math.round(56 * (768 / 988)),
+                backgroundColor: "#4B1311",
+                maskImage: "url(/assets/logo.png)",
+                WebkitMaskImage: "url(/assets/logo.png)",
+                maskSize: "contain",
+                WebkitMaskSize: "contain",
+                maskRepeat: "no-repeat",
+                WebkitMaskRepeat: "no-repeat",
+                maskPosition: "center",
+                WebkitMaskPosition: "center",
+              }}
+            />
           </div>
         </div>
 
