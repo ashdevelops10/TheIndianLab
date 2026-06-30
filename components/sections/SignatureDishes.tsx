@@ -32,7 +32,7 @@ export function SignatureDishes() {
             <RevealText
               as="h2"
               text={t("title")}
-              className="mt-6 font-display text-fluid-h1 font-medium leading-[1.05] text-fg-cream"
+              className="mt-[22px] md:mt-6 font-display text-fluid-h1 font-medium leading-[1.05] text-fg-cream"
             />
           </div>
           <div className="md:col-span-4 md:col-start-9">

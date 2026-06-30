@@ -13,7 +13,7 @@
     "order": "ऑनलाइन ऑर्डर"
   },
   "hero": {
-    "marker": "N° 001 - विक्टोरिया · बीसी",
+    "marker": "विक्टोरिया · बीसी",
     "stamp": "आधुनिक भारतीय फाइन डाइनिंग",
     "title": "आधुनिक\n*भारतीय*\nभोजन।",
     "subtitle": "विक्टोरिया में एक रोमांटिक भारतीय डाइनिंग डेस्टिनेशन, जहाँ पारंपरिक स्वाद, क्राफ्ट कॉकटेल और refined वैश्विक माहौल साथ आते हैं।",
@@ -24,7 +24,7 @@
   },
   "manifesto": { "label": "घोषणापत्र" },
   "story": {
-    "label": "N° 002 - ब्रांड कहानी",
+    "label": "ब्रांड कहानी",
     "title": "एक आधुनिक\n*भारतीय*\nअनुभव।",
     "lead": "द इंडियन लैब विक्टोरिया में भारतीय cuisine को नए ढंग से अनुभव कराने के लिए बनाया गया है: यादों में rooted, आज के लिए refined, और linger करने वाले माहौल में served।",
     "body": "हमारी रसोई regional Indian recipes का सम्मान करती है और उन्हें modern technique, careful presentation और premium ingredients से elevate करती है। टेबल के आसपास soft lighting, curated house music, elegant interiors और vibrant patio एक ऐसी evening बनाते हैं जो intimate, global और India से deeply connected महसूस होती है।",
@@ -33,13 +33,13 @@
     "cta": "पूरी कहानी पढ़ें"
   },
   "studies": {
-    "label": "N° 003 — प्लेट अध्ययन",
+    "label": "प्लेट अध्ययन",
     "title": "भारतीय स्वाद,\nआज की रात के लिए\n*refined*।",
     "body": "Signature plates tandoor से coast तक, slow-cooked comfort से elegant modern finishes तक जाती हैं।",
     "cta": "पूरा मेन्यू देखें"
   },
   "cocktails": {
-    "label": "N° 004 — बार",
+    "label": "बार",
     "title": "कॉकटेल, *वाइन*,\nऔर धीमा rhythm।",
     "body": "बार Indian botanicals को polished global language में लाता है: इमली, इलायची, केसर, smoke, premium spirits और दुनिया भर की cellar selections।",
     "feature_name": "मिडनाइट तमरिंद नीग्रोनी",
@@ -50,11 +50,11 @@
     "cta": "पूरी सूची देखें"
   },
   "pillars": {
-    "label": "N° 005 - मूल मूल्य",
+    "label": "मूल मूल्य",
     "title": "पाँच *मूल्य*,\nएक अनुभव।"
   },
   "ambience": {
-    "label": "N° 006 — परिवेश",
+    "label": "परिवेश",
     "title": "रोमांस और\nrhythm के लिए\n*सजा* कमरा।",
     "body": "Warm tones, soft lighting, intimate seating, polished textures और carefully curated house music. बाहर patio वही elevated mood Victoria evening में ले जाता है।",
     "interior_label": "भोजन कक्ष",
@@ -64,13 +64,13 @@
     "music_label": "ध्वनि",
     "music_caption": "संयम से चुना गया house music, जो room को energy देता है पर उसे overpower नहीं करता।"
   },
-  "press": { "label": "N° 007 — प्रेस" },
+  "press": { "label": "प्रेस" },
   "testimonials": {
-    "label": "N° 008 — उनकी ज़ुबानी",
+    "label": "उनकी ज़ुबानी",
     "title": "हमारे अतिथि\n*क्या* कहते हैं।"
   },
   "visit": {
-    "label": "N° 009 — पधारें",
+    "label": "पधारें",
     "title": "*विक्टोरिया*\nमें मिलें।",
     "lead": "२९०० जैकलिन रोड। Fine Indian dining, crafted cocktail bar, premium wine cellar और linger करने के लिए बना patio।",
     "hours_title": "समय",
@@ -80,7 +80,7 @@
     "reserve": "टेबल बुक करें"
   },
   "newsletter": {
-    "label": "N° 010 — जुड़े रहें",
+    "label": "जुड़े रहें",
     "title": "*द इंडियन लैब*\nसे नोट्स।",
     "body": "Seasonal menus, cellar pours, patio evenings, private events और कभी-कभी late-night activation। महीने में एक बार, उससे ज़्यादा कभी नहीं।",
     "placeholder": "आपका@ईमेल.com",

@@ -45,7 +45,7 @@ export async function StoryTeaser({ locale }: { locale: string }) {
           <RevealText
             as="h2"
             text={t("title")}
-            className="mt-6 font-display text-fluid-h1 font-medium leading-[1.05] text-fg-ink"
+            className="mt-[22px] md:mt-6 font-display text-fluid-h1 font-medium leading-[1.05] text-fg-ink"
           />
 
           <div className="mt-6 h-px w-16 bg-accent-gold" />

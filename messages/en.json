@@ -13,7 +13,7 @@
     "order": "Order Online"
   },
   "hero": {
-    "marker": "N° 001 - Victoria · BC",
+    "marker": "Victoria · BC",
     "stamp": "MODERN INDIAN FINE DINING",
     "title": "An Ode to\n*Extraordinary*\nDining.",
     "subtitle": "Every course is meticulously composed, every detail intentionally designed, every visit destined to become a lasting memory.",
@@ -26,7 +26,7 @@
     "label": "The Manifesto"
   },
   "story": {
-    "label": "N° 002 - Brand Story",
+    "label": "Brand Story",
     "title": "A modern\n*Indian*\nescape.",
     "lead": "The Indian Lab was created to redefine how Indian cuisine is experienced in Victoria: rooted in memory, refined for the present, and served in a room built for lingering.",
     "body": "Our kitchen honours regional Indian recipes while elevating them through modern technique, careful presentation, and premium ingredients. Around the table, soft lighting, curated house music, elegant interiors, and a vibrant patio create an evening that feels intimate, global, and deeply connected to India.",
@@ -35,13 +35,13 @@
     "cta": "Read the full story"
   },
   "studies": {
-    "label": "N° 003 — Plate Studies",
+    "label": "Plate Studies",
     "title": "Indian flavour,\n*refined*\nfor tonight.",
     "body": "Signature plates move from the tandoor to the coast, from slow-cooked comfort to elegant modern finishes.",
     "cta": "Explore the full menu"
   },
   "cocktails": {
-    "label": "N° 004 — The Bar Program",
+    "label": "The Bar Program",
     "title": "Cocktails, *wine*,\nand slow rhythm.",
     "body": "The bar brings Indian botanicals into a polished global language: tamarind, cardamom, saffron, smoke, premium spirits, and cellar selections from around the world.",
     "feature_name": "Midnight Tamarind Negroni",
@@ -52,11 +52,11 @@
     "cta": "View the full bar list"
   },
   "pillars": {
-    "label": "N° 005 - Core Values",
+    "label": "Core Values",
     "title": "Five\n*values*,\none experience."
   },
   "ambience": {
-    "label": "N° 006 — Ambience",
+    "label": "Ambience",
     "title": "A room\nlit for *romance*\nand rhythm.",
     "body": "Warm tones, soft lighting, intimate seating, polished textures, and a soundtrack of carefully curated house music. Outside, the patio carries the same elevated mood into the Victoria evening.",
     "interior_label": "The Dining Room",
@@ -67,14 +67,14 @@
     "music_caption": "House music selected with restraint, giving the room energy without taking it over."
   },
   "press": {
-    "label": "N° 007 — Press"
+    "label": "Press"
   },
   "testimonials": {
-    "label": "N° 008 — In Their Words",
+    "label": "In Their Words",
     "title": "What our\nguests *say*."
   },
   "visit": {
-    "label": "N° 009 — Visit",
+    "label": "Visit",
     "title": "Find us\nin *Victoria*.",
     "lead": "2401 Millstream Rd #193 in Langford. Fine Indian dining, a crafted cocktail bar, a premium wine cellar, and a patio made for lingering.",
     "hours_title": "Hours",
@@ -84,7 +84,7 @@
     "reserve": "Reserve a table"
   },
   "newsletter": {
-    "label": "N° 010 — Stay Close",
+    "label": "Stay Close",
     "title": "Notes from\n*The Indian Lab*.",
     "body": "Seasonal menus, cellar pours, patio evenings, private events, and the occasional late-night activation. Once a month, never more.",
     "placeholder": "your@email.com",

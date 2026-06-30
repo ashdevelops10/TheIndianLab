@@ -140,7 +140,7 @@ export function CocktailScrollShowcase({
               transition={{ duration: 0.6, ease: easeOutExpo }}
               className="w-full"
             >
-              <p className="label">N° 00{activeIndex + 1} — Featured</p>
+              <p className="label">Featured</p>
               <h3 className="mt-4 text-balance font-display text-fluid-h2 font-medium leading-[1.05] text-fg-cream">
                 {activeProduct.name}
               </h3>

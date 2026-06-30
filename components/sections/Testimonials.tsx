@@ -61,7 +61,7 @@ export function Testimonials() {
                 <RevealText
                   as="h2"
                   text={t("title")}
-                  className="mt-6 text-balance font-display text-fluid-h2 font-medium leading-[1.08] text-fg-ink"
+                  className="mt-[22px] md:mt-6 text-balance font-display text-fluid-h2 font-medium leading-[1.08] text-fg-ink"
                 />
               </div>
               <div className="hidden gap-3 md:flex">

@@ -58,7 +58,7 @@ export function ContactBody({
           <RevealText
             as="h1"
             text={title}
-            className="mt-6 text-balance font-display text-fluid-h1 font-medium leading-[1.05] text-fg-cream"
+            className="mt-[22px] md:mt-6 text-balance font-display text-fluid-h1 font-medium leading-[1.05] text-fg-cream"
           />
           {lead && (
             <p className="mt-8 max-w-sm text-fluid-body leading-relaxed text-fg-bone">{lead}</p>

@@ -39,7 +39,7 @@ export async function Ambience({ locale }: { locale: string }) {
             <RevealText
               as="h2"
               text={t("title")}
-              className="mt-6 font-display text-fluid-h1 font-medium leading-[1.05] text-fg-cream"
+              className="mt-[22px] md:mt-6 font-display text-fluid-h1 font-medium leading-[1.05] text-fg-cream"
             />
           </div>
           <p className="md:col-span-5 md:col-start-8 max-w-md text-fluid-body leading-relaxed text-fg-bone">

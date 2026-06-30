@@ -38,7 +38,7 @@ export function Newsletter() {
             <RevealText
               as="h2"
               text={t("title")}
-              className="mt-6 font-display text-fluid-h1 text-fg-cream"
+              className="mt-[22px] md:mt-6 font-display text-fluid-h1 text-fg-cream"
             />
           </div>
 

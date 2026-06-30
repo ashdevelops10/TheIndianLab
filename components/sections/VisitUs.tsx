@@ -15,7 +15,7 @@ export async function VisitUs({ locale }: { locale: string }) {
           <RevealText
             as="h2"
             text={t("title")}
-            className="mt-6 font-display text-fluid-h1 text-fg-cream"
+            className="mt-[22px] md:mt-6 font-display text-fluid-h1 text-fg-cream"
           />
           <p className="mt-8 max-w-md text-fluid-body text-fg-bone">{t("lead")}</p>
 

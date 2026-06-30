@@ -16,7 +16,7 @@ export async function Cocktails({ locale }: { locale: string }) {
 
   return (
     <section className="section-burgundy relative overflow-hidden pb-[clamp(5rem,10vw,8rem)] pt-[clamp(5rem,12vw,10rem)]">
-      <div className="pointer-events-none absolute -left-20 -bottom-10 h-[500px] w-[500px] opacity-[0.10]">
+      <div className="pointer-events-none absolute -left-32 -bottom-20 h-[800px] w-[800px] opacity-[0.10]">
         <Image src="/assets/hero-bg.svg" alt="" fill sizes="500px" className="object-contain" />
       </div>
       <Container className="relative z-10">
@@ -27,7 +27,7 @@ export async function Cocktails({ locale }: { locale: string }) {
             <RevealText
               as="h2"
               text={t("title")}
-              className="mt-6 font-display text-fluid-h1 font-medium leading-[1.05] text-fg-cream"
+              className="mt-[22px] md:mt-6 font-display text-fluid-h1 font-medium leading-[1.05] text-fg-cream"
             />
             <p className="mt-8 max-w-md text-fluid-body leading-relaxed text-fg-bone">
               {t("body")}

@@ -17,7 +17,7 @@ export function SectionLabel({
       )}
     >
       {align === "left" && (
-        <span aria-hidden="true" className="block h-px w-10 bg-accent-gold/70" />
+        <span aria-hidden="true" className="hidden h-px w-10 bg-accent-gold/70 md:block" />
       )}
       <span>{children}</span>
       {align === "right" && (

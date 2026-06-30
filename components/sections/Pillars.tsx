@@ -44,11 +44,10 @@ export async function Pillars({ locale }: { locale: string }) {
           </div>
         </div>
 
-        <div className="mt-16 h-px w-full bg-accent-gold/30" />
 
         {/* Mobile: manual swipe scroll */}
-        <div className="-mx-6 mt-14 sm:hidden">
-          <div className="flex gap-4 overflow-x-auto scroll-smooth px-6 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" style={{ scrollSnapType: "x mandatory" }}>
+        <div className="mt-14 sm:hidden">
+          <div className="flex gap-4 overflow-x-auto scroll-smooth pl-[22px] pr-6 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" style={{ scrollSnapType: "x mandatory" }}>
             {siteConfig.pillars.map((p, i) => (
               <article
                 key={p.no}

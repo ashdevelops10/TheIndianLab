@@ -1,7 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { RevealText } from "@/components/ui/RevealText";
-import { GinkgoLines } from "@/components/ui/GinkgoLines";
 
 export function PageHero({
   eyebrow,
@@ -14,7 +13,6 @@ export function PageHero({
 }) {
   return (
     <section className="section-burgundy relative overflow-hidden pt-36 pb-16 md:pt-44 md:pb-24">
-      <GinkgoLines className="pointer-events-none absolute -right-24 -top-12 h-[440px] w-[560px] opacity-[0.2]" />
       <div aria-hidden className="grain-overlay" />
       <Container className="relative grid gap-10 md:grid-cols-12">
         <div className="md:col-span-10">

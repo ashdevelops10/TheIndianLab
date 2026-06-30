@@ -159,19 +159,17 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.85 }}
             className="container-page relative pb-7"
           >
-            <div className="flex items-center gap-4">
+            {/* Full-width ornament rule with text centered inside — all breakpoints */}
+            <div className="hidden items-center gap-3 md:flex">
               <span className="h-px flex-1 bg-accent-gold/45" />
               <Ornament size="sm" />
               <span className="h-px flex-1 bg-accent-gold/45" />
-              <Ornament size="sm" />
-              <span className="h-px flex-1 bg-accent-gold/45" />
-              <Ornament size="sm" />
-              <span className="h-px flex-1 bg-accent-gold/45" />
-            </div>
-            <div className="mt-3 flex justify-end">
-              <span className="font-mono text-[10px] uppercase tracking-[0.32em] text-fg-bone/70">
+              <span className="font-mono text-[9px] uppercase tracking-[0.28em] text-fg-bone/70 whitespace-nowrap">
                 भारत · India · Reimagined
               </span>
+              <span className="h-px flex-1 bg-accent-gold/45" />
+              <Ornament size="sm" />
+              <span className="h-px flex-1 bg-accent-gold/45" />
             </div>
           </motion.div>
         </motion.div>

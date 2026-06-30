@@ -20,10 +20,10 @@ export async function Footer({ locale }: { locale: string }) {
   return (
     <footer className="section-burgundy relative overflow-hidden border-t border-accent-gold/20">
       {/* botanical pattern — bottom-right */}
-      <div className="pointer-events-none absolute -bottom-10 -right-10 h-[520px] w-[520px] opacity-[0.22]">
-        <Image src="/assets/hero-bg.svg" alt="" fill sizes="520px" className="object-contain" />
+      <div className="pointer-events-none absolute bottom-[32px] -right-10 h-[320px] w-[320px] rotate-180 opacity-[0.22] md:bottom-[72px] md:h-[520px] md:w-[520px]">
+        <Image src="/assets/hero-bg.svg" alt="" fill sizes="(max-width: 768px) 320px, 520px" className="object-contain" />
       </div>
-      <Container className="relative py-14 md:py-[clamp(5rem,10vw,8rem)]">
+      <Container className="relative overflow-hidden py-14 md:py-[clamp(5rem,10vw,8rem)]">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-16">
           <div className="lg:col-span-5">
             <Link
@@ -58,7 +58,9 @@ export async function Footer({ locale }: { locale: string }) {
           </div>
         </div>
 
-        <OrnamentRule className="my-10 md:my-14" />
+        <div className="my-10 w-1/2 md:my-14">
+          <OrnamentRule />
+        </div>
 
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-12 md:gap-12">
           <div className="md:col-span-3">
@@ -145,12 +147,12 @@ export async function Footer({ locale }: { locale: string }) {
         </div>
       </Container>
 
-      <Container className="relative flex flex-col items-start justify-between gap-3 border-t border-accent-gold/20 py-6 text-xs text-fg-muted md:flex-row md:items-center">
-        <div className="flex max-w-full items-start gap-3">
-          <Ornament size="sm" />
-          <p>{tF("rights")}</p>
+      <Container className="relative flex flex-col items-start justify-between gap-3 overflow-hidden border-t border-accent-gold/20 py-6 text-xs text-fg-muted md:flex-row md:items-center">
+        <div className="flex min-w-0 items-start gap-3">
+          <Ornament size="sm" className="shrink-0" />
+          <p className="min-w-0 break-words">{tF("rights")}</p>
         </div>
-        <p className="max-w-full font-sans text-[10px] font-medium uppercase leading-relaxed tracking-[0.18em] sm:tracking-[0.26em]">{tF("made")}</p>
+        <p className="w-full break-words font-sans text-[10px] font-medium uppercase leading-relaxed tracking-[0.14em] md:w-auto md:text-right md:tracking-[0.26em]">{tF("made")}</p>
       </Container>
     </footer>
   );
