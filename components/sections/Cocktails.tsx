@@ -5,7 +5,6 @@ import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { RevealText } from "@/components/ui/RevealText";
 import { Ornament } from "@/components/ui/Ornament";
-import { GinkgoLines } from "@/components/ui/GinkgoLines";
 import { BarProgramReveal } from "@/components/sections/BarProgramReveal";
 import { CocktailScrollShowcase } from "@/components/sections/CocktailScrollShowcase";
 import { ArrowUpRight } from "lucide-react";
@@ -17,7 +16,9 @@ export async function Cocktails({ locale }: { locale: string }) {
 
   return (
     <section className="section-burgundy relative overflow-hidden pb-[clamp(5rem,10vw,8rem)] pt-[clamp(5rem,12vw,10rem)]">
-      <GinkgoLines className="pointer-events-none absolute -left-32 bottom-0 hidden h-[460px] w-[560px] opacity-[0.18] md:block" />
+      <div className="pointer-events-none absolute -left-20 -bottom-10 h-[500px] w-[500px] opacity-[0.22]">
+        <Image src="/assets/hero-bg.svg" alt="" fill sizes="500px" className="object-contain" />
+      </div>
       <Container className="relative z-10">
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
           {/* Left — label + headline + body */}
@@ -46,8 +47,8 @@ export async function Cocktails({ locale }: { locale: string }) {
           methodLabel={t("method")}
         />
 
-        {/* Three-up card grid — outside showcase, in normal document flow */}
-        <div className="mt-24 gap-10 md:grid md:grid-cols-3 md:gap-8">
+        {/* Three-up card grid — hidden on all breakpoints */}
+        <div className="hidden gap-10 md:gap-8">
           {cocktails.map((c, i) => (
             <article
               key={c.id}
@@ -94,8 +95,8 @@ export async function Cocktails({ locale }: { locale: string }) {
           ))}
         </div>
 
-        {/* CTA — in normal flow, always visible within the burgundy section */}
-        <div className="mt-16 flex justify-center">
+        {/* CTA */}
+        <div className="mt-10 flex justify-center">
           <Link
             href={`/${locale}/menu`}
             className="inline-flex items-center gap-3 rounded-full border border-accent-gold/60 px-8 py-3.5 font-sans text-[11px] font-semibold uppercase tracking-[0.28em] text-accent-gold transition-all duration-300 hover:border-accent-gold hover:bg-accent-gold/10"

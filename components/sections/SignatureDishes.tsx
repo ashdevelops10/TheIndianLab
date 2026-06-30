@@ -46,8 +46,50 @@ export function SignatureDishes() {
           </div>
         </div>
 
-        {/* Editorial dish rows */}
-        <div className="mt-16 border-t border-line">
+        {/* Mobile — horizontal scroll cards */}
+        <div className="mt-16 md:hidden">
+          <div className="border-t border-line" />
+          <div className="-mr-5 flex gap-5 overflow-x-auto pb-4 pt-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" style={{ scrollSnapType: "x mandatory" }}>
+            {items.map((d, i) => (
+              <Link
+                key={d.id}
+                href={`/${locale}/menu`}
+                className="group flex w-[72vw] max-w-[300px] flex-none flex-col"
+                style={{ scrollSnapAlign: "start" }}
+              >
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
+                  <Image
+                    src={d.image}
+                    alt={d.name}
+                    fill
+                    sizes="72vw"
+                    className="object-cover transition-transform duration-500 ease-out-expo group-hover:scale-[1.06]"
+                  />
+                </div>
+                <div className="mt-4 flex items-start justify-between">
+                  <div>
+                    <h3 className="font-display text-xl font-medium text-fg-cream transition-colors duration-300 group-hover:text-accent-gold">
+                      {d.name}
+                    </h3>
+                    {d.nameHi && <p className="mt-1 font-deva text-sm text-fg-muted">{d.nameHi}</p>}
+                    <p className="mt-1 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-fg-dim">
+                      {d.region}
+                    </p>
+                  </div>
+                  <span className="font-display text-2xl text-accent-gold">
+                    {formatPrice(d.price)}
+                  </span>
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-fg-bone">{d.description}</p>
+              </Link>
+            ))}
+            {/* right padding sentinel */}
+            <div className="w-5 flex-none" />
+          </div>
+        </div>
+
+        {/* Desktop — editorial rows */}
+        <div className="mt-16 hidden border-t border-line md:block">
           {items.map((d, i) => (
             <motion.div
               key={d.id}
@@ -60,45 +102,28 @@ export function SignatureDishes() {
                 href={`/${locale}/menu`}
                 className="group grid grid-cols-1 items-center gap-6 border-b border-line py-7 transition-colors md:grid-cols-12 md:gap-8 md:py-8"
               >
-                {/* index */}
                 <span className="hidden font-sans text-[15px] font-medium uppercase tracking-[0.24em] text-fg-dim md:col-span-1 md:block">
                   0{i + 1}
                 </span>
-
-                {/* image */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden rounded-sm md:col-span-3 md:aspect-[5/4]">
                   <Image
                     src={d.image}
                     alt={d.name}
                     fill
-                    sizes="(min-width: 768px) 25vw, 90vw"
+                    sizes="25vw"
                     className="object-cover transition-transform duration-500 ease-out-expo group-hover:scale-[1.06]"
                   />
                 </div>
-
-                {/* name + region */}
                 <div className="md:col-span-4">
-                  <div className="flex items-start justify-between md:block">
-                    <div>
-                      <h3 className="font-display text-fluid-h3 font-medium text-fg-cream transition-colors duration-300 group-hover:text-accent-gold">
-                        {d.name}
-                      </h3>
-                      {d.nameHi && <p className="mt-1 font-deva text-sm text-fg-muted">{d.nameHi}</p>}
-                      <p className="mt-2 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-fg-dim">
-                        {d.region}
-                      </p>
-                    </div>
-                    {/* price — inline with name on mobile only */}
-                    <span className="font-display text-2xl text-accent-gold md:hidden">
-                      {formatPrice(d.price)}
-                    </span>
-                  </div>
+                  <h3 className="font-display text-fluid-h3 font-medium text-fg-cream transition-colors duration-300 group-hover:text-accent-gold">
+                    {d.name}
+                  </h3>
+                  {d.nameHi && <p className="mt-1 font-deva text-sm text-fg-muted">{d.nameHi}</p>}
+                  <p className="mt-2 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-fg-dim">
+                    {d.region}
+                  </p>
                 </div>
-
-                {/* description */}
                 <p className="text-sm leading-relaxed text-fg-bone md:col-span-3">{d.description}</p>
-
-                {/* price — after description on desktop */}
                 <span className="hidden font-display text-[32px] text-accent-gold md:col-span-1 md:block md:text-right">
                   {formatPrice(d.price)}
                 </span>

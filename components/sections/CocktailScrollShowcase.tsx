@@ -32,74 +32,43 @@ export function CocktailScrollShowcase({
 
   return (
     <div className="relative mt-14 md:mt-0">
-      {/* Mobile: auto-shuffle card */}
+      {/* Mobile: horizontal scroll cards */}
       <div className="mt-6 md:hidden">
-        <div className="relative aspect-[4/5] w-full overflow-hidden bg-bg-velvet">
-          <AnimatePresence>
-            <motion.div
-              key={activeProduct.id}
-              initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 1.06 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.75, ease: easeOutExpo }}
-              className="absolute inset-0"
+        <div
+          className="-mr-5 flex gap-5 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          style={{ scrollSnapType: "x mandatory" }}
+        >
+          {products.map((product, index) => (
+            <div
+              key={product.id}
+              className="flex w-[80vw] max-w-[320px] flex-none flex-col"
+              style={{ scrollSnapAlign: "start" }}
             >
-              <Image
-                src={activeProduct.image}
-                alt={activeProduct.name}
-                fill
-                sizes="100vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-bg-base/80 via-bg-base/20 to-transparent" />
-            </motion.div>
-          </AnimatePresence>
-          <span className="absolute left-4 top-4 z-10 font-mono text-[10px] uppercase tracking-[0.28em] text-fg-cream/85">
-            N° 00{activeIndex + 1}
-          </span>
-        </div>
-
-        <div className="bg-bg-base/92 px-5 pb-6 pt-5">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeProduct.id}
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.45, ease: easeOutExpo }}
-            >
-              <p className="label">Featured</p>
-              <h3 className="mt-3 font-display text-3xl font-medium leading-tight text-fg-cream">
-                {activeProduct.name}
-              </h3>
-              <p className="mt-2 font-sans text-[10.5px] font-medium uppercase tracking-[0.2em] text-fg-muted">
-                {activeProduct.base} · ${activeProduct.price}
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-fg-bone">{activeProduct.note}</p>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Progress indicators */}
-          <div className="mt-5 flex gap-2">
-            {products.map((product, index) => (
-              <button
-                key={product.id}
-                onClick={() => setActiveIndex(index)}
-                aria-label={`Show ${product.name}`}
-                className="relative h-1 flex-1 overflow-hidden bg-line-strong"
-              >
-                {index === activeIndex && (
-                  <motion.span
-                    key={activeIndex}
-                    className="absolute inset-y-0 left-0 bg-accent-gold"
-                    initial={{ width: "0%" }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: INTERVAL_MS / 1000, ease: "linear" }}
-                  />
-                )}
-              </button>
-            ))}
-          </div>
+              <div className="relative aspect-[4/5] overflow-hidden bg-bg-velvet">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  sizes="80vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-base/80 via-bg-base/20 to-transparent" />
+                <span className="absolute left-4 top-4 z-10 font-mono text-[10px] uppercase tracking-[0.28em] text-fg-cream/85">
+                  N° 00{index + 1}
+                </span>
+              </div>
+              <div className="pt-5">
+                <h3 className="font-display text-2xl font-medium leading-tight text-fg-cream">
+                  {product.name}
+                </h3>
+                <p className="mt-2 font-sans text-[10.5px] font-medium uppercase tracking-[0.2em] text-fg-muted">
+                  {product.base} · ${product.price}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-fg-bone">{product.note}</p>
+              </div>
+            </div>
+          ))}
+          <div className="w-5 flex-none" />
         </div>
       </div>
 
