@@ -68,7 +68,7 @@ export function Testimonials() {
                 <button
                   type="button"
                   onClick={() => emblaApi?.scrollPrev()}
-                  className="grid h-12 w-12 place-items-center rounded-full border border-accent-bordeaux/30 text-accent-bordeaux transition-colors duration-300 hover:border-accent-bordeaux hover:bg-accent-bordeaux hover:text-fg-cream"
+                  className="grid h-12 w-12 place-items-center rounded-full border border-accent-bordeaux/30 text-accent-bordeaux transition-colors duration-300 hover:border-accent-bordeaux hover:bg-accent-bordeaux hover:text-white"
                   aria-label="Previous"
                 >
                   <ArrowLeft size={16} />
@@ -76,7 +76,7 @@ export function Testimonials() {
                 <button
                   type="button"
                   onClick={() => emblaApi?.scrollNext()}
-                  className="grid h-12 w-12 place-items-center rounded-full border border-accent-bordeaux/30 text-accent-bordeaux transition-colors duration-300 hover:border-accent-bordeaux hover:bg-accent-bordeaux hover:text-fg-cream"
+                  className="grid h-12 w-12 place-items-center rounded-full border border-accent-bordeaux/30 text-accent-bordeaux transition-colors duration-300 hover:border-accent-bordeaux hover:bg-accent-bordeaux hover:text-white"
                   aria-label="Next"
                 >
                   <ArrowRight size={16} />

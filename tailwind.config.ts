@@ -81,6 +81,7 @@ const config: Config = {
       keyframes: {
         marquee: { from: { transform: "translateX(0)" }, to: { transform: "translateX(-50%)" } },
         "marquee-slow": { from: { transform: "translateX(0)" }, to: { transform: "translateX(-50%)" } },
+        "marquee-fast": { from: { transform: "translateX(0)" }, to: { transform: "translateX(-50%)" } },
         shimmer: { "0%, 100%": { opacity: "0.4" }, "50%": { opacity: "1" } },
         "fade-in-up": {
           from: { opacity: "0", transform: "translateY(12px)" },
@@ -97,7 +98,8 @@ const config: Config = {
       },
       animation: {
         marquee: "marquee 40s linear infinite",
-        "marquee-slow": "marquee-slow 45s linear infinite",
+        "marquee-slow": "marquee-slow 20s linear infinite",
+        "marquee-fast": "marquee-fast 22s linear infinite",
         shimmer: "shimmer 2.4s ease-in-out infinite",
         "fade-in-up": "fade-in-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both",
         "scroll-cue": "scroll-cue 2s ease-in-out infinite",

@@ -14,13 +14,12 @@ export async function Pillars({ locale }: { locale: string }) {
     <section className="section-cream relative scroll-mt-24 py-[clamp(5rem,12vw,10rem)]">
       <Container>
         {/* Header — logo badge + editorial headline */}
-        <div className="grid items-center gap-10 md:grid-cols-12">
-          <div className="flex justify-start md:col-span-3 md:justify-start">
-            <div className="grid h-36 w-28 place-items-center rounded-[999px] border border-accent-gold/50 md:h-44 md:w-36">
+        <div className="flex items-center gap-6 md:grid md:grid-cols-12 md:gap-10">
+          <div className="order-2 flex shrink-0 justify-end md:order-1 md:col-span-3 md:justify-start">
+            <div className="grid h-20 w-16 place-items-center rounded-[999px] border border-accent-gold/50 md:h-44 md:w-36">
               <div
+                className="h-[48px] w-[48px] md:h-[75px] md:w-[96px]"
                 style={{
-                  width: 96,
-                  height: Math.round(96 * (768 / 988)),
                   backgroundColor: "#CBA66A",
                   maskImage: "url(/assets/logo.png)",
                   WebkitMaskImage: "url(/assets/logo.png)",
@@ -34,12 +33,12 @@ export async function Pillars({ locale }: { locale: string }) {
               />
             </div>
           </div>
-          <div className="md:col-span-9">
+          <div className="order-1 flex-1 md:order-2 md:col-span-9">
             <SectionLabel>{t("label")}</SectionLabel>
             <RevealText
               as="h2"
               text={t("title")}
-              className="mt-5 font-display text-fluid-h1 font-medium leading-[1.05] text-fg-ink"
+              className="mt-5 font-display text-[2rem] leading-[1.05] font-medium md:text-fluid-h1 text-fg-ink"
             />
           </div>
         </div>

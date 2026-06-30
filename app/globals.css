@@ -241,6 +241,7 @@
     width: max-content;
     gap: 1rem;
     will-change: transform;
+    animation: marquee-slow 20s linear infinite !important;
   }
 
   .mobile-loop-shell:hover .mobile-loop-track {

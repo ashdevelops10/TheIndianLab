@@ -46,18 +46,17 @@ export function SignatureDishes() {
           </div>
         </div>
 
-        {/* Mobile — horizontal scroll cards */}
-        <div className="mt-16 md:hidden">
-          <div className="border-t border-line" />
-          <div className="-mr-5 flex gap-5 overflow-x-auto pb-4 pt-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" style={{ scrollSnapType: "x mandatory" }}>
-            {items.map((d, i) => (
+        {/* Mobile — looping marquee */}
+        <div className="mobile-loop-shell mt-14 md:hidden">
+          <div className="mobile-loop-fade" />
+          <div className="mobile-loop-track animate-marquee-slow">
+            {[...items, ...items].map((d, i) => (
               <Link
-                key={d.id}
+                key={`${d.id}-${i}`}
                 href={`/${locale}/menu`}
-                className="group flex w-[72vw] max-w-[300px] flex-none flex-col"
-                style={{ scrollSnapAlign: "start" }}
+                className={`mobile-loop-card group flex w-[72vw] max-w-[300px] flex-col ${i % 2 ? "translate-y-5" : ""}`}
               >
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[4px] md:rounded-[8px]">
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[4px]">
                   <Image
                     src={d.image}
                     alt={d.name}
@@ -66,25 +65,25 @@ export function SignatureDishes() {
                     className="object-cover transition-transform duration-500 ease-out-expo group-hover:scale-[1.06]"
                   />
                 </div>
-                <div className="mt-4 flex items-start justify-between">
-                  <div>
-                    <h3 className="font-display text-xl font-medium text-fg-cream transition-colors duration-300 group-hover:text-accent-gold">
-                      {d.name}
-                    </h3>
-                    {d.nameHi && <p className="mt-1 font-deva text-sm text-fg-muted">{d.nameHi}</p>}
-                    <p className="mt-1 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-fg-dim">
-                      {d.region}
-                    </p>
+                <div className="p-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <h3 className="font-display text-xl font-medium text-fg-cream transition-colors duration-300 group-hover:text-accent-gold">
+                        {d.name}
+                      </h3>
+                      {d.nameHi && <p className="mt-1 font-deva text-sm text-fg-muted">{d.nameHi}</p>}
+                      <p className="mt-1 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-fg-dim">
+                        {d.region}
+                      </p>
+                    </div>
+                    <span className="shrink-0 font-display text-xl text-accent-gold">
+                      {formatPrice(d.price)}
+                    </span>
                   </div>
-                  <span className="font-display text-2xl text-accent-gold">
-                    {formatPrice(d.price)}
-                  </span>
+                  <p className="mt-3 text-sm leading-relaxed text-fg-bone">{d.description}</p>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-fg-bone">{d.description}</p>
               </Link>
             ))}
-            {/* right padding sentinel */}
-            <div className="w-5 flex-none" />
           </div>
         </div>
 
