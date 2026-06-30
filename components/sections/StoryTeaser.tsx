@@ -20,9 +20,9 @@ export async function StoryTeaser({ locale }: { locale: string }) {
             ratio="4/5"
           />
           {/* floating logo badge */}
-          <div className="absolute -bottom-6 right-4 grid h-24 w-24 place-items-center rounded-full border border-accent-bordeaux/30 bg-bg-cream shadow-[0_24px_60px_-30px_rgba(75,19,17,0.5)] md:h-28 md:w-28">
+          <div className="absolute -bottom-6 right-4 grid h-32 w-32 place-items-center rounded-full border border-accent-bordeaux/30 bg-bg-cream shadow-[0_24px_60px_-30px_rgba(75,19,17,0.5)] md:h-28 md:w-28">
             <div
-              className="h-[37px] w-[48px] md:h-[54px] md:w-[70px]"
+              className="h-[52px] w-[64px] md:h-[54px] md:w-[70px]"
               style={{
                 backgroundColor: "#4B1311",
                 maskImage: "url(/assets/logo.png)",

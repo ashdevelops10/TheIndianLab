@@ -16,9 +16,9 @@ export async function Pillars({ locale }: { locale: string }) {
         {/* Header — logo badge + editorial headline */}
         <div className="flex items-center gap-6 md:grid md:grid-cols-12 md:gap-10">
           <div className="order-2 flex shrink-0 justify-end md:order-1 md:col-span-3 md:justify-start">
-            <div className="grid h-20 w-16 place-items-center rounded-[999px] border border-accent-gold/50 md:h-44 md:w-36">
+            <div className="grid h-28 w-24 place-items-center rounded-[999px] border border-accent-gold/50 md:h-44 md:w-36">
               <div
-                className="h-[48px] w-[48px] md:h-[75px] md:w-[96px]"
+                className="h-[64px] w-[64px] md:h-[75px] md:w-[96px]"
                 style={{
                   backgroundColor: "#CBA66A",
                   maskImage: "url(/assets/logo.png)",

@@ -66,7 +66,6 @@ export function Hero() {
               className="object-contain opacity-25"
             />
           </div>
-          <div className="grain-overlay" />
         </div>
 
 

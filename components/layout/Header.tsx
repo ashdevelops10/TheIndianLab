@@ -48,7 +48,7 @@ export function Header() {
           "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out-expo",
           scrolled || open
             ? "border-b border-line bg-bg-burgundy/95 shadow-[0_18px_50px_-34px_rgba(0,0,0,0.75)] backdrop-blur-xl"
-            : "bg-gradient-to-b from-bg-burgundy/55 to-transparent",
+            : "bg-transparent",
         )}
       >
         <div className="container-page flex h-20 items-center justify-between md:h-24">
