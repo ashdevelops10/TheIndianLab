@@ -38,7 +38,7 @@ export function Testimonials() {
         <div className="grid gap-12 md:grid-cols-12 md:gap-x-16">
           {/* portrait of the room */}
           <div className="md:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-bg-velvet">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[4px] md:rounded-[8px] bg-bg-velvet">
               <Image
                 src={portrait}
                 alt=""

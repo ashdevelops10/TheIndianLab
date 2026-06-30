@@ -17,7 +17,7 @@ export function DishCard({
         className,
       )}
     >
-      <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-bg-elevated">
+      <div className="relative aspect-[4/5] overflow-hidden rounded-[4px] bg-bg-elevated md:rounded-[8px]">
         <Image
           src={dish.image}
           alt={dish.name}

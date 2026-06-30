@@ -15,7 +15,7 @@ type Props = Omit<ImageProps, "alt"> & {
 export function RevealImage({ ratio = "4/5", className, alt, ...img }: Props) {
   return (
     <motion.div
-      className={cn("relative overflow-hidden bg-bg-surface", className)}
+      className={cn("relative overflow-hidden rounded-[4px] bg-bg-surface md:rounded-[8px]", className)}
       style={{ aspectRatio: ratio }}
       initial="hidden"
       whileInView="visible"

@@ -55,7 +55,7 @@ export async function Ambience({ locale }: { locale: string }) {
                 key={`${tile.key}-${i}`}
                 className={`mobile-loop-card w-[76vw] max-w-[320px] ${i % 2 ? "translate-y-5" : ""}`}
               >
-                <div className="relative aspect-[4/5] overflow-hidden bg-bg-velvet">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[4px] bg-bg-velvet md:rounded-[8px]">
                   <Image
                     src={tile.img}
                     alt={tile.label}
@@ -80,7 +80,7 @@ export async function Ambience({ locale }: { locale: string }) {
         <div className="mt-20 hidden gap-10 md:grid md:grid-cols-3 md:gap-8">
           {tiles.map((tile, i) => (
             <figure key={tile.key} className="group relative flex flex-col">
-              <div className="relative aspect-[4/5] overflow-hidden bg-bg-velvet">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[4px] bg-bg-velvet md:rounded-[8px]">
                 <Image
                   src={tile.img}
                   alt={tile.label}
@@ -89,9 +89,6 @@ export async function Ambience({ locale }: { locale: string }) {
                   className="object-cover transition-transform duration-[1400ms] ease-out-expo group-hover:scale-[1.04]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-base/55 via-transparent to-transparent" />
-                <span className="absolute left-4 top-4 font-sans text-[10px] font-medium uppercase tracking-[0.32em] text-fg-cream/85">
-                  N° 00{i + 1}
-                </span>
               </div>
               <figcaption className="mt-5 flex flex-1 flex-col">
                 <p className="font-display text-2xl font-medium text-fg-cream">{tile.label}</p>

@@ -57,7 +57,7 @@ export function SignatureDishes() {
                 className="group flex w-[72vw] max-w-[300px] flex-none flex-col"
                 style={{ scrollSnapAlign: "start" }}
               >
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[4px] md:rounded-[8px]">
                   <Image
                     src={d.image}
                     alt={d.name}
@@ -105,7 +105,7 @@ export function SignatureDishes() {
                 <span className="hidden font-sans text-[15px] font-medium uppercase tracking-[0.24em] text-fg-dim md:col-span-1 md:block">
                   0{i + 1}
                 </span>
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-sm md:col-span-3 md:aspect-[5/4]">
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[4px] md:rounded-[8px] md:col-span-3 md:aspect-[5/4]">
                   <Image
                     src={d.image}
                     alt={d.name}
@@ -114,7 +114,7 @@ export function SignatureDishes() {
                     className="object-cover transition-transform duration-500 ease-out-expo group-hover:scale-[1.06]"
                   />
                 </div>
-                <div className="md:col-span-4">
+                <div className="md:col-span-4 md:pl-8">
                   <h3 className="font-display text-fluid-h3 font-medium text-fg-cream transition-colors duration-300 group-hover:text-accent-gold">
                     {d.name}
                   </h3>

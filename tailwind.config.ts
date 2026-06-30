@@ -97,7 +97,7 @@ const config: Config = {
       },
       animation: {
         marquee: "marquee 40s linear infinite",
-        "marquee-slow": "marquee-slow 90s linear infinite",
+        "marquee-slow": "marquee-slow 45s linear infinite",
         shimmer: "shimmer 2.4s ease-in-out infinite",
         "fade-in-up": "fade-in-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both",
         "scroll-cue": "scroll-cue 2s ease-in-out infinite",

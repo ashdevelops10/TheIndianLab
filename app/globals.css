@@ -67,7 +67,7 @@
 }
 
 @layer components {
-  .container-page { @apply mx-auto w-full max-w-[1600px] px-6 sm:px-8 lg:px-16 xl:px-20; }
+  .container-page { @apply mx-auto w-full max-w-[1600px] px-[22px] sm:px-8 lg:px-16 xl:px-20; }
 
   /* ── Section background system (alternating light / dark) ── */
   .section-dark {

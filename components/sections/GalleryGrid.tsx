@@ -45,7 +45,7 @@ export function GalleryGrid() {
             <button
               key={g.id}
               onClick={() => setOpen(i)}
-              className="group mb-5 block w-full overflow-hidden rounded-sm bg-bg-surface"
+              className="group mb-5 block w-full overflow-hidden rounded-[4px] bg-bg-surface md:rounded-[8px]"
               style={{ breakInside: "avoid" }}
             >
               <div

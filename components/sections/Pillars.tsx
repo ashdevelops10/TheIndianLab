@@ -52,7 +52,7 @@ export async function Pillars({ locale }: { locale: string }) {
             {siteConfig.pillars.map((p, i) => (
               <article
                 key={p.no}
-                className="flex w-[76vw] max-w-[320px] flex-none flex-col gap-6 rounded-xl border border-[rgba(30,26,20,0.12)] bg-[#EBE2D5] p-6 shadow-[0_4px_24px_-8px_rgba(30,26,20,0.08)]"
+                className="flex w-[76vw] max-w-[320px] flex-none flex-col gap-6 rounded-[4px] md:rounded-[8px] border border-[rgba(30,26,20,0.12)] bg-[#EBE2D5] p-6 shadow-[0_4px_24px_-8px_rgba(30,26,20,0.08)]"
                 style={{ scrollSnapAlign: "start" }}
               >
                 <div className="flex items-center justify-between">
@@ -71,14 +71,14 @@ export async function Pillars({ locale }: { locale: string }) {
           {siteConfig.pillars.map((p, i) => (
             <article
               key={p.no}
-              className="group relative flex flex-col gap-5 overflow-hidden rounded-xl border border-[rgba(30,26,20,0.12)] bg-[#EBE2D5] p-7 shadow-[0_4px_24px_-8px_rgba(30,26,20,0.08)] transition-all duration-700 ease-out hover:border-accent-gold/50 hover:-translate-y-1 hover:shadow-[0_8px_40px_-4px_rgba(203,166,106,0.28),0_2px_12px_-4px_rgba(203,166,106,0.18)]"
+              className="group relative flex flex-col gap-5 overflow-hidden rounded-[4px] md:rounded-[8px] border border-[rgba(30,26,20,0.12)] bg-[#EBE2D5] p-7 shadow-[0_4px_24px_-8px_rgba(30,26,20,0.08)] transition-all duration-700 ease-out hover:border-accent-gold/50 hover:-translate-y-1 hover:shadow-[0_8px_40px_-4px_rgba(203,166,106,0.28),0_2px_12px_-4px_rgba(203,166,106,0.18)]"
             >
               {/* GinkgoLines pattern — fades in on hover */}
               <GinkgoLines className="absolute -right-16 -top-16 h-[260px] w-[260px] opacity-0 transition-opacity duration-700 group-hover:opacity-[0.18]" />
               {/* Gold top accent line on hover */}
-              <div className="absolute inset-x-0 top-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-accent-gold/70 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+              <div className="absolute inset-x-0 top-0 h-px rounded-t-[4px] md:rounded-t-[8px] bg-gradient-to-r from-transparent via-accent-gold/70 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
               {/* Subtle gold inner glow at bottom */}
-              <div className="absolute inset-x-0 bottom-0 h-24 rounded-b-xl bg-gradient-to-t from-accent-gold/[0.06] to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+              <div className="absolute inset-x-0 bottom-0 h-24 rounded-b-[4px] md:rounded-b-[8px] bg-gradient-to-t from-accent-gold/[0.06] to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
               <div className="relative flex items-center justify-between">
                 <span className="font-accent text-5xl text-accent-gold">{p.no}.</span>
                 <Ornament size="sm" className="opacity-40 transition-all duration-700 group-hover:opacity-100 group-hover:scale-110" />
@@ -94,13 +94,13 @@ export async function Pillars({ locale }: { locale: string }) {
           {siteConfig.pillars.map((p, i) => (
             <article
               key={p.no}
-              className="group relative flex flex-col gap-6 overflow-hidden rounded-xl border border-[rgba(30,26,20,0.12)] bg-[#EBE2D5] p-8 pb-10 shadow-[0_4px_24px_-8px_rgba(30,26,20,0.08)] transition-all duration-700 ease-out hover:border-accent-gold/50 hover:-translate-y-1.5 hover:shadow-[0_12px_56px_-4px_rgba(203,166,106,0.32),0_4px_16px_-4px_rgba(203,166,106,0.20)] md:p-12 md:pb-14"
+              className="group relative flex flex-col gap-6 overflow-hidden rounded-[4px] md:rounded-[8px] border border-[rgba(30,26,20,0.12)] bg-[#EBE2D5] p-8 pb-10 shadow-[0_4px_24px_-8px_rgba(30,26,20,0.08)] transition-all duration-700 ease-out hover:border-accent-gold/50 hover:-translate-y-1.5 hover:shadow-[0_12px_56px_-4px_rgba(203,166,106,0.32),0_4px_16px_-4px_rgba(203,166,106,0.20)] md:p-12 md:pb-14"
             >
               {/* Gold top accent line on hover */}
-              <div className="absolute inset-x-0 top-0 h-px rounded-t-xl bg-gradient-to-r from-transparent via-accent-gold/70 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+              <div className="absolute inset-x-0 top-0 h-px rounded-t-[4px] md:rounded-t-[8px] bg-gradient-to-r from-transparent via-accent-gold/70 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
 
               {/* Subtle gold inner glow at bottom */}
-              <div className="absolute inset-x-0 bottom-0 h-32 rounded-b-xl bg-gradient-to-t from-accent-gold/[0.07] to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+              <div className="absolute inset-x-0 bottom-0 h-32 rounded-b-[4px] md:rounded-b-[8px] bg-gradient-to-t from-accent-gold/[0.07] to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
 
               {/* GinkgoLines — slides up and fades in from bottom-right on hover */}
               <GinkgoLines className="absolute -bottom-20 -right-20 h-[340px] w-[340px] translate-y-8 opacity-0 transition-all duration-700 ease-out group-hover:translate-y-0 group-hover:opacity-[0.22]" />

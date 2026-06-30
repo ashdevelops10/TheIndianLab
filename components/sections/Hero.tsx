@@ -86,7 +86,7 @@ export function Hero() {
           style={{ clipPath: detailClipPath }}
           className="pointer-events-none absolute inset-0 z-20 hidden [will-change:clip-path] md:block"
         >
-          <motion.div style={{ scale: detailImageScale }} className="absolute inset-0 origin-center will-change-transform">
+          <motion.div style={{ scale: detailImageScale }} className="absolute inset-0 origin-center overflow-hidden rounded-[8px] will-change-transform">
             <Image
               src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1800&q=88"
               alt=""

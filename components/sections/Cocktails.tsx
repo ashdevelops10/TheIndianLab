@@ -16,7 +16,7 @@ export async function Cocktails({ locale }: { locale: string }) {
 
   return (
     <section className="section-burgundy relative overflow-hidden pb-[clamp(5rem,10vw,8rem)] pt-[clamp(5rem,12vw,10rem)]">
-      <div className="pointer-events-none absolute -left-20 -bottom-10 h-[500px] w-[500px] opacity-[0.22]">
+      <div className="pointer-events-none absolute -left-20 -bottom-10 h-[500px] w-[500px] opacity-[0.10]">
         <Image src="/assets/hero-bg.svg" alt="" fill sizes="500px" className="object-contain" />
       </div>
       <Container className="relative z-10">
